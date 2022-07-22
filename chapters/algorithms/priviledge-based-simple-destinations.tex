@@ -1,0 +1,17 @@
+\begin{algorithm}
+\DontPrintSemicolon
+\KwIn{Código do processo $p_i$}
+
+${{nextdeliver}_p}_{i} := 1$\;
+${{pending}_p}_{i} := \emptyset$\;
+
+\when { receive (m, seqnum) } {
+  ${{pending}_p}_{i} := {{pending}_p}_{i} \cup \{(m, seqnum)\}$\;
+  \while { $\exists ({m}^{\prime}, {seqnum}^{\prime}) \in {{pending}_p}_{i}$ s.t. $seqnum^\prime = {{nextdeliver}_{p}}_{i}$} {
+    \text{deliver} ${m}^{\prime}$\;
+    ${{nextdeliver}_p}_{i} := {{nextdeliver}_p}_{i} + 1$\;
+  }
+}
+\caption{Código dos destinatários para o algoritmo baseado em privilégios \cite{journals/csur/DefagoSU04}}
+\label{algo:priviledge-based-simple-destinations}
+\end{algorithm}

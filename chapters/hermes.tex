@@ -1,0 +1,82 @@
+\chapter{Hermes}
+\label{cap:hermes}
+
+O Hermes \cite{renan2021hermes} é um interceptador de mensagens, entre o cliente e servidor. O Hermes é encarregado de ordenar as mensagens usando algoritmos de consenso. Após ordenadas as mensagens, o Hermes entrega as mensagens aos servidores replicados.
+
+O objetivo do Hermes é abstrair os detalhes da ordenação de requisições em sistemas replicados em arquiteturas de microsserviços. Trata-se de um conjunto de interfaces que visam oferecer uma camada de abstração. O Hermes usa o padrão de projetos \textit{proxy}, uma vez que as requisições chegam até o Kubernetes, o serviço do Hermes as intercepta e faz o tratamento de obter consenso entre as réplicas. O cliente envia as requisições para o Hermes, mas isso fica transparente ao usuário. O módulo Hermes utiliza a biblioteca \textit{Hashicorp Raft}\footnote{Hashicorp Raft: \url{https://github.com/hashicorp/raft}}.
+
+% \textbf{Hermes}
+
+O Hermes tem propósitos de ser desacoplado, escalável e compartimentado em tecnologia de contêiner Docker e orquestrado em Kubernetes. Utilizar o Kubernetes é parte do mecanismo de interceptação e também serve para fazer gestão das réplicas. O sistema usufrui de mecanismos do Kubernetes que isolam as réplicas em seus \textit{Nodes} específicos:
+
+\begin{itemize}
+\item Afinidade e Anti-Afinidade: Forçar o Kubernetes a inserir uma réplica para cada nó, afastando-as em máquinas físicas, para que cada \textit{Pod} tenha seus recursos garantidos.
+\item NodeSelector: localizar as réplicas de Hermes com o servidor alvo em Nós especificos com a label \textit{server}. Segregar os clientes dos servidores, em nós.
+\end{itemize}
+
+O interceptador Hermes utiliza padrões de projeto de microsserviços. Os padrões utilizados foram \textit{Proxy} e \textit{Sidecar}. O padrão \textit{Proxy} foi escolhido por fornecer meios lógicos para interceptar mensagens dos clientes e manter um distanciamento das regras de negócio do servidor alvo. O padrão Sidecar foi usado para separar as operações de ordenação de mensagens da aplicação por trás do Hermes, reduzindo sua complexidade interna e deixando a cargo do Hermes para fazer a ordenação de mensagens.
+
+% \textbf{Interface}
+
+% \textbf{Padrão \textit{Interceptor}}
+
+% \textbf{Onde o interceptador se encontra}
+
+A aplicação está contida dentro dos \textit{Pods}, e cada \textit{Pod} tem um Hermes e uma aplicação alvo sendo replicada. As requisições chegam para o Hermes líder que repassa a mensagem em bytes para o Raft poder ordenar usando consenso entre os participantes.
+
+% O Hermes, por sua vez, deve acionar o algoritmo de consenso para poder ordenar as mensagens recebidas. O banco de dados chave valor \textit{etcd} pode ser usado para armazenar informações essenciais para o funcionamento do algoritmo de consenso.
+
+\pagebreak
+
+\begin{figure}[!htb]
+\centering
+\caption{Arquitetura do \textit{Cluster} Kubernetes}
+\includegraphics[width=0.4\linewidth]{figures/kubernetes-arch.png}
+{\flushleft Fonte - Adaptado de \textcite{renan2021hermes}}
+\label{fig:kubernetes-architecture}
+\end{figure}
+
+A Figura \ref{fig:kubernetes-architecture} representa uma forma de esquematizar um \textit{cluster} Kubernetes com o Hermes servindo à frente de uma aplicação \textit{stateful} alvo. O \textit{cluster} Kubernetes pode conter vários nós, cada nó tem 1 Kubelet e suporte para Docker contêineres, cada nó pode conter 1 ou mais \textit{Pods}, cada \textit{Pod} tem 2 imagens de contêineres (uma para o Hermes e outra para a aplicação \textit{stateful} alvo, cada \textit{Pod} tem seu IP na rede privada do Kubernetes e cada Pod contêm seu volume persistente.
+
+% \textbf{Oportunidades de aprimoramento}
+
+% Entre os trabalhos futuros que constam em \textcite{renan2021hermes} foi possível atingir um ponto de melhoria, que se trata de implementar mais uma via de comunicação, além do TCP, previamente implementado pelo Hermes. Implementamos o HTTP, seguindo a interface de comunicação \textit{Communicator}, que posiciona 2 métodos de interface a serem implementados, uma vez implementados da maneira correta, o Hermes passa a entender e usufruir dos métodos para poder receber novos tipos de pacotes. O Hermes em si trabalha  baseado em Arranjo de \textit{Bytes}, ou seja, a passagem de informação se da por Arranjo de \textit{Bytes}. Visto que é necessário passar \textit{Bytes} a diante foi preciso entender qual biblioteca seria a melhor para se poder complementar o interceptador Hermes com leitura de requisições HTTP. A biblioteca utilizada foi \textit{net/http} para GOLANG.
+
+% \begin{itemize}
+% \item Implementar novas regras de ordenação de mensagens (por exemplo utilizar AB-cast com algoritmo sequenciador fixo e simples, ou com algoritmo baseado em privilégios)
+% \item Utilizar diferentes implementações do protocolo Paxos e suas variações, é algo em aberto.
+% \item Implementar a otimização do tamanho dos pacotes trafegados pelo protocolo utilizados na ordenação.
+% \item Implementar ordenação de lotes de identificadores (visando diminuir o número de chamadas ao protocolo de ordenação).
+
+% Assim como a ordenação de identificadores anterior visa diminuir o tamanho das mensagens que transitam pelo protocolo, a ordenação de um conjuntos de identificadores visa diminuir o número de chamadas ao protocolo de ordenação. Para esta abordagem, a transmissão direta de mensagens para todas as réplicas também será necessária.
+
+% Uma prática que também pode diminuir o número de chamadas ao protocolo de ordenação é a concretização da interface de comunicação do interceptador utilizando protocolos de aplicação. Dois exemplos viáveis podem ser os protocolos HTTP e gRPC.
+
+% O protocolo HTTP identifica suas requisições com verbos que podem ser distinguidos como leitura e escrita (ex: GET e POST respectivamente).
+
+% O protocolo gRPC descreve suas operações em um arquivo de texto e identifica os métodos que são chamados, desta forma a concretização poderia ser configurada para selecionar quais métodos ordenar. Operações de leitura poderiam ser encaminhadas diretamente para a aplicação sem passarem pela ordenação. Tal prática só é desejada caso a consistência eventual seja permitida.
+
+% O protocolo de consenso utilizado por este trabalho, Raft, é um protocolo que exige que o líder seja o proponente de um comando. Para tal, uma melhoria no modelo deste trabalho prevê o desenvolvimento de um processo extra que participa do protocolo. Este processo extra identifica modificações na estrutura do grupo de consenso e então pode configurar o direcionador de requisições para as réplicas implantadas no cluster.
+
+% \item Implementar uma maneira de atualizar o redirecionador de requisições para um novo líder, escolhido pelo algoritmo Raft. Visto que o Hermes implementou o redirecionador de requisições para uma réplica líder fixa.
+
+% O exemplo neste trabalho utiliza um balanceador de carga padrão do Kubernetes configurado para enviar requisições apenas para a réplica líder. Porém, se esta réplica líder falhar e uma nova for eleita como líder no lugar dela, o balanceador de carga estará enviando requisições para a réplica errada.
+
+% \item Implementar registro de \textit{logs} desacoplado, indo de encontro com o trabalho de \textcite{XavierDecoupledLogging}.
+
+% A utilização de processos participantes extras também pode viabilizar uma integração com a proposta de (XAVIER et al., 2020). Esta integração pretende utilizar um registro desacoplados dos logs do protocolo sendo utilizado para ordenação das mensagens. Desta forma, participantes do protocolo terão regras de aplicação do comando diferentes: o Hermes fica encarregado de entregar o comando para a aplicação, enquanto as outras registram a ordem acordada para a recuperação de réplicas que venham a falhar.
+
+% \item Comparar o desempenho entre diferentes técnicas de ordenação de mensagens.
+% \end{itemize}
+
+% \textbf{Proposta}
+
+%Além das propostas que já discutimos na introdução.
+% Existem avanços específicas, em aberto, com relação ao código do Hermes. O presente trabalho, busca avaliar os próximos pontos e desejamos implementar esses pontos de melhoria, segue uma relação:
+
+% \begin{itemize}
+% \item Implementar novas regras de ordenação de mensagens (por exemplo utilizar AB-cast com algoritmo sequenciador fixo e simples, ou com algoritmo baseado em privilégios)
+% \item Encontrar uma implementação do protocolo Paxos, em GO, e incluir no Hermes, para poder ser usada também, e comparar com os resultados através com Raft.
+% \item Implementar a otimização do tamanho dos pacotes trafegados pelo protocolo utilizados na ordenação.
+% \item Implementar ordenação de lotes de identificadores (visando diminuir o número de chamadas ao protocolo de ordenação).
+% \end{itemize}

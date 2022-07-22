@@ -1,0 +1,191 @@
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ---
+% \imprimirfolhaderosto*
+% ---
+
+% ---
+% Inserir a ficha bibliografica
+% ---
+% http://ficha.bu.ufsc.br/
+% \begin{fichacatalografica}
+% \includepdf{beforetext/Ficha_Catalografica.pdf}
+% \end{fichacatalografica}
+% ---
+
+% ---
+% Inserir folha de aprovação
+% ---
+% \begin{folhadeaprovacao}
+% \OnehalfSpacing
+% \centering
+% \imprimirautor\\%
+% \vspace*{10pt}		
+% \textbf{\imprimirtitulo}%
+% \ifnotempty{\imprimirsubtitulo}{:~\imprimirsubtitulo}\\%
+% % \vspace*{31.5pt}%3\baselineskip
+% \vspace*{\baselineskip}
+% %\begin{minipage}{\textwidth}
+% O presente trabalho em nível de \imprimirnivel~foi avaliado e aprovado por banca examinadora composta pelos seguintes membros:\\
+% %\end{minipage}%
+% \vspace*{\baselineskip}
+% Prof.(a) xxxx, Dr(a).\\
+% Instituição xxxx\\
+% \vspace*{\baselineskip}
+% Prof.(a) xxxx, Dr(a).\\
+% Instituição xxxx\\
+% \vspace*{\baselineskip}
+% Prof.(a) xxxx, Dr(a).\\
+% Instituição xxxx\\
+% \vspace*{2\baselineskip}
+% \begin{minipage}{\textwidth}
+% O presente trabalho é um \textbf{rascunho de monografia} para ser entregue na disciplina INE5631 (Projetos I)
+% % Certificamos que esta é a \textbf{versão original e final} do trabalho de conclusão que foi julgado adequado para obtenção do título de \imprimirformacao.\\
+% \end{minipage}
+% % \vspace{-0.7cm}
+% \vspace*{\fill}
+% \assinatura{\OnehalfSpacing Coordenação do Programa de Pós-Graduação}
+% \vspace*{\fill}
+% \assinatura{\OnehalfSpacing\imprimirorientador \\ \imprimirorientadorRotulo}
+% % \ifnotempty{\imprimircoorientador}{
+% % \assinatura{\imprimircoorientador \\ \imprimircoorientadorRotulo \\
+% % \imprimirinstituicao~--~\imprimirinstituicaosigla}
+% % }
+% % \newpage
+% \vspace*{\fill}
+% \imprimirlocal, \imprimirano.
+% \end{folhadeaprovacao}
+% ---
+
+% ---
+% Dedicatória
+% ---
+% \begin{dedicatoria}
+% \vspace*{\fill}
+% \noindent
+% \begin{adjustwidth*}{}{5.5cm} 
+% \raggedleft       
+% Este trabalho é dedicado aos meus colegas de classe e aos meus queridos pais.
+% \end{adjustwidth*}
+% \end{dedicatoria}
+% ---
+
+% ---
+% Agradecimentos
+% ---
+% \begin{agradecimentos}
+% Inserir os agradecimentos aos colaboradores à execução do trabalho. 
+% \end{agradecimentos}
+% ---
+
+% ---
+% Epígrafe
+% ---
+% \begin{epigrafe}
+% \vspace*{\fill}
+% \begin{flushright}
+% \textit{``Texto da Epígrafe.\\
+% Citação relativa ao tema do trabalho.\\
+% É opcional. A epígrafe pode também aparecer\\
+% na abertura de cada seção ou capítulo.\\
+% Deve ser elaborada de acordo com a NBR 10520.''\\
+% (SOBRENOME do autor da epígrafe, ano)}
+% \end{flushright}
+% \end{epigrafe}
+% ---
+
+% ---
+% RESUMOS
+% ---
+
+% resumo em português
+\include{chapters/resumo}
+
+% resumo em inglês
+% \begin{resumo}[Abstract]
+% \SingleSpacing
+% \begin{otherlanguage*}{english}
+% Replication is a widely adopted fault tolerance strategy to achieve a minimum acceptable degree of availability, of the services. A technique widely used is State Machine Replication, where each replica starts from the same initial state, receives the same requests from the clients and processes the requests deterministically, ensuring that the replicas evolve equally through time. In this way, the occurrence of failures in a limited number of replicas does not compromise the functioning of the service. Recently, microservices-based architectures have gained popularity due to the modular programming model and also due to the support of container orchestration platforms, which offer automatic and efficient management of resources required by container orchestration platforms. This work presents a proposal for the implementation of State Machine Replication aimed at microservices architectures. The goal is to provide the replication functionality transparently to the user, so that the details of replication and fault tolerance do not need to be explicitly addressed by developers. This work proposal will extend a work initiated by the group, which proposes an architecture for a message ordering service based on interceptors. To improve the service, we intend to implement new communication and message ordering protocols, in addition to investigating resources to improve performance in ordering and delivering requests to replicas, such as the use of batches.
+
+% \textbf{Keywords}: State machine replication. Consensus protocol. Proxies. Container orchestration. Total ordering. Microservices architecture.
+% \end{otherlanguage*}
+% \end{resumo}
+
+%% resumo em francês 
+%\begin{resumo}[Résumé]
+% \begin{otherlanguage*}{french}
+%    Il s'agit d'un résumé en français.
+% 
+%   \textbf{Mots-clés}: latex. abntex. publication de textes.
+% \end{otherlanguage*}
+%\end{resumo}
+%
+%% resumo em espanhol
+%\begin{resumo}[Resumen]
+% \begin{otherlanguage*}{spanish}
+%   Este es el resumen en español.
+%  
+%   \textbf{Palabras clave}: latex. abntex. publicación de textos.
+% \end{otherlanguage*}
+%\end{resumo}
+%% ---
+
+{%hidelinks
+\hypersetup{hidelinks}
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de quadros
+% ---
+% \pdfbookmark[0]{\listofquadrosname}{loq}
+% \listofquadros*
+% \cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+% \pdfbookmark[0]{\listtablename}{lot}
+% \listoftables*
+% \cleardoublepage
+% ---
+\pdfbookmark[0]{\listalgorithmcfname}{lof}
+\listofalgorithms
+\cleardoublepage
+% ---
+% inserir lista de abreviaturas e siglas (devem ser declarados no preambulo)
+% ---
+
+\imprimirlistadesiglas
+% ---
+
+% ---
+% inserir lista de símbolos (devem ser declarados no preambulo)
+% ---
+% 	\imprimirlistadesimbolos
+% ---
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+}%hidelinks
+% ---
+
+
+

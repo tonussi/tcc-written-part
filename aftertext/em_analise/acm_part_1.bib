@@ -1,0 +1,1497 @@
+@inproceedings{10.1109/WI-IAT.2012.16,
+author = {Ding, Yihua and Wang, James Z. and Srimani, Pradip K.},
+title = {Churn Tolerance Algorithm for State Machine Replication},
+year = {2012},
+isbn = {9780769548807},
+publisher = {IEEE Computer Society},
+address = {USA},
+url = {https://doi.org/10.1109/WI-IAT.2012.16},
+doi = {10.1109/WI-IAT.2012.16},
+abstract = {State machine replication is a general approach for building a Byzantine fault-tolerant
+(BFT) distributed systems like a grid or a cloud or a data center. Various BFT protocols
+based on state machine replication have been introduced for modern distributed systems
+to tolerate byzantine failures and thus provide more reliable services. However, most
+of them have not fully considered the adverse affects of Churn (nodes entering and
+leaving the system at will) on the correctness and availability of services. In this
+paper, we propose a new churn tolerance algorithm based on the BFT protocol approach
+using state machine replication. It is capable of tolerating both Byzantine failures
+and arbitrary churn when the constraint on the number of faults in the distributed
+system is satisfied.},
+booktitle = {Proceedings of the The 2012 IEEE/WIC/ACM International Joint Conferences on Web Intelligence and Intelligent Agent Technology - Volume 02},
+pages = {356–360},
+numpages = {5},
+keywords = {Churn Tolerance, State Machine Replication, Byzantine Fault, PBFT},
+series = {WI-IAT '12}
+}
+
+@inproceedings{10.1145/3267809.3267825,
+author = {Alchieri, Eduardo and Dotti, Fernando and Pedone, Fernando},
+title = {Early Scheduling in Parallel State Machine Replication},
+year = {2018},
+isbn = {9781450360111},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3267809.3267825},
+doi = {10.1145/3267809.3267825},
+abstract = {State machine replication, a classic approach to fault tolerance, requires replicas
+to execute operations deterministically. Deterministic execution is typically ensured
+by having replicas execute operations serially in the same total order. Two classes
+of techniques have extended state machine replication to execute operations concurrently:
+late scheduling and early scheduling. With late scheduling, operations are scheduled
+for execution after they are ordered across replicas. With early scheduling, part
+of the scheduling decisions are made before requests are ordered; after requests are
+ordered, their scheduling must respect these restrictions. This paper generalizes
+early scheduling techniques. We propose an automated mechanism to schedule operations
+on worker threads at replicas, integrate our contributions to a popular state machine
+replication framework, and experimentally compare the resulting system to late scheduling.},
+booktitle = {Proceedings of the ACM Symposium on Cloud Computing},
+pages = {82–94},
+numpages = {13},
+keywords = {Parallel State Machine Replication, Dependability, Optimization Problems, Scheduling},
+location = {Carlsbad, CA, USA},
+series = {SoCC '18}
+}
+
+@inproceedings{10.1145/2834965.2834969,
+author = {Eibel, Christopher and Distler, Tobias},
+title = {Towards Energy-Proportional State-Machine Replication},
+year = {2015},
+isbn = {9781450337335},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2834965.2834969},
+doi = {10.1145/2834965.2834969},
+abstract = {The energy consumption of state-of-the-art systems applying state-machine replication
+in general is not proportional to the performance they provide. This is mainly due
+to the fact that current implementations rely on static replica configurations, for
+example with regard to the number of threads to be used, which prevent them from adjusting
+their resource footprints to changing load levels. In this paper, we address this
+problem by presenting a mechanism that allows a replica to adapt its energy consumption
+by switching between configurations at runtime. Furthermore, we study the effectiveness
+of different energy-saving techniques and their impact on peak performance. Our evaluation
+results for a Byzantine fault-tolerant coordination service show that utilizing such
+knowledge in combination with our mechanism, it is possible to build energy-proportional
+replicated systems.},
+booktitle = {Proceedings of the 14th International Workshop on Adaptive and Reflective Middleware},
+articleno = {4},
+numpages = {6},
+keywords = {State-Machine Replication, Energy Proportionality},
+location = {Vancouver, BC, Canada},
+series = {ARM 2015}
+}
+
+@inproceedings{10.1145/3342195.3387543,
+author = {Enes, Vitor and Baquero, Carlos and Rezende, Tuanir Fran\c{c}a and Gotsman, Alexey and Perrin, Matthieu and Sutra, Pierre},
+title = {State-Machine Replication for Planet-Scale Systems},
+year = {2020},
+isbn = {9781450368827},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3342195.3387543},
+doi = {10.1145/3342195.3387543},
+abstract = {Online applications now routinely replicate their data at multiple sites around the
+world. In this paper we present Atlas, the first state-machine replication protocol
+tailored for such planet-scale systems. Atlas does not rely on a distinguished leader,
+so clients enjoy the same quality of service independently of their geographical locations.
+Furthermore, client-perceived latency improves as we add sites closer to clients.
+To achieve this, Atlas minimizes the size of its quorums using an observation that
+concurrent data center failures are rare. It also processes a high percentage of accesses
+in a single round trip, even when these conflict. We experimentally demonstrate that
+Atlas consistently outperforms state-of-the-art protocols in planet-scale scenarios.
+In particular, Atlas is up to two times faster than Flexible Paxos with identical
+failure assumptions, and more than doubles the performance of Egalitarian Paxos in
+the YCSB benchmark.},
+booktitle = {Proceedings of the Fifteenth European Conference on Computer Systems},
+articleno = {24},
+numpages = {15},
+keywords = {consensus, fault tolerance, geo-replication},
+location = {Heraklion, Greece},
+series = {EuroSys '20}
+}
+
+@inproceedings{10.1145/3361525.3361549,
+author = {Escobar, Ian Aragon and Alchieri, Eduardo and Dotti, Fernando Lu\'{\i}s and Pedone, Fernando},
+title = {Boosting Concurrency in Parallel State Machine Replication},
+year = {2019},
+isbn = {9781450370097},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3361525.3361549},
+doi = {10.1145/3361525.3361549},
+abstract = {State machine replication (SMR) is a well-known approach to implementing fault-tolerant
+services, providing high availability and strong consistency. To boost the performance
+of SMR, some proposals execute independent commands concurrently, while dependent
+commands execute sequentially in the total delivery order. The most general approach
+to handling command dependencies resorts to a directed acyclic graph (DAG), where
+nodes represent commands and edges represent dependencies. In this paper we show that
+due to the command arrival and multithreaded execution rates of SMR, a highly concurrent
+implementation of a DAG is needed. We show that a typical coarse-grained DAG implementation,
+where the whole graph is a critical section, results in a bottleneck in the replica.
+We propose two improvements to the coarse-grained DAG approach: fine-grained algorithms,
+using lock-coupling, and lock-free algorithms. Our fine-grain algorithms lock individual
+vertices in the DAG. The lock-free algorithms use nonblocking synchronization, with
+atomic operations, and lazy synchronization to postpone physical removal of nodes.
+All algorithms were integrated in a parallel SMR prototype. Experimental evaluation
+revealed that the fine-grained algorithms are also subject to a bottleneck. The lock-free
+implementation, however, sports linear speedup with the number of working threads,
+in some cases scaling up to 64 threads.},
+booktitle = {Proceedings of the 20th International Middleware Conference},
+pages = {228–240},
+numpages = {13},
+keywords = {Fault Tolerance, State Machine Replication, Concurrent Algorithms},
+location = {Davis, CA, USA},
+series = {Middleware '19}
+}
+
+@inproceedings{10.1145/2851613.2851879,
+author = {Mendizabal, Odorico M. and Dotti, Fernando Lu\'{\i}s and Pedone, Fernando},
+title = {Analysis of Checkpointing Overhead in Parallel State Machine Replication},
+year = {2016},
+isbn = {9781450337397},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2851613.2851879},
+doi = {10.1145/2851613.2851879},
+abstract = {State machine replication (SMR) is a well-established technique to fault-tolerant
+systems. In part, this is explained by the simplicity of the approach and its strong
+consistency guarantees. Recently, several proposals have suggested parallelizing the
+execution of state machine replicas to achieve high throughput. Concurrent execution
+of commands has many implications, including the recovery of replicas from failures.
+Conventional checkpointing techniques, for example, must be revisited in parallelized
+models. In this paper, we review parallel variations of state machine replication
+and discuss how checkpointing procedures apply to these models. Moreover, we evaluate
+the impact caused by checkpointing techniques on recovery through simulations.},
+booktitle = {Proceedings of the 31st Annual ACM Symposium on Applied Computing},
+pages = {534–537},
+numpages = {4},
+keywords = {distributed systems, checkpointing, fault tolerance},
+location = {Pisa, Italy},
+series = {SAC '16}
+}
+
+@inproceedings{10.1145/3293611.3338023,
+author = {Buchman, Ethan},
+title = {Byzantine Fault Tolerant State Machine Replication in Any Programming Language},
+year = {2019},
+isbn = {9781450362177},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3293611.3338023},
+doi = {10.1145/3293611.3338023},
+abstract = {State machine replication is a fundamental primitive in fault tolerant distributed
+computing, but few production tools exist to support the replication of arbitrary
+state machines. The tools that do exist, like Apache Zookeeper, CoreOS's etcd, and
+Hashicrop's Consul, include an implementation of a consensus algorithm (eg. ZAB or
+Raft) for replication, and a service-discovery oriented key-value store as the state
+machine. While these tools can tolerate crash failures, they cannot tolerate malicious
+or adversarial ("Byzantine") faults.We present Tendermint, a production-grade Byzantine
+Fault Tolerant State Machine Replication engine written in Go. Tendermint supports
+replication for state machines written in any language by using a socket protocol
+to communicate between the state machine and the replication engine. Tendermint is
+being used on the public internet today to secure upwards of 1 Billion USD in value,
+with deployments supporting hundreds of consensus nodes. In this workshop, we provide
+an overview of the Tendermint system and demonstrate how to build Byzantine Fault
+Tolerant applications in Go and Javascript. We will also introduce the Cosmos Hub,
+an advanced Proof-of-Stake cryptocurrency system built on Tendermint.},
+booktitle = {Proceedings of the 2019 ACM Symposium on Principles of Distributed Computing},
+pages = {546},
+numpages = {1},
+keywords = {blockchain, replicated state machine, byzantine fault tolerant},
+location = {Toronto ON, Canada},
+series = {PODC '19}
+}
+
+@inproceedings{10.1145/3293611.3331568,
+author = {Skrzypczak, Jan and Schintke, Florian and Sch\"{u}tt, Thorsten},
+title = {Linearizable State Machine Replication of State-Based CRDTs without Logs},
+year = {2019},
+isbn = {9781450362177},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3293611.3331568},
+doi = {10.1145/3293611.3331568},
+abstract = {General solutions of state machine replication have to ensure that all replicas apply
+the same commands in the same order, even in the presence of failures. Such strict
+ordering incurs high synchronization costs due to the use of distributed consensus
+or a leader. This paper presents a protocol for linearizable state machine replication
+of conflict-free replicated data types (CRDTs) that neither requires consensus nor
+a leader. By leveraging the properties of state-based CRDTs---in particular the monotonic
+growth of a join semilattice---synchronization overhead is greatly reduced. In addition,
+updates just need a single round trip and modify the state 'in-place' without the
+need for a log. Furthermore, the message size overhead for coordination consists of
+a single counter per message. While reads in the presence of concurrent updates are
+not wait-free without a coordinator, we show that more than 97,% of reads can be
+handled in one or two round trips under highly concurrent accesses. Our protocol achieves
+high throughput without auxiliary processes such as command log management or leader
+election. It is well suited for all practical scenarios that need linearizable access
+on CRDT data on a fine-granular scale.},
+booktitle = {Proceedings of the 2019 ACM Symposium on Principles of Distributed Computing},
+pages = {455–457},
+numpages = {3},
+keywords = {conflict-free replicated data types, state machine replication, linearizabiliy, generalized lattice agreement},
+location = {Toronto ON, Canada},
+series = {PODC '19}
+}
+
+@article{10.1145/3436728,
+author = {Distler, Tobias},
+title = {Byzantine Fault-Tolerant State-Machine Replication from a Systems Perspective},
+year = {2021},
+issue_date = {January 2022},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {54},
+number = {1},
+issn = {0360-0300},
+url = {https://doi.org/10.1145/3436728},
+doi = {10.1145/3436728},
+abstract = {Byzantine fault-tolerant&nbsp;(BFT) state-machine replication makes it possible to design
+systems that are resilient against arbitrary faults, a requirement considered crucial
+for an increasing number of use cases such as permissioned blockchains, firewalls,
+and SCADA systems. Unfortunately, the strong fault-tolerance guarantees provided by
+BFT replication protocols come at the cost of a high complexity, which is why it is
+inherently difficult to correctly implement BFT systems in practice. This is all the
+more true with regard to the plethora of solutions and ideas that have been developed
+in recent years to improve performance, availability, or resource efficiency. This
+survey aims at facilitating the task of building BFT systems by presenting an overview
+of state-of-the-art techniques and analyzing their practical implications, for example,
+with respect to applicability and composability. In particular, this includes problems
+that arise in the context of concrete implementations, but which are often times passed
+over in literature. Starting with an in-depth discussion of the most important architectural
+building blocks of a BFT system&nbsp;(i.e.,&nbsp;clients, agreement protocol, execution stage),
+the survey then focuses on selected approaches and mechanisms addressing specific
+tasks such as checkpointing and recovery.},
+journal = {ACM Comput. Surv.},
+month = feb,
+articleno = {24},
+numpages = {38},
+keywords = {state-machine replication, Byzantine fault tolerance}
+}
+
+@inproceedings{10.1145/3477132.3483582,
+author = {Pan, Haochen and Tuglu, Jesse and Zhou, Neo and Wang, Tianshu and Shen, Yicheng and Zheng, Xiong and Tassarotti, Joseph and Tseng, Lewis and Palmieri, Roberto},
+title = {Rabia: Simplifying State-Machine Replication Through Randomization},
+year = {2021},
+isbn = {9781450387095},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3477132.3483582},
+doi = {10.1145/3477132.3483582},
+abstract = {We introduce Rabia, a simple and high performance framework for implementing state-machine
+replication (SMR) within a datacenter. The main innovation of Rabia is in using randomization
+to simplify the design. Rabia provides the following two features: (i) It does not
+need any fail-over protocol and supports trivial auxiliary protocols like log compaction,
+snapshotting, and reconfiguration, components that are often considered the most challenging
+when developing SMR systems; and (ii) It provides high performance, up to 1.5x higher
+throughput than the closest competitor (i.e., EPaxos) in a favorable setup (same availability
+zone with three replicas) and is comparable with a larger number of replicas or when
+deployed in multiple availability zones.},
+booktitle = {Proceedings of the ACM SIGOPS 28th Symposium on Operating Systems Principles},
+pages = {472–487},
+numpages = {16},
+keywords = {SMR, Formal Verification, Consensus},
+location = {Virtual Event, Germany},
+series = {SOSP '21}
+}
+
+@article{10.1145/3302258,
+author = {Jha, Sagar and Behrens, Jonathan and Gkountouvas, Theo and Milano, Matthew and Song, Weijia and Tremel, Edward and Renesse, Robbert Van and Zink, Sydney and Birman, Kenneth P.},
+title = {Derecho: Fast State Machine Replication for Cloud Services},
+year = {2019},
+issue_date = {April 2019},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {36},
+number = {2},
+issn = {0734-2071},
+url = {https://doi.org/10.1145/3302258},
+doi = {10.1145/3302258},
+abstract = {Cloud computing services often replicate data and may require ways to coordinate distributed
+actions. Here we present Derecho, a library for such tasks. The API provides interfaces
+for structuring applications into patterns of subgroups and shards, supports state
+machine replication within them, and includes mechanisms that assist in restart after
+failures. Running over 100Gbps RDMA, Derecho can send millions of events per second
+in each subgroup or shard and throughput peaks at 16GB/s, substantially outperforming
+prior solutions. Configured to run purely on TCP, Derecho is still substantially faster
+than comparable widely used, highly-tuned, standard tools. The key insight is that
+on modern hardware (including non-RDMA networks), data-intensive protocols should
+be built from non-blocking data-flow components.},
+journal = {ACM Trans. Comput. Syst.},
+month = apr,
+articleno = {4},
+numpages = {49},
+keywords = {Cloud computing, RDMA, replication, non-volatile memory, consistency}
+}
+
+@inproceedings{10.1145/2332432.2332449,
+author = {Bortnikov, Vita and Chockler, Gregory and Perelman, Dmitri and Roytman, Alexey and Shachor, Shlomit and Shnayderman, Ilya},
+title = {Brief Announcement: Reconfigurable State Machine Replication from Non-Reconfigurable Building Blocks},
+year = {2012},
+isbn = {9781450314503},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2332432.2332449},
+doi = {10.1145/2332432.2332449},
+abstract = {Reconfigurable state machine replication is an important enabler of elasticity for
+replicated cloud services, which must be able to dynamically adjust their size as
+a function of changing load and resource availability. We introduce a new generic
+framework to allow the reconfigurable state machine implementation to be derived from
+a collection of arbitrary non-reconfigurable state machines. Our reduction framework
+follows the black box approach, and does not make any assumptions with respect to
+its execution environment apart from reliable channels. It allows higher-level services
+to leverage speculative command execution to ensure uninterrupted progress during
+the reconfiguration periods as well as in situations where failures prevent the reconfiguration
+agreement from being reached in a timely fashion. We apply our framework to obtain
+a reconfigurable speculative state machine from the non-reconfigurable Paxos implementation,
+and analyze its performance on a realistic distributed testbed. Our results show that
+our framework incurs negligible overheads in the absence of reconfiguration, and allows
+steady throughput to be maintained throughout the reconfiguration periods.},
+booktitle = {Proceedings of the 2012 ACM Symposium on Principles of Distributed Computing},
+pages = {93–94},
+numpages = {2},
+keywords = {state machine, replication, fault tolerance},
+location = {Madeira, Portugal},
+series = {PODC '12}
+}
+
+@inproceedings{10.1145/3386367.3431291,
+author = {Yan, Xinan and Yang, Linguan and Wong, Bernard},
+title = {Domino: Using Network Measurements to Reduce State Machine Replication Latency in WANs},
+year = {2020},
+isbn = {9781450379489},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3386367.3431291},
+doi = {10.1145/3386367.3431291},
+abstract = {This paper introduces Domino, a low-latency state machine replication protocol for
+wide-area networks. Domino uses network measurements to predict the expected arrival
+time of a client request to each of its replicas, and assigns a future timestamp to
+the request indicating when the last replica from the supermajority quorum should
+have received the request. With accurate arrival time predictions and in the absence
+of failures, Domino can always commit a request in a single network roundtrip using
+a Fast Paxos-like protocol by ordering the requests based on their timestamps.Additionally,
+depending on the network geometry between the client and replica servers, a leader-based
+consensus protocol can have a lower commit latency than Fast Paxos even without conflicting
+requests. Domino supports both leader-based consensus and Fast Paxos-like consensus
+in different cycles of the same deployment. Each Domino client can independently choose
+which to use based on recent network measurement data to minimize the commit latency
+for its requests. Our experiments on Microsoft Azure show that Domino can achieve
+significantly lower commit latency than other consensus protocols, such as Mencius,
+Fast Paxos, and EPaxos.},
+booktitle = {Proceedings of the 16th International Conference on Emerging Networking EXperiments and Technologies},
+pages = {351–363},
+numpages = {13},
+location = {Barcelona, Spain},
+series = {CoNEXT '20}
+}
+
+@inproceedings{10.1145/2600212.2600218,
+author = {Mu, Shuai and Chen, Kang and Wu, Yongwei and Zheng, Weimin},
+title = {When Paxos Meets Erasure Code: Reduce Network and Storage Cost in State Machine Replication},
+year = {2014},
+isbn = {9781450327497},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2600212.2600218},
+doi = {10.1145/2600212.2600218},
+abstract = {Paxos-based state machine replication is a key technique to build highly reliable
+and available distributed services, such as lock servers, databases and other data
+storage systems. Paxos can tolerate any minority number of node crashes in an asynchronous
+network environment. Traditionally, Paxos is used to perform a full copy replication
+across all participants. However, full copy is expensive both in term of network and
+storage cost, especially in wide area with commodity hard drives.In this paper, we
+discussed the non-triviality and feasibility of combining erasure code into Paxos
+protocol, and presented an improved protocol named RS-Paxos (Reed Solomon Paxos).
+To the best of our knowledge, we are the first to propose such a combination. Compared
+to Paxos, RS-Paxos requires a limitation on the number of possible failures. If the
+number of tolerated failures decreases by 1, RS-Paxos can save over 50% of network
+transmission and disk I/O. To demonstrate the benefits of our protocol, we designed
+and built a key-value store based on RS-Paxos, and evaluated it on EC2 with various
+settings. Experiment results show that RS-Paxos achieves at most 2.5x improvement
+on write throughput and as much as 30% reduction on latency, in common configurations.},
+booktitle = {Proceedings of the 23rd International Symposium on High-Performance Parallel and Distributed Computing},
+pages = {61–72},
+numpages = {12},
+keywords = {asynchronous message passing model, state machine replication, consensus, erasure code, paxos},
+location = {Vancouver, BC, Canada},
+series = {HPDC '14}
+}
+
+@inproceedings{10.1145/3341105.3373875,
+author = {Grambow, Martin and Meusel, Lukas and Wittern, Erik and Bermbach, David},
+title = {Benchmarking Microservice Performance: A Pattern-Based Approach},
+year = {2020},
+isbn = {9781450368667},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3341105.3373875},
+doi = {10.1145/3341105.3373875},
+abstract = {Benchmarking microservices serves to understand and check their non-functional properties
+for relevant workloads and over time. Performing benchmarks, however, can be costly:
+each microservice requires the design and implementation of a benchmark, possibly
+repeatedly as the service evolves. As microservice APIs differ, benchmarking tools
+that assume common interfaces - like ones for databases - do not exist.In this work,
+we present a pattern-based approach to reduce the efforts for defining microservice
+benchmarks, while still allowing to measure qualities of complex interactions. It
+assumes that microservices expose a REST API, described in a machine-understandable
+way, and allows developers to model interaction patterns from abstract operations
+that can be mapped to that API. Possible data-dependencies between operations are
+resolved at runtime. We implement a prototype of our approach, which we use to demonstrate
+that it can be applied to open-source microservices with little effort. Our work shows
+that pattern-based benchmarking of microservices is feasible and opens up opportunities
+for microservice providers and tooling developers.},
+booktitle = {Proceedings of the 35th Annual ACM Symposium on Applied Computing},
+pages = {232–241},
+numpages = {10},
+location = {Brno, Czech Republic},
+series = {SAC '20}
+}
+
+@inproceedings{10.1145/3425269.3425277,
+author = {Costa, Diego Ivo Campos and Filho, Eduardo Pereira e Silva and Silva, Reginaldo Florencio da and de C. Quaresma Gama, Thiago Dias and Cort\'{e}s, Mariela I.},
+title = {Microservice Architecture: A Tertiary Study},
+year = {2020},
+isbn = {9781450387545},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3425269.3425277},
+doi = {10.1145/3425269.3425277},
+abstract = {Context. The large-scale use of microservices and their increasing adoption in the
+industry in recent years has motivated researches on the most diverse aspects related
+to microservice-based development. However, as it is a relatively new topic, there
+is still no consolidated body of knowledge in the area. Objective. The present work
+intends to investigate the current state of research on microservices based on the
+formulation of six research questions covering fundamental aspects, such as: main
+interest topics and adopted standards, techniques and tools have been used and application
+areas. Method. From four digital libraries, 22 secondary studies were selected as
+a data source, which were analyzed and synthesized in the present study following
+the proposed research protocol. Results. Among the main topics of interest addressed,
+we highlight researches related to the applicability of microservice architecture,
+both by industry and academia. Results indicated that standards focus on challenges
+related to communication have been the most commonly considered by researchers of
+the area. Finally, the predominance in the use of the Docker container and the presence
+of DevOps practices in the automation of operations are noteworthy. Conclusions. The
+present mapping study points to some directions of research based on the identified
+gaps, such as modeling and testing of microservice applications, and addressing security
+aspects. Another promising point to be explored involves the combined use of microservice
+architecture with other related concepts such as IoT, smart cities, FOG computing
+and reactive systems, in order to reinforce the use of microservices, as well as creating
+new solutions and challenges to be researched.},
+booktitle = {Proceedings of the 14th Brazilian Symposium on Software Components, Architectures, and Reuse},
+pages = {61–70},
+numpages = {10},
+keywords = {Academia, Industria, Arquitetura de software, Padr\~{o}es de arquitetura, Microsservi\c{c}os, Mapeamento sistem\'{a}tico},
+location = {Natal, Brazil},
+series = {SBCARS '20}
+}
+
+@inproceedings{10.1145/3238147.3240730,
+author = {Zhou, Xiang and Peng, Xin and Xie, Tao and Sun, Jun and Li, Wenhai and Ji, Chao and Ding, Dan},
+title = {Delta Debugging Microservice Systems},
+year = {2018},
+isbn = {9781450359375},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3238147.3240730},
+doi = {10.1145/3238147.3240730},
+abstract = {Debugging microservice systems involves the deployment and manipulation of microservice
+systems on a containerized environment and faces unique challenges due to the high
+complexity and dynamism of microservices. To address these challenges, in this paper,
+we propose a debugging approach for microservice systems based on the delta debugging
+algorithm, which is to minimize failureinducing deltas of circumstances (e.g., deployment,
+environmental configurations) for effective debugging. Our approach includes novel
+techniques for defining, deploying/manipulating, and executing deltas following the
+idea of delta debugging. In particular, to construct a (failing) circumstance space
+for delta debugging to minimize, our approach defines a set of dimensions that can
+affect the execution of microservice systems. Our experimental study on a medium-size
+microservice benchmark system shows that our approach can effectively identify failure-inducing
+deltas that help diagnose the root causes.},
+booktitle = {Proceedings of the 33rd ACM/IEEE International Conference on Automated Software Engineering},
+pages = {802–807},
+numpages = {6},
+keywords = {Delta Debugging, Microservice, Testing},
+location = {Montpellier, France},
+series = {ASE 2018}
+}
+
+@inproceedings{10.1145/3387906.3388625,
+author = {Pigazzini, Ilaria and Fontana, Francesca Arcelli and Lenarduzzi, Valentina and Taibi, Davide},
+title = {Towards Microservice Smells Detection},
+year = {2020},
+isbn = {9781450379601},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3387906.3388625},
+doi = {10.1145/3387906.3388625},
+abstract = {With the adoption of microservices architectural styles, practitioners started noticing
+increasing pitfalls in managing and maintaining such architectures, with the risk
+of introducing architectural debt. Previous studies identified different microservice
+smells (also named anti-patterns) that harm microservices architectures. However,
+according to our knowledge, there are no tools that can automatically detect microservice
+smells, so their identification is left to the experience of the developer. In this
+paper, we extend an existing tool developed for the detection of architectural smells
+to explore microservices architecture through the detection of three microservice
+smells: Cyclic Dependencies, Hard-Coded Endpoints, and Shared Persistence. We detected
+the smells on five open-source projects implemented with microservices and manually
+validated the precision of the detection results. This work aims to open new perspectives
+on facing and studying architectural debt in the field of microservices architectures.},
+booktitle = {Proceedings of the 3rd International Conference on Technical Debt},
+pages = {92–97},
+numpages = {6},
+keywords = {anti-patterns, microservices, microservice bad smells detection},
+location = {Seoul, Republic of Korea},
+series = {TechDebt '20}
+}
+
+@inproceedings{10.1145/3472883.3487003,
+author = {Luo, Shutian and Xu, Huanle and Lu, Chengzhi and Ye, Kejiang and Xu, Guoyao and Zhang, Liping and Ding, Yu and He, Jian and Xu, Chengzhong},
+title = {Characterizing Microservice Dependency and Performance: Alibaba Trace Analysis},
+year = {2021},
+isbn = {9781450386388},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3472883.3487003},
+doi = {10.1145/3472883.3487003},
+abstract = {Loosely-coupled and light-weight microservices running in containers are replacing
+monolithic applications gradually. Understanding the characteristics of microservices
+is critical to make good use of microservice architectures. However, there is no comprehensive
+study about microservice and its related systems in production environments so far.
+In this paper, we present a solid analysis of large-scale deployments of microservices
+at Alibaba clusters. Our study focuses on the characterization of microservice dependency
+as well as its runtime performance. We conduct an in-depth anatomy of microservice
+call graphs to quantify the difference between them and traditional DAGs of data-parallel
+jobs. In particular, we observe that microservice call graphs are heavy-tail distributed
+and their topology is similar to a tree and moreover, many microservices are hot-spots.
+We reveal three types of meaningful call dependency that can be utilized to optimize
+microservice designs. Our investigation on microservice runtime performance indicates
+most microservices are much more sensitive to CPU interference than memory interference.
+To synthesize more representative microservice traces, we build a mathematical model
+to simulate call graphs. Experimental results demonstrate our model can well preserve
+those graph properties observed from Alibaba traces.},
+booktitle = {Proceedings of the ACM Symposium on Cloud Computing},
+pages = {412–426},
+numpages = {15},
+location = {Seattle, WA, USA},
+series = {SoCC '21}
+}
+
+@inproceedings{10.1145/3297663.3310309,
+author = {Jindal, Anshul and Podolskiy, Vladimir and Gerndt, Michael},
+title = {Performance Modeling for Cloud Microservice Applications},
+year = {2019},
+isbn = {9781450362399},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3297663.3310309},
+doi = {10.1145/3297663.3310309},
+abstract = {Microservices enable a fine-grained control over the cloud applications that they
+constitute and thus became widely-used in the industry. Each microservice implements
+its own functionality and communicates with other microservices through language-
+and platform-agnostic API. The resources usage of microservices varies depending on
+the implemented functionality and the workload. Continuously increasing load or a
+sudden load spike may yield a violation of a service level objective (SLO). To characterize
+the behavior of a microservice application which is appropriate for the user, we define
+a MicroService Capacity (MSC) as a maximal rate of requests that can be served without
+violating SLO.The paper addresses the challenge of identifying MSC individually for
+each microservice. Finding individual capacities of microservices ensures the flexibility
+of the capacity planning for an application. This challenge is addressed by sandboxing
+a microservice and building its performance model. This approach was implemented in
+a tool Terminus. The tool estimates the capacity of a microservice on different deployment
+configurations by conducting a limited set of load tests followed by fitting an appropriate
+regression model to the acquired performance data. The evaluation of the microservice
+performance models on microservices of four different applications shown relatively
+accurate predictions with mean absolute percentage error (MAPE) less than 10%.The
+results of the proposed performance modeling for individual microservices are deemed
+as a major input for the microservice application performance modeling.},
+booktitle = {Proceedings of the 2019 ACM/SPEC International Conference on Performance Engineering},
+pages = {25–32},
+numpages = {8},
+keywords = {cloud computing, microservice, scaling, regression, microservice application, performance modeling, cloud, microservice capacity, kubernetes, aws, performance modeling microservice},
+location = {Mumbai, India},
+series = {ICPE '19}
+}
+
+@article{10.1145/3429204.3429206,
+author = {Grambow, Martin and Wittern, Erik and Bermbach, David},
+title = {Benchmarking the Performance of Microservice Applications},
+year = {2020},
+issue_date = {September 2020},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {20},
+number = {3},
+issn = {1559-6915},
+url = {https://doi.org/10.1145/3429204.3429206},
+doi = {10.1145/3429204.3429206},
+abstract = {Application performance is crucial for end user satisfaction. It has therefore been
+proposed to benchmark new software releases as part of the build process. While this
+can easily be done for system classes which come with a standard interface, e.g.,
+database or messaging systems, benchmarking microservice applications is hard because
+each application requires its own custom benchmark and benchmark implementation due
+to interface heterogeneity. Furthermore, even minor interface changes will easily
+break an existing benchmark implementation.In previous work, we proposed a benchmarking
+approach for single microservices: Assuming a REST-based microservice interface, developers
+describe the benchmark workload based on abstract interaction patterns. At runtime,
+our approach uses an interface description such as the OpenAPI specification to automatically
+resolve and bind the workload patterns to the concrete endpoint before executing the
+benchmark and collecting results. In this extended paper, we enhance our approach
+with the capabilities necessary for benchmarking entire microservice applications,
+especially the ability to resolve complex data dependencies across microservice endpoints.
+We evaluate our approach through our proof-of-concept prototype OpenISBT and demonstrate
+that it can be used to benchmark an open source microservice application with little
+manual effort.},
+journal = {SIGAPP Appl. Comput. Rev.},
+month = sep,
+pages = {20–34},
+numpages = {15},
+keywords = {QoS, SLA, benchmarking, API, microservice, open API specification, swagger, restful}
+}
+
+@inproceedings{10.1145/3341105.3374065,
+author = {Sorgalla, Jonas and Rademacher, Florian and Sachweh, Sabine and Z\"{u}ndorf, Albert},
+title = {Modeling Microservice Architecture: A Comparative Experiment towards the Effectiveness of Two Approaches},
+year = {2020},
+isbn = {9781450368667},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3341105.3374065},
+doi = {10.1145/3341105.3374065},
+abstract = {Microservice Architecture denotes an architectural style for software systems whereby
+business capabilities are encapsulated in autonomous services. Model-driven Development
+is considered as means to foster the efficient development of such systems. It can
+be used to address complexity and tedious development tasks, e.g., by using code generation.
+In this short paper, we present two modeling approaches for describing microservice
+architecture and compare them. The first is based on domain-specific modeling languages,
+the second on the Unified Modeling Language. We comparatively evaluated both approaches
+in a student experiment with 32 participants. First results of the experiment indicate
+that students commit fewer modeling errors while using the set of domain-specific
+modeling languages.},
+booktitle = {Proceedings of the 35th Annual ACM Symposium on Applied Computing},
+pages = {1506–1509},
+numpages = {4},
+keywords = {software architecture, modeling language evaluation, domain-specific languages, microservices},
+location = {Brno, Czech Republic},
+series = {SAC '20}
+}
+
+@article{10.1145/3183628.3183631,
+author = {Cerny, Tomas and Donahoo, Michael J. and Trnka, Michal},
+title = {Contextual Understanding of Microservice Architecture: Current and Future Directions},
+year = {2018},
+issue_date = {December 2017},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {17},
+number = {4},
+issn = {1559-6915},
+url = {https://doi.org/10.1145/3183628.3183631},
+doi = {10.1145/3183628.3183631},
+abstract = {Current industry trends in enterprise architectures indicate movement from Service-Oriented
+Architecture (SOA) to Microservices. By understanding the key differences between
+these two approaches and their features, we can design a more effective Microservice
+architecture by avoiding SOA pitfalls. To do this, we must know why this shift is
+happening and how key SOA functionality is addressed by key features of the Microservice-based
+system. Unfortunately, Microservices do not address all SOA shortcomings. In addition,
+Microservices introduce new challenges. This work provides a detailed analysis of
+the differences between these two architectures and their features. Next, we describe
+both research and industry perspectives on the strengths and weaknesses of both architectural
+directions. Finally, we perform a systematic mapping study related to Microservice
+research, identifying interest and challenges in multiple categories from a range
+of recent research.},
+journal = {SIGAPP Appl. Comput. Rev.},
+month = jan,
+pages = {29–45},
+numpages = {17},
+keywords = {survey, architectures, microservices, systematic mapping study, SOA, self-contained systems}
+}
+
+@inproceedings{10.1145/3297280.3297401,
+author = {Ibrahim, Amjad and Bozhinoski, Stevica and Pretschner, Alexander},
+title = {Attack Graph Generation for Microservice Architecture},
+year = {2019},
+isbn = {9781450359337},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3297280.3297401},
+doi = {10.1145/3297280.3297401},
+abstract = {Microservices, which are typically technologically heterogenous and can be deployed
+automatically, are increasingly dominating service systems. However, with increased
+utilization of third-party components distributed as images, the potential vulnerabilities
+in microservice-based systems increase. Based on component dependency, such vulnerabilities
+can lead to exposing a system's critical assets. Similar problems have been addressed
+by the computer networks community. In this paper, we propose utilizing attack graphs
+in the continuous delivery infrastructure of microservices-based systems. To that
+end, we relate microservices to network nodes and automatically generate attack graphs
+that help practitioners identify, analyze, and prevent plausible attack paths in their
+microservice-based container networks. We present a complete solution that can be
+easily embedded in continuous delivery systems and demonstrate its efficiency and
+scalability based on real-world use cases.},
+booktitle = {Proceedings of the 34th ACM/SIGAPP Symposium on Applied Computing},
+pages = {1235–1242},
+numpages = {8},
+keywords = {microservices, containers, attack graph generation},
+location = {Limassol, Cyprus},
+series = {SAC '19}
+}
+
+@inproceedings{10.1145/3183440.3194991,
+author = {Zhou, Xiang and Peng, Xin and Xie, Tao and Sun, Jun and Xu, Chenjie and Ji, Chao and Zhao, Wenyun},
+title = {Benchmarking Microservice Systems for Software Engineering Research},
+year = {2018},
+isbn = {9781450356633},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3183440.3194991},
+doi = {10.1145/3183440.3194991},
+abstract = {Despite the prevalence and importance of microservices in industry, there exists limited
+research on microservices, partly due to lacking a benchmark system that reflects
+the characteristics of industrial microservice systems. To fill this gap, we conduct
+a review of literature and open source systems to identify the gap between existing
+benchmark systems and industrial microservice systems. Based on the results of the
+gap analysis, we then develop and release a medium-size benchmark system of microservice
+architecture.},
+booktitle = {Proceedings of the 40th International Conference on Software Engineering: Companion Proceeedings},
+pages = {323–324},
+numpages = {2},
+keywords = {tracing, visualization, debugging, microservice, benchmark, failure diagnosis},
+location = {Gothenburg, Sweden},
+series = {ICSE '18}
+}
+
+@inproceedings{10.1145/3318216.3363330,
+author = {Samanta, Amit and Li, Yong},
+title = {Cost-Effective Microservice Scaling at Edge: Poster},
+year = {2019},
+isbn = {9781450367332},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3318216.3363330},
+doi = {10.1145/3318216.3363330},
+abstract = {We propose a cost-effective microservice scaling to manage complex IoT and microservices
+for future edge computing applications. We design a small scale prototype to show
+it's basic functionality considering scaling cost and delay of mobile applications
+in a practical testbed.},
+booktitle = {Proceedings of the 4th ACM/IEEE Symposium on Edge Computing},
+pages = {326–328},
+numpages = {3},
+keywords = {evaluation, edge cloud, scaling, microservices},
+location = {Arlington, Virginia},
+series = {SEC '19}
+}
+
+@inproceedings{10.1145/3297280.3297403,
+author = {Santana, Matheus and Sampaio, Adalberto and Andrade, Marcos and Rosa, Nelson S.},
+title = {Transparent Tracing of Microservice-Based Applications},
+year = {2019},
+isbn = {9781450359337},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3297280.3297403},
+doi = {10.1145/3297280.3297403},
+abstract = {Tracing has been applied to study and understand the behavior and performance of distributed
+systems. Despite the attention this topic has received, two important aspects are
+still challenges and especially harmful in the context of microservice-based applications:
+source code instrumentation and performance overhead. Existing attempts resort on
+working around overhead (e.g., sampling techniques) and do not address microservices
+architecture's high technological heterogeneity. Our main contribution is a novel
+approach for tracing microservices which joins proxies' usage (for handling tracing
+concerns) and operating system syscalls monitoring (for diagnosing causality between
+multiple requests). It makes advances on the field by completely separating instrumentation
+and application code while minimizing performance overhead. We carry out a performance
+evaluation to show the impact of our solution on the execution of microservice-based
+applications. Our proposal fosters developers' productivity by allowing them to focus
+on business logic instead of instrumentation and copes with the intrinsic heterogeneity
+of microservices by relying on deployment modifications and operating systems mechanisms
+solely.},
+booktitle = {Proceedings of the 34th ACM/SIGAPP Symposium on Applied Computing},
+pages = {1252–1259},
+numpages = {8},
+keywords = {tracing, debugging, microservices, monitoring, code instrumentation},
+location = {Limassol, Cyprus},
+series = {SAC '19}
+}
+
+@inproceedings{10.1145/3357141.3357599,
+author = {Costa, Ana Claudia L. A. I. and Colanzi, Thelma E. and Marcolino, Anderson S. and Barbosa, Ellen F.},
+title = {Microservice-Oriented Product Line Architecture Design: An Exploratory Study},
+year = {2019},
+isbn = {9781450376372},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3357141.3357599},
+doi = {10.1145/3357141.3357599},
+abstract = {Microservice has been successfully employed in software industry [1, 11], as they
+provide modularization and easy management of small and autonomous services, high
+availability, scalability and short time-to-market. A recent study on microservices
+shows that most studies generate specific solutions, which emphasize the need for
+fundamental research, proposals of reusable practices and works that focus on providing
+information to ease communication between architects and stakeholders [11] -- software
+architecture can be a powerful tool for this regard. The definition and documentation
+of the software product line architecture (PLA) is an important activity, especially
+for inception and extraction of microservice-oriented PLA, because they involve decisions
+about how to design customizable microservices, how to arrange the communication between
+microsservices and APIs, etc. In this work, it is proposed a metamodel for the specification
+of microsserve-oriented PLA design in order to assist the developer in carrying out
+such an activity. The proposed metamodel was validated in an exploratory study, in
+which a new PLA was designed through the instantiation of the proposed metamodel and
+a product was configured from the designed PLA. Both the metamodel and its instantiation
+were evaluated in a survey involving software developers. The results indicate that
+the metamodel addresses the structural needs of microservice-oriented architectures.
+The main contributions of this work are (i) to assist the software product line developers
+in the specification and documentation of microservice-oriented PLA design and (ii)
+the lessons about the industrial practice learned from the surveys that are useful
+to enhance the proposed metamodel.},
+booktitle = {Proceedings of the XIII Brazilian Symposium on Software Components, Architectures, and Reuse},
+pages = {113–122},
+numpages = {10},
+location = {Salvador, Brazil},
+series = {SBCARS '19}
+}
+
+@inproceedings{10.1145/3461002.3473947,
+author = {Pinnecke, Marcus},
+title = {Product-Lining the Elinvar Wealthtech Microservice Platform},
+year = {2021},
+isbn = {9781450384704},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3461002.3473947},
+doi = {10.1145/3461002.3473947},
+abstract = {Software product lining is the act of providing different but related software products
+under the same brand, known as a software product line (SPL). As engineering, management
+and validation of SPLs is far from trivial, special solutions for software product
+line engineering (SPLE) have a continuous momentum in both academic and industry.
+In general, it is hard to judge when to reasonably favor SPLE over alternative solutions
+that are more common in the industry. In this paper, we illustrate how we as Elinvar
+manage variability within our WealthTech Platform as a Service (PaaS) at different
+granularity levels, and discuss methods for SPLE in this context. More in detail,
+we share our techniques and concepts to address configuration management, and show
+how we manage a single microservice SPL including inter-service communication. Finally,
+we provide insights into platform solutions by means of packages for our clients.
+We end with a discussion on SPLE techniques in context of service SPLs and our packaging
+strategy. We conclude that while we are good to go with industry-standard approaches
+for microservice SPLs, the variability modeling and analysis advantages within SPLE
+is promising for our packaging strategy.},
+booktitle = {Proceedings of the 25th ACM International Systems and Software Product Line Conference - Volume B},
+pages = {60–68},
+numpages = {9},
+keywords = {variability management, configuration management, microservice platforms, technologies and concepts, product families},
+location = {Leicester, United Kindom},
+series = {SPLC '21}
+}
+
+@inproceedings{10.1145/3234152.3234193,
+author = {Rademacher, Florian and Sorgalla, Jonas and Wizenty, Philip Nils and Sachweh, Sabine and Z\"{u}ndorf, Albert},
+title = {Microservice Architecture and Model-Driven Development: Yet Singles, Soon Married (?)},
+year = {2018},
+isbn = {9781450364225},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3234152.3234193},
+doi = {10.1145/3234152.3234193},
+abstract = {Microservice Architecture (MSA) is a comparatively novel service-based architectural
+style with a strong focus on high cohesion, loose coupling, and independence of services
+and their development teams. In this position paper we argue that Microservice Architecture
+(MSA) can benefit from the application of Model-driven Development (MDD). Therefore,
+we elucidate how typical MSA concerns may be addressed by means of MDD such as abstraction,
+model transformation, and modeling viewpoints. Because this contemplation is driven
+from a conceptual perspective on MSA, we conversely present an overview of existing
+methodologies and tools for applying MDD holistically in MSA development to further
+substantiate our position.},
+booktitle = {Proceedings of the 19th International Conference on Agile Software Development: Companion},
+articleno = {23},
+numpages = {5},
+keywords = {model transformation, model-driven development, model-driven microservice development, modeling languages, domain-driven design, microservice architecture},
+location = {Porto, Portugal},
+series = {XP '18}
+}
+
+@inproceedings{10.1145/3393822.3432339,
+author = {Dinh-Tuan, Hai and Mora-Martinez, Maria and Beierle, Felix and Garzon, Sandro Rodriguez},
+title = {Development Frameworks for Microservice-Based Applications: Evaluation and Comparison},
+year = {2020},
+isbn = {9781450377621},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3393822.3432339},
+doi = {10.1145/3393822.3432339},
+abstract = {The microservice architectural style has gained much attention from both academia
+and industry recently as a novel way to design, develop, and deploy cloud-native applications.
+This concept encourages the decomposition of a monolith into multiple independently
+deployable units. A typical microservices-based application is formed of two service
+types: functional services, which provide the core business logic, and infrastructure
+services, which provide essential functionalities for a microservices ecosystem. To
+improve developers' productivity, many software frameworks have been developed to
+provide those reusable infrastructure services, allowing programmers to focus on implementing
+microservices in arbitrary ways. In this work, we made use of four open source frameworks
+to develop a cloud-based application in order to compare and evaluate their usability
+and practicability. While all selected frameworks promote asynchronous microservice
+design in general, there are differences in the ways each implements services. This
+leads to interoperability issues, such as message topic naming convention. Additionally,
+a key finding is the long startup times of JVM-based services that might reduce application's
+resiliency and portability. Some other advantages come directly from the programming
+language, such as the ability of Go to generate native binary executables, which results
+in very small and compact Docker images (up to 78% smaller compared to other languages).},
+booktitle = {Proceedings of the 2020 European Symposium on Software Engineering},
+pages = {12–20},
+numpages = {9},
+keywords = {framework-based software development, Microservices, software engineering},
+location = {Rome, Italy},
+series = {ESSE 2020}
+}
+
+@inproceedings{10.1145/3366423.3380111,
+author = {Ma, Meng and Xu, Jingmin and Wang, Yuan and Chen, Pengfei and Zhang, Zonghua and Wang, Ping},
+title = {AutoMAP: Diagnose Your Microservice-Based Web Applications Automatically},
+year = {2020},
+isbn = {9781450370233},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3366423.3380111},
+doi = {10.1145/3366423.3380111},
+abstract = {The high complexity and dynamics of the microservice architecture make its application
+diagnosis extremely challenging. Static troubleshooting approaches may fail to obtain
+reliable model applies for frequently changing situations. Even if we know the calling
+dependency of services, we lack a more dynamic diagnosis mechanism due to the existence
+of indirect fault propagation. Besides, algorithm based on single metric usually fail
+to identify the root cause of anomaly, as single type of metric is not enough to characterize
+the anomalies occur in diverse services. In view of this, we design a novel tool,
+named AutoMAP, which enables dynamic generation of service correlations and automated
+diagnosis leveraging multiple types of metrics. In AutoMAP, we propose the concept
+of anomaly behavior graph to describe the correlations between services associated
+with different types of metrics. Two binary operations, as well as a similarity function
+on behavior graph are defined to help AutoMAP choose appropriate diagnosis metric
+in any particular scenario. Following the behavior graph, we design a heuristic investigation
+algorithm by using forward, self, and backward random walk, with an objective to identify
+the root cause services. To demonstrate the strengths of AutoMAP, we develop a prototype
+and evaluate it in both simulated environment and real-work enterprise cloud system.
+Experimental results clearly indicate that AutoMAP achieves over 90% precision, which
+significantly outperforms other selected baseline methods. AutoMAP can be quickly
+deployed in a variety of microservice-based systems without any system knowledge.
+It also supports introduction of various expert knowledge to improve accuracy.},
+booktitle = {Proceedings of The Web Conference 2020},
+pages = {246–258},
+numpages = {13},
+keywords = {cloud computing, root cause, Microservice architecture, web application, anomaly diagnosis},
+location = {Taipei, Taiwan},
+series = {WWW '20}
+}
+
+@inproceedings{10.1145/3151759.3151840,
+author = {Higashino, Masayuki},
+title = {Application of Mobile Agent Technology to Microservice Architecture},
+year = {2017},
+isbn = {9781450352994},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3151759.3151840},
+doi = {10.1145/3151759.3151840},
+abstract = {A mobile agent is an autonomous software module which can migrate between different
+computers via computer networks. A paradigm and a behavior of mobile agents are designed
+like humans and whose society such as collaboration and competition among people.
+This feature of mobile agents is assumed to contribute to the ease of management for
+microservices because microservices are hard to be managed these life cycle and relations
+among them as a distributed dynamic software module. The problem area of microservice
+architecture partly overlaps with mobile agent technology. This paper discusses an
+application of mobile agent technology to microservice architecture and shows requirements
+for designing a mobile agent framework to manage microservices on the web.},
+booktitle = {Proceedings of the 19th International Conference on Information Integration and Web-Based Applications &amp; Services},
+pages = {526–529},
+numpages = {4},
+keywords = {web service, microservice, mobile agent},
+location = {Salzburg, Austria},
+series = {iiWAS '17}
+}
+
+@inproceedings{10.1145/3475061.3475086,
+author = {Freitas, Francisco and Ferreira, Andr\'{e} and Cunha, J\'{a}come},
+title = {Refactoring Java Monoliths into Executable Microservice-Based Applications},
+year = {2021},
+isbn = {9781450390620},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3475061.3475086},
+doi = {10.1145/3475061.3475086},
+abstract = { In the last few years we have been seeing a drastic change in the way software is
+developed. Large-scale software projects are being assembled by a flexible composition
+of many (small) components possibly written in different programming languages and
+deployed anywhere in the cloud – the so-called microservice-based applications. The
+dramatic growth in popularity of microservice-based applications has pushed several
+companies to apply major refactorings to their software systems. However, this is
+a challenging task that may take several months or even years. We propose a methodology
+to automatically evolve a Java monolithic application into a microservice-based one.
+Our methodology receives the Java code and a proposition of microservices and refactors
+the original classes to make each microservice independent. Our methodology creates
+an API for each method call to classes that are in other services. The database entities
+are also refactored to be included in the corresponding service. The initial evaluation
+shows that our tool can successfully refactor 80% of the applications tested. },
+booktitle = {25th Brazilian Symposium on Programming Languages},
+pages = {100–107},
+numpages = {8},
+keywords = {refactoring, monolithic decomposition, Java, microservice-based applications, microservice architecture},
+location = {Joinville, Brazil},
+series = {SBLP'21}
+}
+
+@inproceedings{10.1145/3207677.3277954,
+author = {Shao, Jixin and Zhang, Xiuguo and Cao, Zhiying},
+title = {Research on Context-Based Instances Selection of Microservice},
+year = {2018},
+isbn = {9781450365123},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3207677.3277954},
+doi = {10.1145/3207677.3277954},
+abstract = {The1 deployment environment and execution conditions of microservices and Web services
+are different. Web service selection needs to consider aspects of QoS such as reliability,
+availability, and response time. Microservices not only need to consider QoS attribute
+information, but also consider the server's load and other aspects. Compared to papers
+with fixed weight information, this paper uses the information in historical context
+database to dynamically determine the weight of each contextual information. The algorithm
+of context-based instances selection of microservice named ACISM is proposed. ACISM
+uses the dynamically acquired weight information to obtain result and uses the result
+to select the microservice instance. This can weaken the decisiveness of user's subjective
+selection by using the dynamical weight information. ACISM balances the influence
+of subjective and objective factors and can improve the accuracy of microservice instances
+selection and shorten the response time.},
+booktitle = {Proceedings of the 2nd International Conference on Computer Science and Application Engineering},
+articleno = {1},
+numpages = {5},
+keywords = {context, Microservice, microservice instances selection},
+location = {Hohhot, China},
+series = {CSAE '18}
+}
+
+@inproceedings{10.1145/3297280.3300182,
+author = {Rademacher, Florian and Sorgalla, Jonas and Sachweh, Sabine and Z\"{u}ndorf, Albert},
+title = {A Model-Driven Workflow for Distributed Microservice Development},
+year = {2019},
+isbn = {9781450359337},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3297280.3300182},
+doi = {10.1145/3297280.3300182},
+abstract = {Model-driven Development (MDD) is a software engineering approach that abstracts a
+software's design leveraging models. In particular, the development of complex, service-based
+architectures is considered to benefit from MDD techniques like model validation,
+transformation, and code generation. This paper presents an MDD-based workflow for
+distributed, DevOps-based microservice development and identifies the involved model
+types. They provide the foundation for the subsequent development of modeling languages
+to employ MDD for MSA engineering.},
+booktitle = {Proceedings of the 34th ACM/SIGAPP Symposium on Applied Computing},
+pages = {1260–1262},
+numpages = {3},
+keywords = {viewpoint modeling, distributed microservice development, microservice architecture, modeling languages, model-driven microservice development},
+location = {Limassol, Cyprus},
+series = {SAC '19}
+}
+
+@inproceedings{10.5555/3340730.3340742,
+author = {Zhao, Yixue and Medvidovic, Nenad},
+title = {A Microservice Architecture for Online Mobile App Optimization},
+year = {2019},
+publisher = {IEEE Press},
+abstract = {A large number of techniques for analyzing and optimizing mobile apps have emerged
+in the past decade. However, those techniques' components are notoriously difficult
+to extract and reuse outside their original tools. This paper introduces MAOMAO, a
+microservice-based reference architecture for reusing and integrating such components.
+MAOMAO's twin goals are (1) adoption of available app optimization techniques in practice
+and (2) improved construction and evaluation of new techniques. The paper uses several
+existing app optimization techniques to illustrate both the motivation behind MAOMAO
+and its potential to fundamentally alter the landscape in this area.},
+booktitle = {Proceedings of the 6th International Conference on Mobile Software Engineering and Systems},
+pages = {45–49},
+numpages = {5},
+location = {Montreal, Quebec, Canada},
+series = {MOBILESoft '19}
+}
+
+@inproceedings{10.1145/3018896.3018961,
+author = {Lehmann, Martin and Sandnes, Frode Eika},
+title = {A Framework for Evaluating Continuous Microservice Delivery Strategies},
+year = {2017},
+isbn = {9781450347747},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3018896.3018961},
+doi = {10.1145/3018896.3018961},
+abstract = {The emergence of service-oriented computing, and in particular microservice architecture,
+has introduced a new layer of complexity to the already challenging task of continuously
+delivering changes to the end users. Cloud computing has turned scalable hardware
+into a commodity, but also imposes some requirements on the software development process.
+Yet, the literature mainly focuses on quantifiable metrics such as number of manual
+steps and lines of code required to make a change. The industry, on the other hand,
+appears to focus more on qualitative metrics such as increasing the productivity of
+their developers. These are common goals, but must be measured using different approaches.
+Therefore, based on interviews of industry stakeholders a framework for evaluating
+and comparing approaches to continuous microservice delivery is proposed. We show
+that it is possible to efficiently evaluate and compare strategies for continuously
+delivering microservices.},
+booktitle = {Proceedings of the Second International Conference on Internet of Things, Data and Cloud Computing},
+articleno = {64},
+numpages = {9},
+keywords = {evaluation framework, microservices, deployment strategy, microservice architectures, continuous deployment, cloud computing},
+location = {Cambridge, United Kingdom},
+series = {ICC '17}
+}
+
+@inproceedings{10.1145/3207677.3277949,
+author = {Liu, Huan and Cao, Zhiying and Zhang, Xiuguo},
+title = {An Efficient Algorithm of Context-Clustered Microservice Discovery},
+year = {2018},
+isbn = {9781450365123},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3207677.3277949},
+doi = {10.1145/3207677.3277949},
+abstract = {Using context1 is helpful to find services that satisfy users' requirements more accurately.
+In this paper context is classified into service context and user context and an algorithm
+of context-clustered microservice discovery (ACCMD) is proposed. Firstly, microservices
+are clustered according to the similarity of service context and a candidate service
+set is initialized by matching the request with service clusters. Then, according
+to the similarity of user context, users whoever used and are using the candidate
+services are clustered and the candidate service set is refined by matching the requester's
+information with the context of users in these clusters. Finally, Quality of Service
+(QoS) and requester's preference are used to filter candidate services and the results
+are inverted indexed and returned to the requester. Comparative experiments show that
+the ACCMD can increase user suitability of discovery and help filter out microservices
+quickly.},
+booktitle = {Proceedings of the 2nd International Conference on Computer Science and Application Engineering},
+articleno = {60},
+numpages = {6},
+keywords = {context, service discovery, Microservice, clustering},
+location = {Hohhot, China},
+series = {CSAE '18}
+}
+
+@inproceedings{10.1145/3411564.3411629,
+author = {Villa\c{c}a, Lu\'{\i}s Henrique Neves and Azevedo, Leonardo Guerreiro and Siqueira, Sean Wolfgand Matsui},
+title = {Microservice Architecture for Multistore Database Using Canonical Data Model},
+year = {2020},
+isbn = {9781450388733},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3411564.3411629},
+doi = {10.1145/3411564.3411629},
+abstract = { In a microservice architecture, solutions are created by teams focused on specific
+domains and needs. They independently develop and deploy distributed services in the
+network. One characteristic of microservices is decentralized data management. Each
+microservice may use different data management technology which best fit its needs.
+Hence, it is an issue to integrate data of heterogenous microservices to come up with
+consolidate data views. Flexible and efficient solutions in this scenario are needed.
+This work is based on the use of a canonical data model as the mechanism for data
+integration in microservices. The canonical data model is the reference for query
+specifications and data integration. This work proposes and implements a microservice
+architecture based on this strategy and it is composed by nodes that intercommunicate
+through several mechanisms (e.g., SPARQL, GraphQL and JDBC queries, calls to REST
+services and proprietary APIs). The solution was analyzed in a proof of concept in
+a fictitious scenario but using real services available at DBPedia and Twitter. The
+evaluation goal was to qualitatively analyze the use of the architecture in the design,
+development and execution of microservices in order to identify the characteristics
+one should consider when using the canonical data model strategy. The evaluation employed
+the criteria of ISO/IEC 25010 model that most relate to the SOA challenges, which
+were: usability; performance; compatibility; and, maintainability. The identified
+advantages and disadvantages of using the architecture (i.e., the strategy) can be
+used by architects and developers to make their development decisions.},
+booktitle = {XVI Brazilian Symposium on Information Systems},
+articleno = {20},
+numpages = {8},
+keywords = {service-oriented architecture, canonical data model, microservice architecture, multistore, polyglot persistence},
+location = {S\~{a}o Bernardo do Campo, Brazil},
+series = {SBSI'20}
+}
+
+@inproceedings{10.1145/3338840.3355659,
+author = {Smid, Antonin and Wang, Ruolin and Cerny, Tomas},
+title = {Case Study on Data Communication in Microservice Architecture},
+year = {2019},
+isbn = {9781450368438},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3338840.3355659},
+doi = {10.1145/3338840.3355659},
+abstract = {Microservice Architecture is becoming a design standard for modern cloud-based software
+systems. However, data communication management remains a challenge. This is especially
+apparent when migrating from an existing monolithic system into microservices. In
+this paper, we report on data synchronization and improvement of the data-source performance.
+We faced these challenges in production-level development. Two case studies illustrate
+and describe our approach. To address data synchronization we propose using an automated
+data streaming system between databases. To improve the performance of a data-source
+we introduced a solution with the distributed cache. We discuss the balance between
+the performance and coupling and point out situations where our architectures are
+appropriate.},
+booktitle = {Proceedings of the Conference on Research in Adaptive and Convergent Systems},
+pages = {261–267},
+numpages = {7},
+keywords = {cloud-computing, microservices, system integration},
+location = {Chongqing, China},
+series = {RACS '19}
+}
+
+@inproceedings{10.1145/3465480.3467839,
+author = {Lesniak, Anna and Laigner, Rodrigo and Zhou, Yongluan},
+title = {Enforcing Consistency in Microservice Architectures through Event-Based Constraints},
+year = {2021},
+isbn = {9781450385558},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3465480.3467839},
+doi = {10.1145/3465480.3467839},
+abstract = {Microservice architectures are an emerging paradigm for developing event-driven applications.
+By prescribing that an application is decomposed into small and independent components,
+each encapsulating its own state and communicating via asynchronous events, new components
+and events can be easily integrated into the system. However, by pursuing a model
+where events are generated and processed at the application-level, developers have
+a hard time to safeguard arbitrary event interleavings from doing harm to application
+safety.To address these challenges, we start by analyzing event-driven microservice
+open-source applications to identify unsafe interleavings. Next, we categorize event-based
+constraints to address such unsafe encodings, providing an easy-to-use guide for microservice
+developers. Finally, we introduce StreamConstraints, a library built on top of Kafka
+Streams designed to enforce explicit event-based constraints defined by developers.
+We showcase StreamConstraints based on the case of a popular event-driven microservice
+system, and demonstrate how it could benefit from event-based constraints to ensure
+application safety.},
+booktitle = {Proceedings of the 15th ACM International Conference on Distributed and Event-Based Systems},
+pages = {180–183},
+numpages = {4},
+keywords = {application integrity, stream management, microservice architecture},
+location = {Virtual Event, Italy},
+series = {DEBS '21}
+}
+
+@inproceedings{10.1145/3427921.3450248,
+author = {Grohmann, Johannes and Straesser, Martin and Chalbani, Avi and Eismann, Simon and Arian, Yair and Herbst, Nikolas and Peretz, Noam and Kounev, Samuel},
+title = {SuanMing: Explainable Prediction of Performance Degradations in Microservice Applications},
+year = {2021},
+isbn = {9781450381949},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3427921.3450248},
+doi = {10.1145/3427921.3450248},
+abstract = {Application performance management (APM) tools are useful to observe the performance
+properties of an application during production. However, APM is normally purely reactive,
+that is, it can only report about current or past performance degradation. Although
+some approaches capable of predictive application monitoring have been proposed, they
+can only report a predicted degradation but cannot explain its root-cause, making
+it hard to prevent the expected degradation.In this paper, we present SuanMing---a
+framework for predicting performance degradation of microservice applications running
+in cloud environments. SuanMing is able to predict future root causes for anticipated
+performance degradations and therefore aims at preventing performance degradations
+before they actually occur. We evaluate SuanMing on two realistic microservice applications,
+TeaStore and TrainTicket, and we show that our approach is able to predict and pinpoint
+performance degradations with an accuracy of over 90%.},
+booktitle = {Proceedings of the ACM/SPEC International Conference on Performance Engineering},
+pages = {165–176},
+numpages = {12},
+keywords = {performance prediction, explainability, forecasting, microservices},
+location = {Virtual Event, France},
+series = {ICPE '21}
+}
+
+@inproceedings{10.1145/3434581.3434711,
+author = {Liu, Xiaobin and Liu, Weijia and Yi, Siyuan and Li, Jinyang},
+title = {Research on Software Development Automation Based on Microservice Architecture},
+year = {2020},
+isbn = {9781450375764},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3434581.3434711},
+doi = {10.1145/3434581.3434711},
+abstract = {Compute is a term coined from the etymology of French and Latin words computer and
+computare respectively, so is computing. ural network computing research features,
+to find the order to produce a large number of crowd Composite Features of Artificial
+Intelligence and Video Images, infrastructure corresponding state, so that architecture
+can according to the model group behavior related to optimize business orders. After
+understanding the basic principles of group Composite Features of Artificial Intelligence
+and Video Images research based on neural network computing, we can start the training
+of group Composite Features of Artificial Intelligence and Video Images research based
+on neural network computing and carry out subsequent modeling work. Next, a brief
+analysis is made of the training process of the research on the group Composite Features
+of Artificial Intelligence and Video Images basece Architecture 1.35A, = and layout
+requirements, the type SW4-110/1000 circuit breakers were selected annalysis data
+lifecycystem processing machine tool power sliding tabld their rated technical data
+were: =,=1000A, rated 75A,=,= =15142KAS,= 163. explore the desig sliding table hydraulic,
+According to Development Automation based on Microservice Architecture anuas assembly
+process system processing machine tool power slidydraulic, According tog machine toity.},
+booktitle = {Proceedings of the 2020 International Conference on Aviation Safety and Information Technology},
+pages = {670–677},
+numpages = {8},
+keywords = {Group behavior model, artificial neural network, Neural network, perceptron, deep neural network},
+location = {Weihai City, China},
+series = {ICASIT 2020}
+}
+
+@inproceedings{10.1145/3234152.3234194,
+author = {Sorgalla, Jonas and Rademacher, Florian and Sachweh, Sabine and Z\"{u}ndorf, Albert},
+title = {Collaborative Model-Driven Software Engineering and Microservice Architecture: A Perfect Match?},
+year = {2018},
+isbn = {9781450364225},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3234152.3234194},
+doi = {10.1145/3234152.3234194},
+abstract = {The emerging microservice architectural style (MSA) provides means predestined to
+cope with the essential complexity of distributed software systems. However, this
+gives rise to accidental complexity which can be reduced with the application of Model-Driven
+Development (MDD). Although there are first MDD approaches for microservices, we take
+the position that for a holistic modeling approach the organizational characteristics
+of MSA need more attention.},
+booktitle = {Proceedings of the 19th International Conference on Agile Software Development: Companion},
+articleno = {24},
+numpages = {2},
+keywords = {collaborative model-driven software engineering, model-driven development, microservice architecture},
+location = {Porto, Portugal},
+series = {XP '18}
+}
+
+@inproceedings{10.1145/3282308.3282313,
+author = {Li, Fei and Fr\"{o}hlich, Joachim and Schall, Daniel and Lachenmayr, Markus and St\"{u}ckj\"{u}rgen, Christoph and Meixner, Sebastian and Buschmann, Frank},
+title = {Microservice Patterns for the Life Cycle of Industrial Edge Software},
+year = {2018},
+isbn = {9781450363877},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3282308.3282313},
+doi = {10.1145/3282308.3282313},
+abstract = {The Industry 4.0 initiative is pushing traditional production systems and methodologies
+through fundamental changes. In traditional industries such as manufacturing, utilities,
+and infrastructure monitoring, customers are demanding more flexibility and greater
+efficiency. The software that oversees these systems addresses these demands by adopting
+novel architectural styles and patterns. Industrial edge systems are gaining momentum
+because they offer superior data security and better response time to field operations.
+Microservice style has been adopted from cloud services because it improves development
+efficiency. This paper presents architecture patterns that cover four phases in the
+life cycle of industrial software. In the deployment phase, DOWNSHIFTING moves microservices
+from the cloud to the edge. During runtime, MONITORING CONNECTORS oversee properties
+of microservices at the edge, such as performance and resource usage. When adaptation
+is needed, EDGE-TO-CLOUD LOAD BALANCING leverages cloud resources to fulfill performance
+expectations. When a new microservice version is deployed, TEST PROBE enables testing
+the microservice at the edge without interfering with ongoing operations.This paper
+is intended for architects, developers and practitioners who are involved in delivering
+software in industrial edge environments.},
+booktitle = {Proceedings of the 23rd European Conference on Pattern Languages of Programs},
+articleno = {4},
+numpages = {11},
+keywords = {Embedded software, Design patterns, Industry 4.0, Microservices, Edge Computing},
+location = {Irsee, Germany},
+series = {EuroPLoP '18}
+}
+
+@inproceedings{10.1145/3443467.3443869,
+author = {Gu, Huijie and Hu, Jieping and Gu, Mengdie and Yuan, Ming},
+title = {Research and Design of Digital Content Management System Based on Microservice},
+year = {2020},
+isbn = {9781450387811},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3443467.3443869},
+doi = {10.1145/3443467.3443869},
+abstract = {With the advent of the Internet plus era, the traditional information management system
+is not only increasingly large and complex, but also difficult to cope with the diversity
+of information. In view of the traditional digital content management system, which
+has the problems of low efficiency of digital content processing, trivial and huge
+data, this paper uses the unique organizational structure of microservice technology,
+distributed service registration technology and Spring Cloud microservice framework
+to solve them, and proposes a digital content management system based on microservice.
+Microservice technology has the characteristics of independent deployment, single
+responsibility, easy maintenance and easy upgrade, which makes the system have better
+expansibility, large-scale deployment and flexible configuration, and provides new
+ideas and methods for information system.},
+booktitle = {Proceedings of the 2020 4th International Conference on Electronic Information Technology and Computer Engineering},
+pages = {865–869},
+numpages = {5},
+keywords = {Spring Cloud, Microservice, Digital content management, Distributed service registration technology},
+location = {Xiamen, China},
+series = {EITCE 2020}
+}
+
+@inproceedings{10.1145/3483899.3483908,
+author = {Santos, Ana and Paula, Hugo},
+title = {Microservice Decomposition and Evaluation Using Dependency Graph and Silhouette Coefficient},
+year = {2021},
+isbn = {9781450384193},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3483899.3483908},
+doi = {10.1145/3483899.3483908},
+abstract = { The benefits provided by microservices architecture in some application scenarios
+are a motivating factor for organizations to migrate their monoliths to this architecture.
+Extracting microservices from existing monolithic code bases presents a key challenge
+in this context, and there is a lack of tools that automate not only the decomposition
+processes but also the evaluation of the resulting architecture. This work presents
+a new approach for microservice decomposition that analyzes source code of a monolithic
+application and, with the combined use of approaches in the literature, suggests parts
+to be extracted in microservices considering the artifacts: classes, methods and/or
+history of modifications. The quality of the microservices’ suggestions are assessed,
+quantitatively, through the silhouette coefficient, a quality metric used in clustering
+analysis, and the microservice granularity. A tool was developed to automate the process
+of microservice decomposition for Java repositories. As a result, it was observed
+that the tool generated clusters with satisfactory results and can be used as an auxiliary
+instrument by experts during the migration process from monolithic architecture to
+microservices.},
+booktitle = {15th Brazilian Symposium on Software Components, Architectures, and Reuse},
+pages = {51–60},
+numpages = {10},
+keywords = {decomposition, monolithic application, microservices},
+location = {Joinville, Brazil},
+series = {SBCARS '21}
+}
+
+@inproceedings{10.1145/3234152.3234196,
+author = {Li, Fei and Gelbke, Lars},
+title = {Microservice Architecture in Industrial Software Delivery on Edge Devices},
+year = {2018},
+isbn = {9781450364225},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3234152.3234196},
+doi = {10.1145/3234152.3234196},
+abstract = {Production in Industry 4.0 calls for flexible configurations, customizable features,
+frequent changes, and above all, short time to market, which poses significant challenges
+to the practices of industrial software development and delivery. However, under strict
+regulations and non-negotiable requirements on safety, reliability and compliance,
+industrial software is still dominated by monolithic architecture that usually requires
+planned downtime and manual installation for each update. The result is a typical
+release cycle of 12-18 months with several patches during the release cycle.This paper
+reports our experiences in applying microservice architecture, and delivery pipeline
+to achieve continuous deployment for industrial control software on edge devices.
+They are characterized by their physical proximity to industrial equipment, limited
+computational resources, high avail-ability, and highly heterogeneous software environments
+in order to accommodate various industrial protocols and processes.},
+booktitle = {Proceedings of the 19th International Conference on Agile Software Development: Companion},
+articleno = {26},
+numpages = {4},
+keywords = {edge computing, industrial software, microservice},
+location = {Porto, Portugal},
+series = {XP '18}
+}
+
+@inproceedings{10.1145/3290420.3290476,
+author = {Wu, Na and Zuo, Decheng and Zhang, Zhan},
+title = {An Extensible Fault Tolerance Testing Framework for Microservice-Based Cloud Applications},
+year = {2018},
+isbn = {9781450365345},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3290420.3290476},
+doi = {10.1145/3290420.3290476},
+abstract = {A growing number of enterprises are beginning to adopt the microservice architecture
+to build their applications in clouds. The microservice architecture breakdowns the
+traditional development pattern of monolithic applications. The heterogeneity of the
+development technologies and the accelerated service component lifecycle provide both
+opportunity and challenge for building high-availability microservice-based applications.
+Because failures are inevitable in dynamic and complex cloud environments, it is necessary
+to test the fault tolerant capability of applications. To this end, we propose an
+extensible fault tolerance testing framework for microservice-based cloud applications
+based on the non-intrusive fault injection. Users can customize and execute test cases
+with the proposed framework to verify the manner and performance of the fault tolerance
+of the target service. We take a use case to show the fault tolerance testing process
+of the framework.},
+booktitle = {Proceedings of the 4th International Conference on Communication and Information Processing},
+pages = {38–42},
+numpages = {5},
+keywords = {fault injection, fault tolerance testing, cloud application, microservices},
+location = {Qingdao, China},
+series = {ICCIP '18}
+}
+

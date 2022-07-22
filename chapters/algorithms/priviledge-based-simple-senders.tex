@@ -1,0 +1,26 @@
+\begin{algorithm}
+\DontPrintSemicolon
+\KwIn{Código do processo $s_i$}
+
+${{tosend}_s}_{i} := \emptyset$\;
+
+\If {$s_i = s_1$} {
+  token.seqnum := 1\;
+  send token to $s_1$\;
+}
+
+\procedure { TO-broadcast(m) } {
+  ${{tosend}_s}_{i} \cup \{m\}$\;
+}
+
+\when {receive token} {
+  \foreach { ${m}{\prime}$ in ${{tosend}_s}_{i}$ } {
+    send(${m}^{\prime}$, token.seqnum) to destinations\;
+    $\text{token.seqnum} := \text{token.seqnum} + 1$\;
+  }
+  ${{tosend}_s}_{i} := \emptyset$\;
+  send token to ${s}_{i+1 \mod n}$
+}
+\caption{Código dos remetentes para o algoritmo baseado em privilégios \cite{journals/csur/DefagoSU04}}
+\label{algo:priviledge-based-simple-senders}
+\end{algorithm}
