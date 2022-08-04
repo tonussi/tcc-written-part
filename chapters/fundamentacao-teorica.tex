@@ -133,7 +133,7 @@ conforme descrito por
 
 \subsection{Ordenação por sequenciador}
 
-O algoritmo de ordenação por sequenciador tem a incumbência de ordenar todas as mensagens, sendo que para cada mensagem é associado um número de sequência. O algoritmo tem 3 papéis: o remetente (Algoritmo \ref{algo:simple-fixed-sequencer-sender}), o sequenciador (Algoritmo \ref{algo:simple-fixed-sequencer}) e os destinatários (Algoritmo \ref{algo:simple-fixed-sequencer-destinations}).
+O algoritmo de ordenação por sequenciador \cite{journals/csur/DefagoSU04} tem a incumbência de ordenar todas as mensagens, sendo que para cada mensagem é associado um número de sequência. O algoritmo tem 3 papéis: o remetente (Algoritmo \ref{algo:simple-fixed-sequencer-sender}), o sequenciador (Algoritmo \ref{algo:simple-fixed-sequencer}) e os destinatários (Algoritmo \ref{algo:simple-fixed-sequencer-destinations}).
 
 % \begin{enumerate}
 % \item Todos os emissores enviam suas mensagens para o sequenciador.
@@ -224,7 +224,7 @@ O Algoritmo \ref{algo:simple-fixed-sequencer-destinations} inicializa os conjunt
 
 \subsection{Ordenação baseada em privilégio}
 
-O algoritmo baseado em privilégio tem 2 papéis principais: os remetentes (Algoritmo \ref{algo:priviledge-based-simple-senders}) e os destinatários (Algoritmo \ref{algo:priviledge-based-simple-destinations}). A intenção geral do algoritmo é implementar a difusão atômica, para isso, rotaciona-se um \textit{token} entre os remetentes. Quando cada remetente recebe o \textit{token}, na sua vez, executa-se a primitiva \textit{tosend}, enviando para todos os destinatários as mesmas mensagens e na mesma ordem de chegada.
+O algoritmo baseado em privilégio \cite{journals/csur/DefagoSU04} tem 2 papéis principais: os remetentes (Algoritmo \ref{algo:priviledge-based-simple-senders}) e os destinatários (Algoritmo \ref{algo:priviledge-based-simple-destinations}). A intenção geral do algoritmo é implementar a difusão atômica, para isso, rotaciona-se um \textit{token} entre os remetentes. Quando cada remetente recebe o \textit{token}, na sua vez, executa-se a primitiva \textit{tosend}, enviando para todos os destinatários as mesmas mensagens e na mesma ordem de chegada.
 % Uma desvantagem do algoritmo baseado em privilégio é a dificuldade em atingir bons níveis de justiça (\textit{fairness}) entre todos os remetentes, a seguir exibimos o algoritmos remetentes e destinatários respectivamente.
 
 % \textbf{Remetentes}
