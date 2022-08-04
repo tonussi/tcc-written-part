@@ -21,20 +21,19 @@ A classe \textit{HTTPCommunicator} está localizada em \textit{pkg/communication
 
 O Algoritmo \ref{lst:codigo-httpcomm} pode ser entendido da seguinte forma: A linha 14 converte a requisição \gls{HTTP} para \textit{bytes} (código omitido). A linha 16 faz com que o Hermes acione o mecanismo de ordenação de mensagens, passando os bytes para serem ordenados. Depois que os bytes foram ordenados eles vão eventualmente retornar para o \textit{Deliver} para serem entregues para o servidor da aplicação, para isso a linha 2 converte os bytes em requisição (código omitido). Com a requisição convertida, altera-se o \textit{HOST} alvo nas linhas 4-6. A variável \textit{RequestURI} na linha 8 está sendo transformada para \textit{string} vazia, pois a biblioteca de \textit{net/http} proíbe que a mesma requisição seja usada, desta maneira a biblioteca aceita executar a requisição. Finalmente, a variável \textit{URI.Scheme} na linha 9 está sendo preenchida com o protocolo \gls{HTTP}.
 
-\begin{figure}[!htb]
-\centering
-\caption{Exemplo resumido dos passos para tratamento da mensagem HTTP que chega ao interceptador Hermes}
-\includegraphics[width=\linewidth]{figures/deliver-listen-logic.drawio.png}
-{\flushleft Fonte - Própria}
-\label{fig:deliver-listen-logic}
-\end{figure}
+% \begin{figure}[!htb]
+% \centering
+% \caption{Exemplo resumido dos passos para tratamento da mensagem HTTP que chega ao interceptador Hermes}
+% \includegraphics[width=\linewidth]{figures/deliver-listen-logic.drawio.png}
+% {\flushleft Fonte - Própria}
+% \label{fig:deliver-listen-logic}
+% \end{figure}
 
-A Figura \ref{fig:deliver-listen-logic} mostra um diagrama do fluxo de informação passando pelos métodos \textit{Listen} e \textit{Deliver}. Uma vez que uma requisição HTTP qualquer é interceptada pelo Hermes, o evento Listen irá capturar essa requisição e transformar a requisição HTTP em \textit{bytes} e passar ao \textit{handler}. O \textit{handler} irá levar a informação em arranjo de bytes para ser ordenador pelo algoritmo de ordenação. Uma vez que o arranjo de \textit{bytes} está ordenado ele entra no método \textit{Deliver} e portanto eles já estão garantidamente ordenados.
-
+% A Figura \ref{fig:deliver-listen-logic} mostra um diagrama do fluxo de informação passando pelos métodos \textit{Listen} e \textit{Deliver}. Uma vez que uma requisição HTTP qualquer é interceptada pelo Hermes, o evento Listen irá capturar essa requisição e transformar a requisição HTTP em \textit{bytes} e passar ao \textit{handler}. O \textit{handler} irá levar a informação em arranjo de bytes para ser ordenador pelo algoritmo de ordenação. Uma vez que o arranjo de \textit{bytes} está ordenado ele entra no método \textit{Deliver} e portanto eles já estão garantidamente ordenados.
 
 \subsection{Experimentação}
 
-Esta sessão trata como foram realizados as experimentações e, além disso, são mostrados as configurações para os experimentos.
+Esta sessão trata como foram realizados as experimentações e as configurações para os experimentos.
 
 \begin{figure}[htb!]
 \centering
