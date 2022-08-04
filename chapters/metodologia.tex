@@ -13,7 +13,11 @@ A intercepção é um trabalho de fatores em conjunto, começando pelo Kubernete
 
 A classe \textit{HTTPCommunicator} está localizada em \textit{pkg/communication/http.go}. Para implementar a \textit{HTTPCommunicator} foram usadas as bibliotecas \textit{net/http, bufio, bytes, io/ioutil}, dentre outras. A necessidade de estender as bibliotecas de conversão de bytes foi para poder transformar a requisição em bytes e enviar ao \textit{handler} ordenador de mensagens. Uma vez que o Hermes devolve a mensagem ordenada para o \textit{HTTPCommunicator}, é preciso transformar a mensagem de bytes para uma Requisição executável pela biblioteca \textit{net/http}.
 
+\begin{minipage}{\textwidth}
+\begin{center}
 \lstinputlisting[language=Go, numbers=left, firstnumber=1, numberstyle=\scriptsize\color{black}, caption={Código na versão resumida do HttpCommunicator}, label={lst:codigo-httpcomm}]{chapters/algorithms/http.go}
+\end{center}
+\end{minipage}
 
 O Algoritmo \ref{lst:codigo-httpcomm} pode ser entendido da seguinte forma: A linha 14 converte a requisição \gls{HTTP} para \textit{bytes} (código omitido). A linha 16 faz com que o Hermes acione o mecanismo de ordenação de mensagens, passando os bytes para serem ordenados. Depois que os bytes foram ordenados eles vão eventualmente retornar para o \textit{Deliver} para serem entregues para o servidor da aplicação, para isso a linha 2 converte os bytes em requisição (código omitido). Com a requisição convertida, altera-se o \textit{HOST} alvo nas linhas 4-6. A variável \textit{RequestURI} na linha 8 está sendo transformada para \textit{string} vazia, pois a biblioteca de \textit{net/http} proíbe que a mesma requisição seja usada, desta maneira a biblioteca aceita executar a requisição. Finalmente, a variável \textit{URI.Scheme} na linha 9 está sendo preenchida com o protocolo \gls{HTTP}.
 
