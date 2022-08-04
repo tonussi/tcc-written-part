@@ -1,0 +1,126 @@
+\chapter{Trabalhos Correlatos}
+\label{cap:correlatos}
+
+A seguir alguns trabalhos relacionados a ordenação de mensagens em arquiteturas de microsserviços e abordagens em orquestração de contêineres. A pesquisa por trabalhos publicados foi feita de maneira exploratória, visando bases científicas tais como: \gls{ACM}, \gls{IEEE}, \gls{SBC}, dentre outras.
+
+\section{Relacionados a implementação de arquitetura de microsserviços}
+
+Trabalhos recentes na literatura têm apresentado diversas soluções envolvendo ordenação de mensagens em arquitetura de microsserviços. Os benefícios de arquiteturas de microsserviços abrangem: modularidade e escalabilidade.
+
+% É comum encontrarmos trabalhos que utilizam a técnica de replicação por máquina de estado, onde um conjunto de máquinas devem manter sincronia, evoluindo igualmente, apesar das falhas que pode ocorrer no sistema, um exemplo é uma das máquinas parar de responder e ser declarada como inalcançável.
+
+\subsection{A Kubernetes controller for managing the availability of elastic microservice based stateful applications}
+
+Segundo \textcite{vayghan2021kubernetes} a arquitetura de microsserviços vêm ganhando muita popularidade. A arquitetura de microsserviços faz a junção de módulos fracamente acoplados, que podem ser escalados independentemente. Esse trabalho avalia o uso de microsserviços em contêineres orquestrados por Kubernetes, mas o Kubernetes recebeu um incremento de software que visa controlar os estados de alta disponibilidade dos contêineres. Nesse trabalho de \textcite{vayghan2021kubernetes} foram identificados arquiteturas para implantar aplicações em microsserviços com Kubernetes. Esse trabalho também realizou experimentações com o Kubernetes da perspectiva de sua capacidade de disponibilidade. Os resultados dos experimentos mostraram que as ações de reparo do Kubernetes não puderam satisfazer alguns limites de alta disponibilidade, avaliados. Em outros casos o Kubernetes não pode garantir recuperação do serviço. Os autores propuseram um controlador de estados de alta disponibilidade integrado ao Kubernetes, que permite replicação de estados de aplicação e redirecionamento automático de serviço. As avaliações foram feitas sob as perspectivas de disponibilidade e escalabilidade. Os resultados das investigações mostram que a solução pode melhorar o tempo de recuperação de aplicações \textit{stateful} baseadas em microsserviços, em 50\%.
+
+% \subsection{COMO O TRABALHO DESENVOLVEU A SOLUÇÃO}
+
+\textcite{vayghan2021kubernetes}
+%buscaram endereçar problemas como disponibilidade e tolerância a falhas. Mas como fizeram isso? Eles(as) 
+implementaram uma ferramenta
+%que vamos descrever um pouco a seguir. A solução deles(as) integra o conceito de Estados de Alta Disponibilidade (do Inglês, \textit{HA states}) (exemplos: quando ativo; quando esperando) com o Kubernetes. Assim eles buscaram aumentar a disponibilidade de aplicações baseadas
+para alta disponibilidade 
+em arquiteturas de microsserviços em \textit{clusters} Kubernetes. O fizeram por recuperar o estado do serviço depois que o \textit{Pod} do Kubernetes foi reparado. Agregaram ao Kubernetes um novo componente chamado Controlador de Estados de Alta Disponibilidade (do Inglês, \textit{High Avaliability State Controller}, abreviado como SC).
+% \subsection{COMO OBTIVERAM RESULTADOS (ALTO NÍVEL)}
+Conduziram um conjunto de experimentos em arquiteturas de microsserviços em um sistema distribuído físico.
+% Pelo artigo é possível notar que houve muito estudo sobre o funcionamento de \textit{StatefulSets} em Kubernetes.
+Para cada arquitetura experimentada pelo trabalho, o número de \textit{Pods} implantados é igual a 10 (dez). Em cada conjunto de experimentos se encerra o contêiner da aplicação dos K \textit{Pods} ativos, onde K são inteiros de 1 até 5. Os outros \textit{Pods} ficam vivos para serem avaliados (discutidos em seguida). Em cada rodada dos experimentos são feitas medições de \textit{disponibilidade}, para cada \textit{Pod} que tenha falhado.
+
+Além disso, são comparados com as falhas simultâneas de múltiplos \textit{Pods} afetam métricas de disponibilidade. Medições de disponibilidade são as métricas que avaliam a disponibilidade do serviço de cada \textit{Pod}. As medições na experimentação medem o tempo de reação, tempo de reparo, tempo de restauração e tempo total de indisponibilidade. Tempo de total de indisponibilidade é um período quando a energia suprida ou outro serviço não está mais disponível ou quando um equipamento é encerrado por alguma razão. Outra medição feita nos experimentos é de tempo de escalonamento e se trata da latência desde o momento de envio das requisições, para escalar máquinas, até o momento do último \textit{Pod} implantado.
+
+% \begin{figure}[ht!]
+% \centering
+% \caption{Funcionamento em alto nível do Controlador de estados de alta disponibilidade (versão adaptada)}
+% \centering
+% \includegraphics[width=0.6\linewidth]{capitulos/simplificacao-kubernetes.png}
+% \caption{fonte: Adaptação de \textcite{vayghan2021kubernetes}.}
+% \end{figure}
+
+% \subsection{AS LIMITAÇÕES DA ABORDAGENS DO TRABALHO}
+
+Uma possível limitação é que o software implementado deve ser compreendido para poder ser utilizado. Um desenvolvedor deverá buscar o Kubernetes modificado ao invés do original e terá que compreender a implementação feita por \textcite{vayghan2021kubernetes}.
+
+% \subsection{RELAÇÃO DESSE TRABALHO COM O NOSSO}
+
+\textcite{vayghan2021kubernetes} fez contribuições em algoritmos, ou seja programação de software que agrega funcionalidades novas ao Kubernetes. Outra forma de contribuição é como interceptar a \textit{API} do Kubernetes, ou seja, como observar os eventos. Outros benefícios desse artigo são maneiras de configurar o Kubernetes para prover replicação das instâncias da aplicação. Finalmente, se relaciona com o presente trabalho por estas contribuições mencionadas e nas questões de avaliação do sistema em arquiteturas de microsserviços, dando importância também para escalabilidade.
+
+% Além disso esse trabalho nos ensina como construir experimentações e avaliações da solução, usando uma metodologia de perguntas e respostas.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{\textit{Incorporating the Raft consensus protocol in containers managed by Kubernetes: an evaluation}}
+
+O trabalho de \textcite{netto2020incorporating} visa implementar uma solução de replicação por máquinas de estados usando Raft como algoritmo de consenso. A sua solução foi construída no topo do orquestrador de contêineres Kubernetes. Esse trabalho optou por utilizar o Raft ao invés do Paxos, pela didática e praticidade.
+
+Para desenvolver a solução os autores escolheram o algoritmo Raft e buscaram um código livre e aberto em linguagem Go. O código foi inserido no contexto de orquestração de contêineres. Esse trabalho visou utilizar o banco de dados Etcd\footnote{\url{https://etcd.io/} para fins práticos e demonstrativos da solução}. Os autores estenderam uma biblioteca para poder acrescentar funcionalidades personalizadas ao Kubernetes. Foram adicionados:
+
+\begin{itemize}
+\item Mecanismo próprio de descoberta de réplicas usando API do Kubernetes.
+\item Aceitação de requisições por qualquer réplica.
+\end{itemize}
+
+% No trabalho os contêineres incluem processos para comunicar com a API do Kubernetes. Através dessa comunicação, cada contêiner periodicamente pergunta sobre os endereços IP de outras réplicas.
+% O Kubernetes permite que todas os pods recebam requisições.
+
+A implementação de \textcite{netto2020incorporating} permite que as réplicas líder possam receber requisições e assim é possível redirecionar as requisições para o líder. Se o líder falhar outras réplicas podem executar o papel de líder.
+
+% \subsection{COMO OBTIVERAM RESULTADOS (ALTO NÍVEL)}
+
+Eles criaram um ambiente de experimentação real, para experimentações diversas. Eles organizaram o sistema distribuído físico para que atendessem as necessidades da pesquisa. Os autores compararam 3 cenários, sendo eles:
+
+\begin{itemize}
+\item A implementação KRaft
+\item A implementação Raft (exclusivo ao Etcd\footnote{O Etcd é banco de armazenamento chave-valor distribuído usado para armazenar e gerenciar as informações críticas que os sistemas distribuídos precisam para continuar funcionando.}, embutido no Kubernetes)
+\item Um sistema não replicado.
+\end{itemize}
+
+O número de clientes fazendo requisições simultâneas aos servidores variou de 4 até 64 para fins de experimentação. Para fazer medições constantes em cada instância os autores usaram um software Linux chamado \textit{dstat}. Os resultados desse trabalho focam bastante em latência (em ms) e vazão (em requisições por segundo). Houveram testes com várias quantidades de clientes acessando a plataforma Kubernetes, e além disso foi comparado a solução KRaft, com Raft, e sistema não replicado.
+
+% \subsection{AS LIMITAÇÕES DA ABORDAGENS DO TRABALHO}
+
+Alguns dos resultados do artigo mostraram que a latência por tempo foi menor do que o sistema replicado, e não há aprofundamento sobre as causas. Outros resultados apontaram que a solução se mostrou limitada na questão de vazão de requisições por tempo. Já outros resultados mostraram análises dos consumos de recursos, a saber, Memória e CPU. Porém não se demonstrou o quanto as máquinas físicas e o Kubernetes consomem de Memória e, CPU. Não foi possível identificar, com clareza, as comparações entre a solução e o Raft do Kubernetes.
+% Em um outro resultado os autores comparam volumes de dados enviados pela rede (em MB/s), mas segundo eles mesmos os resultados foram equivalentes, o que causa dúvida.
+
+% \subsection{RELAÇÃO DESSE TRABALHO COM O NOSSO}
+
+O trabalho em questão é ortogonal ao presente trabalho pelos aspectos de métricas de experimentação, latência e vazão. Construção de um ambiente de experimentação físico. Uso de protocolo de consenso visando implementar ordenação de mensagens com algoritmos de consenso. Abordagens em arquiteturas de microsserviços. Uso de Kubernetes para orquestrar contêineres. Isolamento de aspectos de implementação em contêineres.
+% E finalmente, avaliação do consumo de recursos.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+
+\subsection{\textit{Implementação de um interceptador para ordenação de mensagens em arquiteturas baseadas em microsserviços}}
+
+\textcite{renan2021hermes} propôs uma arquitetura em ambientes de microsserviços para o desacoplamento da lógica de ordenação de mensagens. Um dos objetivos era manter consistência forte em um sistema replicado. Para isto, implementou-se replicação por máquinas de estados usando intercepção de mensagens que chegam ao serviço Hermes. O serviço, baseia-se em padrões de projeto voltados para arquiteturas de microsserviços. O código criado por \textcite{renan2021hermes} provê interfaces que uma vez implementadas possibilitam que outros protocolos de consenso sejam incluídos, e também outros protocolos de comunicação.
+
+O \textit{Hermes} foi programado em linguagem Go\footnote{Golang: \url{https://go.dev/}}. O autor utilizou Kubernetes e Docker para criar o sistema de interceptação, pois cada instância do serviço sendo replicado tem uma outra instância do Hermes à frente, interceptando as requisições. Uma vez interceptadas, as mensagens são submetidas ao protocolo de consenso, para ordenação das mensagens. O \textit{Hermes} utiliza o algoritmo Raft para realizar a ordenação.
+
+A avaliação da ferramenta aconteceu através de experimentação no Emulab \cite{emulab-10.1145/844128.844152}, um ambiente para criação de uma rede física de máquinas. O provisionamento do ambiente foi automatizado com a ferramenta Ansible\footnote{Ansible: \url{https://www.ansible.com/}}. Os cenários básicos de avaliação foram: sem replicação, replicação à nível de aplicação e replicação no interceptador.
+
+As comparações mostram que o Hermes satura relativamente mais rápido que o caso sem replicação. Aparentemente os resultados nos mostram que a medida que a vazão média cresce, a latência (ms) tende a acompanhar, porém em alguns pontos a latência tem um comportamento inverso.
+
+Alguns resultados mostraram uma vazão maior para o cenário de replicação a nível de aplicação. No entanto, para replicação a nível de interceptador mostraram uma vazão menor e em um outro resultado avaliando a latência, inverteram-se os papéis. Aparentemente existem limitações com relação a vazão.
+% Houve pouca clareza em mostrar como as cargas de trabalho foram pensadas e trabalhadas até que os gráficos demonstrassem a curva de saturação.
+
+% \subsection{RELAÇÃO DESSE TRABALHO COM O NOSSO}
+
+A relevância deste trabalho está relacionada ao fato de o trabalho atual estar estendendo as funcionalidades do Hermes, para adicionar uma nova forma de comunicação. É notável o estudo aprofundado do código Hermes, bem como as técnicas, métodos, conceitos, algoritmos por trás do funcionamento do Hermes.
+
+% \subsection{Relacionados a replicação com o uso de orquestrador de contêineres}
+
+% \textcite{netto2020incorporating}
+% \cite{netto2020incorporating}
+% \parencite{netto2020incorporating}
+
+% Estratégias de replicação por máquinas de estados não são novas para os pesquisadores. Trabalhos atuais têm demonstrado avaliações em ambientes reais, além de utilizar orquestradores de contêineres, (como Kubernetes ou outros), para poder gerir as réplicas distribuídas. Cada réplica serve uma aplicação que é construída em contêiner, em Docker ou outra  tecnologia. Os trabalhos de \textcite{netto2020incorporating} e \textcite{renan2021hermes} contribuem com estratégias de replicação por máquina de estados em arquitetura de microsserviços, aplicando em imagens Docker, orquestradas por Kubernetes. O trabalho de \textcite{vayghan2021kubernetes} não utiliza Raft como algoritmo de consenso entre réplicas, pois havia uma necessidade de entender os limites em replicação pelo Kubernetes ao utilizar o sistema próprio de \textit{StatefulSet}, por outro lado \textcite{netto2020incorporating} e \textcite{renan2021hermes} utilizaram Raft.
+
+% https://kubernetes.io/docs/tasks/run-application/run-replicated-stateful-application/
+% https://kubernetes.io/docs/tasks/run-application/run-replicated-stateful-application/
+% https://kubernetes.io/docs/tasks/run-application/run-replicated-stateful-application/
+% https://kubernetes.io/docs/tasks/run-application/run-replicated-stateful-application/
+
+% \subsection{Relacionados ao uso de mensageiros para replicação}
+
+% O trabalho de \textcite{Petrescu2020LogRI} propôs um sistema que visa utilizar o Apache Kafka, um sistema de troca de mensagens, com Raft, um algoritmo de consenso entre as réplicas. Esse trabalho propõe utilizar-se de um mecanismo próprio para troca de mensagens para transferir \textit{logs} de replicação entre as réplicas. Outro trabalho de \textcite{okusanya2019consensus}, também segue uma linha parecida usando Raft, porém se utiliza uma tecnologia diferente para troca de mensagens, o ZMQ Poller, um mecanismo de notificação e escuta, baseado em eventos, via sockets.

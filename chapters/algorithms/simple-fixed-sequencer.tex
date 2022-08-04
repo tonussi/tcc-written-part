@@ -1,0 +1,17 @@
+\begin{algorithm}
+\DontPrintSemicolon
+
+$seqnum := 1$
+
+\when{receive(m)} {
+    $sn(m) := seqnum$
+
+    send(m, sn(m)) to all
+
+    $seqnum := seqnum + 1$
+}
+
+\caption{Código do sequenciador para o algoritmo de sequenciador fixo simples
+\cite{journals/csur/DefagoSU04}}
+\label{algo:simple-fixed-sequencer}
+\end{algorithm}

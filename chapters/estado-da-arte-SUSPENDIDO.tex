@@ -1,0 +1,224 @@
+\chapter{Estado da Arte}
+
+Nesse capítulo é feita uma pesquisa e revisão do estado mais atual da pesquisa referente ao uso de microsserviços e replicação por máquina de estados. Utilizando metodologia básica de pesquisa com termos chaves, a fim de encontrar resultados apurados para análise.
+
+Para isso realizamos uma revisão simplificada, que consiste em pesquisa para: identificar, avaliar e interpretar uma quantidade específica e qualificada de trabalhos pertinentes ao questionamento dessa pesquisa.
+
+\section{Contextualização da Pesquisa}
+
+Após o estudo da fundamentação teórica, realizando uma pesquisa bibliográfica sobre os principais assuntos que envolvem esse trabalho que são: Gerência de Projeto, e Jogos Educacionais, foram também realizadas pesquisas por livros e artigos científicos sobre os assuntos já expostos, em bases científicas reconhecidas, a saber, \textit{Google Scholar}\footnote{\url{https://scholar.google.com.br/}}, ACM Digital Library \footnote{\url{https://dl.acm.org/}}, \textit{IEEEXplorer}\footnote{\url{https://ieeexplore.ieee.org/}}, \textit{Science Direct}\footnote{\url{https://www.sciencedirect.com/}}.
+
+A seguir foram definidos as Perguntas de Pesquisa em Inglês e Português.
+
+\begin{table}[!htb]
+\caption{Criação e idealização da pesquisa}
+\begin{center}
+{
+\footnotesize
+\resizebox{\textwidth}{!}{
+\begin{tabular}{
+|p{7cm}|p{7cm}|
+}
+\hline
+\cellcolor{gray!15}
+\textbf{Perguntas de Pesquisa (Inglês)} &
+\cellcolor{gray!15}
+\textbf{Perguntas de Pesquisa (Português)} \\
+\hline
+What are the papers, until today, regarding microservices architecture and state machine replication for securing high disponibility for distributed systems, also known as fault-tolerance? & Quais foram as pesquisas, até hoje, relacionadas à arquitetura de microsserviços e replicação por máquina de estados, para assegurar alta disponibilidade em sistemas distribuídos, também conhecido como tolerância à falhas? \\
+\hline
+\end{tabular}
+}
+}
+\end{center}
+\label{tab:idealizacao}
+\end{table}
+
+A próxima tabela mostra à extração dos termos de pesquisa, que são levados em consideração para criar as chaves de busca em um padrão de linguagem descritiva de busca em base de dados científicas.
+
+\begin{table}[!htb]
+\caption{Extração dos termos relevantes para construir a busca}
+\begin{center}
+{
+\footnotesize
+\resizebox{\textwidth}{!}{
+\begin{tabular}{
+|p{7cm}|p{7cm}|
+}
+\hline
+\cellcolor{gray!15}
+\textbf{Termos de Pesquisa (Inglês)} &
+\cellcolor{gray!15}
+\textbf{Termos de Pesquisa (Português)} \\
+\hline
+"microservices", "state machine replication" &
+"microsserviços", "replicação por máquina de estados" \\
+\hline
+\end{tabular}
+}
+}
+\end{center}
+\label{tab:extracao-termos}
+\end{table}
+
+Notar que microsserviços automaticamente remete à arquitetura. E replicação por máquina de estados remete à sistemas distribuídos, e garantia de disponibilidade, além disso remete também à tolerância à falhas \cite{schneider1990implementing}.
+
+\subsection{Critérios de Inclusão e Exclusão}
+
+Os termos de busca escolhidos podem resultar em artigos que não se encaixam dentro do contexto desse trabalho, como por exemplo, a decisão entre.
+
+Assim, uma lista de critérios de inclusão e exclusão foi criada, determinando quais artigos podem ser potencialmente relevantes, e quais serão desconsiderados.
+
+\textbf{Critérios de Inclusão}:
+
+\begin{itemize}
+\item Trabalhos que implementam uma solução de replicação por máquinas de estado em arquitetura de microsserviços.
+\item Trabalhos que estão envolvidos com algoritmos que implementam consenso entre as partes, ou seja, os servidores de um sistema distribuído.
+\item É desejável, mas não estritamente obrigatório, que os trabalhos usufruam de tecnologia para orquestração de contêineres (i.e. Kubernetes), além de uma tecnologia para contêineres (i.e. Docker).
+\end{itemize}
+
+\textbf{Critérios de Exclusão}:
+
+\begin{itemize}
+\item Trabalhos que gravitam em torno de: \textit{Blockchain}, Segurança de Redes de Computadores, e Cripto-moedas.
+\item Trabalhos envolvendo Replicação Máquina de Estados Paralela, a versão em Paralela em específico.
+\item Trabalhos envolvendo Inteligência Artificial, por exemplo: Uso de algoritmos: Genéticos, Redes Neurais, Detecção de Objetos, dentre outros.
+\end{itemize}
+
+\section{Critérios de Qualidade}
+
+A seguir estão estabelecidos os critérios de qualidade. Esses critérios foram elaborados para filtrar os artigos científicos, para possibilitar a leitura e análise somente. Os critérios de qualidade foram então aplicados após a execução das strings de busca nas bases de conhecimento científicas.
+
+\begin{itemize}
+\item Os trabalhos devem ser objetivos claros, com informação relevante à sistemas distribuídos, arquitetura de microsserviços, replicação por máquinas de estados, e protocolo de consenso.
+\item Os trabalhos devem explicitar claramente a relação de microsserviços com orquestração de contêineres.
+\item Os trabalhos devem ter métodos de análise de desempenho específicos para Computação Distribuída.
+\item Os trabalhos devem ter feito avaliação experimental.
+\end{itemize}
+
+\section{Dados a Serem Extraídos}
+
+A seguir brevemente explicados alguns dados a serem extraídos dos trabalhos.
+
+\begin{itemize}
+\item Contextualização da pesquisa, tecnologias usada, algoritmos de consenso abordados, ferramentas de análise de sistemas distribuídos, citações relevantes.
+\end{itemize}
+
+\section{Execução da Busca e seus Resultados}
+
+Na execução da busca por resultados, foram adquiridos os termos de busca  configurados conforme as tabelas a seguir. As tabelas a seguir apresentam os termos de pesquisa, a quantidade de artigos relevantes, e quantidade descartada devido aos critérios previamente mencionados.
+
+
+\begin{table}[!htb]
+\caption{Extração de resultados pela Science Direct}
+\begin{center}
+{
+\footnotesize
+\resizebox{\textwidth}{!}{
+\begin{tabular}{
+|p{0.8\linewidth}|p{0.2\linewidth}|
+}
+\hline
+\cellcolor{gray!15}
+\textbf{Busca} &
+\cellcolor{gray!15}
+\textbf{Quantidade} \\
+\hline
+{\tiny TITLE-ABSTR-KEY(“microservice”) AND
+TITLE-ABSTR-KEY(“state machine replication”) AND NOT
+TITLE-ABSTR-KEY(“blockchain”)} &
+1 artigo relevante e 1 descartado \\
+\hline
+\end{tabular}
+}
+}
+\end{center}
+\label{tab:extracao-ScienceDirect}
+\end{table}
+
+
+\begin{table}[!htb]
+\caption{Extração de resultados pela IEEEXplore}
+\begin{center}
+{
+\footnotesize
+\resizebox{\textwidth}{!}{
+\begin{tabular}{
+|p{0.8\linewidth}|p{0.2\linewidth}|
+}
+\hline
+\cellcolor{gray!15}
+\textbf{Busca} &
+\cellcolor{gray!15}
+\textbf{Quantidade} \\
+\hline
+{\tiny ("Abstract": “state machine replication” OR "Publication Title": “state machine replication” ) } &
+34 artigos \\
+\hline
+\end{tabular}
+}
+}
+\end{center}
+\label{tab:extracao-IEEEXplore}
+\end{table}
+
+
+\begin{table}[!htb]
+\caption{Extração de resultados pela Google Scholar}
+\begin{center}
+{
+\footnotesize
+\resizebox{\textwidth}{!}{
+\begin{tabular}{
+|p{0.8\linewidth}|p{0.2\linewidth}|
+}
+\hline
+\cellcolor{gray!15}
+\textbf{Busca} &
+\cellcolor{gray!15}
+\textbf{Quantidade} \\
+\hline
+{\tiny ("microservice" \space "state machine replication" \space -"blockchain" \space -"network security" \space -"artificial intelligence")} &
+52 \\
+\hline
+\end{tabular}
+}
+}
+\end{center}
+\label{tab:extracao-GoogleScholar}
+\end{table}
+
+\begin{table}[!htb]
+\caption{Extração de resultados pela \gls{ACM}}
+\begin{center}
+{
+\footnotesize
+\resizebox{\textwidth}{!}{
+\begin{tabular}{
+|p{0.8\linewidth}|p{0.2\linewidth}|
+}
+\hline
+\cellcolor{gray!15}
+\textbf{Busca} &
+\cellcolor{gray!15}
+\textbf{Quantidade} \\
+\hline
+{\tiny ([[Abstract: "microservice"] OR [Abstract: "state machine replication"]] AND NOT [[Abstract: "blockchain"] OR [Abstract: "network security"]] AND [[Title: "microservice"] OR [[Title: "state machine replication"] AND NOT [[Title: "blockchain"] OR [Title: "network security"]]]])} &
+86 \\
+\hline
+\end{tabular}
+}
+}
+\end{center}
+\label{tab:extracao-ACM}
+\end{table}
+
+Dos trabalhos encontrados foram lidos os títulos e resumos, aplicando-se os critérios de inclusão e exclusão e critérios de qualidade. Foram encontrados 226 trabalhos no total. Desse total X artigos foram descartados por não atenderem os critérios.
+
+\section{Aplicação dos Critérios e Listagem dos Trabalhos}
+
+Foram listados os trabalhos resultantes das pesquisas nas bases científicas, bem como também Google Scholar. Essa listagem, em forma de tabela, está localizada no Anexo \ref{anexo:revisao}. O Anexo \ref{anexo:revisao} contém uma descrição breve dos artigos acolhidos pelas pesquisas bibliográficas. Assim é possível mapear uma relação dos mesmos, ao nosso trabalho. E ainda, a classificação é baseada nos critérios de qualidade, levando em consideração a tabela de dados relevantes, para serem encontrados dentro dos artigos.
+
+\section{Considerações Finais}
+
+Por meio desta revisão simplificada, do estado da arte, foi possível identificar trabalhos interessantes e relevantes para nossos critérios.

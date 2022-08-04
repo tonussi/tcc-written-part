@@ -1,0 +1,211 @@
+\chapter{Considerações finais}
+
+%\textbf{Proposta}
+
+O presente trabalho apresentou uma proposta inicial de monografia, que deverá ser incrementada na segunda etapa (Projetos II). Escrevemos uma fundamentação teórica para aprender sobre o contexto em que estamos trabalhando. Muito foi discutido sobre as técnicas e, por isso sabemos onde estamos nos posicionando para abordar os trabalhos futuros de \textcite{renan2021hermes}.
+
+% \textbf{Objetos}
+
+O presente trabalho tem como objetivo oferecer uma funcionalidade de replicação transparente ao usuário, de forma que os detalhes sobre replicação e tolerância a falhas não precisem ser explicitamente abordados por desenvolvedores. Para isso precisamos estudar as técnicas de: replicação, máquina de estados, consenso, Raft, Paxos, microsserviços, código \cite{renan2021hermes}, \textit{etc}. A presente proposta estenderá um trabalho inciado pelo grupo, que propõe uma arquitetura para um serviço de ordenação de mensagens baseada em interceptadores. Para aprimorar o serviço, pretende-se implementar novos protocolos de comunicação e ordenação de mensagens, além de investigar recursos para melhoria de desempenho na ordenação e entrega de requisições às réplicas, como o uso de lotes.
+
+% \textbf{Desafios}
+
+Com o trabalho de \textcite{renan2021hermes} é possível implementar um módulo funcional, em linguagem GO, de replicação por máquina de estados que atribui uma interface para um módulo de consenso qualquer, ou seja, o módulo de consenso pode ser alterado. Com esse trabalho nós visamos testar um módulo de consenso diferente, ainda estamos decidindo qual módulo será. Se for Paxos precisamos encontrar uma boa implementação pronta, de Paxos e, que faça sentido para nosso trabalho. Se for o caso de implementarmos um Ordenador total via sequenciador, ou via privilégio, teremos que implementar, porém será tangível, visto que são implementações menos complexas que o Paxos. Precisamos deixar tudo pronto para experimentarmos em um ambiente como o \textit{Emulab} \cite{emulab-10.1145/844128.844152}.
+
+% \textbf{Contribuições}
+
+% Por enquanto temos um pequena contribuição teórica sobre o contexto do problema. Juntamos alguns fatos e, interpretamos alguns artigos científicos agrupando alguns conhecimentos importantes para poder abordar o problema, futuramente, com a implementação de código.
+
+\section{Próximos Passos}
+
+De agora em diante pretendemos nos aprofundarmos em código, porém escrevendo um pouco mais sobre trabalhos correlatos, melhorando a fundamentação teórica sempre que possível.
+
+% \section{Cronograma}
+\label{crono}
+
+A Tabela \ref{tab:cronograma} mostra as etapas do projeto, e quando serão realizadas. O cronograma é divido em trimestres e são apresentadas as atividades a partir do segundo semestre de 2021. As células cinza já foram concluídas, e as células azuis estão em processo de conclusão.
+
+% \begin{table}[ht!]
+% \caption{Cronograma do projeto}
+% \centering
+% \resizebox{\textwidth}{!}{
+% \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+% \hline
+% \cellcolor{gray!25}
+% \textbf{Descrição das Etapas} &
+% \cellcolor{gray!25}
+%  2021 &\cellcolor{gray!25}
+%  2021 &\cellcolor{gray!25}
+%  2021 &\cellcolor{gray!25}
+%  2021 &\cellcolor{gray!25}
+%  2021 &\cellcolor{gray!25}
+%  2022 &\cellcolor{gray!25}
+%  2022 &\cellcolor{gray!25}
+%  2022 &\cellcolor{gray!25}
+%  2022 &\cellcolor{gray!25}
+%  2022 &\cellcolor{gray!25}
+%  2022 &\cellcolor{gray!25}
+%  2022 &\cellcolor{gray!25}
+%  2022 &\cellcolor{gray!25}
+%  2022 &\cellcolor{gray!25}
+%  2022 &\cellcolor{gray!25}
+%  2022 &\cellcolor{gray!25}
+%  2022 \\
+% \hline
+%  & \cellcolor{gray!25}
+%  ago. &\cellcolor{gray!25}
+%  set. &\cellcolor{gray!25}
+%  out. &\cellcolor{gray!25}
+%  nov. &\cellcolor{gray!25}
+%  dez. &\cellcolor{gray!25}
+%  jan. &\cellcolor{gray!25}
+%  fev. &\cellcolor{gray!25}
+%  mar. &\cellcolor{gray!25}
+%  abr. &\cellcolor{gray!25}
+%  mai. &\cellcolor{gray!25}
+%  jun. &\cellcolor{gray!25}
+%  jul. &\cellcolor{gray!25}
+%  ago. &\cellcolor{gray!25}
+%  set. &\cellcolor{gray!25}
+%  out. &\cellcolor{gray!25}
+%  nov. &\cellcolor{gray!25}
+%  dez. \\
+% \hline Estudo de técnicas
+% de tolerância
+% a falhas e de replicação & • & • & • & & & & & & & & & &  & & & & \\
+% \hline Estudo de protocolos
+% para comunicação
+% confiável e prot. de
+% ordenação de mensagens & • & • & • & & & & & & & & & &  & & & & \\
+
+% \hline Estudo de protocolos de
+% particionamento em
+% sistemas distribuídos & & • & • & • & • & & & & & & & &  & & & & \\
+
+% \hline Implementação de sistemas
+% replicados usando técnicas
+% tradicionais & & & & • & • & • & • & • & & & & &  & & & & \\
+
+% \hline Desenvolvimento de técnica
+% de particionamento em
+
+% RMEP & & & • & • & • & • & • & • & • & & & &  & & & & \\
+% \hline Criação de protótipos para
+% provas de conceito & & & & & & & & & • & • & • & • &  & & & & \\
+
+% \hline Entrega de relatório TCC 1 & & & & & & & & & & • & & &  & & & & \\
+
+% \hline Avaliação experimental da
+% técnica proposta & & & & & & & & & & • & • & • & •  & & & & \\
+
+% \hline Redação do rascunho do TCC & & & & & & & & & & & & & & • & • & & \\
+
+% \hline Entrega do rascunho do TCC & & & & & & & & & & & & & &  & • & & \\
+
+% \hline Defesa do TCC & & & & & & & & & & & & &  & & & • & \\
+
+% \hline Ajustes no relatório final do TCC & & & & & & & & & & & & &  & & & • & • \\
+
+% \hline
+% \end{tabular}
+% }
+% \label{tab:cronogramaold}
+% %\caption{Cronograma do projeto}
+% \end{table}
+
+% \ct{Vocês precisam adicionar texto que explique o cronograma. Pode usar uma enumeração com cada tarefa seguida de uma explicação do que consiste a tarefa. ex.:}
+
+
+% \ct{O cronograma ficou ilegível, está muito pequeno. Sugiro usar intervalos de tempo maiores (bimestres ou trimestres) e nomes para as tarefas mais enxutas. Vou colocar abaixo um cronograma de exemplo que retirei de um projeto que escrevi.}
+
+\begin{table}[!htb]
+\caption{Cronograma de atividades por bimestres.}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+
+\multicolumn{1}{|c|}{\multirow{2}{*}{Atividades}} &
+\multicolumn{4}{c|}{2021/1} &
+\multicolumn{4}{c|}{2022/1} \\ \cline{2-9}
+\multicolumn{1}{|c|}{} & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 \\ \hline
+
+% \rowcolor[HTML]{EFEFEF}
+% 1. Manutenção do estado da arte & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & ~ & ~ & ~ & \cellcolor{gray!25} & \cellcolor{gray!25} \\ \hline
+% 2. Desenvolvimento de estratégias de \textit{checkpointing} & ~ & ~ & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & ~ & ~ \\ \hline
+% 3. Desenvolvimento de estratégias de \textit{logging} & ~ & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & ~ & ~ & ~ \\ \hline
+% 4. Desenvolvimento para arquiteturas de microsserviço & ~ & ~ & ~ & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & ~ \\ \hline
+% 5. Desenvolvimento de protótipos e implementação & ~ & ~ & ~ & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & ~ & ~\\ \hline
+% 6. Avaliação e prova de conceito das técnicas propostas & ~ & ~ & ~ & ~ & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25}\\ \hline
+% 7. Produção técnico-científica & ~ & ~ & ~ & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25}\\ \hline
+
+
+1. Revisão bibliográfica
+
+& \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & ~ & ~ & ~ & ~ & ~ \\ \hline
+
+2. Estudo de técnicas de tolerância a falhas e de replicação
+
+& ~ & \cellcolor{gray!25} & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+
+3. Estudo de protocolos de consenso
+
+& ~ & ~ & \cellcolor{gray!25} & ~ & ~ & ~ & ~ & ~ \\ \hline
+
+4. Estudo de arquiteturas de microsserviços
+
+& ~ & ~ & ~ & \cellcolor{gray!25} & ~ & ~ & ~ & ~ \\ \hline
+
+5. Estudo de orquestração de contêineres
+
+& ~ & ~ & ~ & \cellcolor{gray!25} & ~ & ~ & ~ & ~ \\ \hline
+
+6. Criação de protótipos para provas de conceito
+
+& ~ & ~ & ~ & ~ & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & ~ \\ \hline
+
+7. Desenvolvimento do relatório TCC 1
+
+& \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & ~ & ~ & ~ & ~ \\ \hline
+
+8. Avaliação experimental da técnica proposta
+
+& ~ & ~ & ~ & ~ & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & ~ \\ \hline
+
+9. Produção técnico-científica % Redação do rascunho do TCC
+
+& \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{gray!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} \\ \hline
+
+10. Entrega, defesa, e ajustes da monografia
+
+& ~ & ~ & ~ & ~ & ~ & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} \\ \hline
+
+\end{tabular}
+}
+\end{center}
+\label{tab:cronograma}
+\end{table}
+
+\begin{enumerate}
+\item \textit{Revisão bibliográfica}: Fizemos uma revisão bibliográfica de forma exploratória apenas e, de 3 artigos que consideramos relevantes, por enquanto.
+
+% \textit{Realização da prova do ENADE}: Feita dia 14 de novembro de 2021.
+
+\item \textit{Estudo de técnicas de tolerância a falhas e de replicação}: Estudamos formas de replicação e tolerância a falhas. Estudamos replicação máquina de estados, validações formais de \textcite{hadzilacos-10.5555/866693} e, validações formais de consenso.
+
+\item \textit{Estudo de protocolos de consenso}: Estudamos também as possibilidades sobre protocolos de ordenação de mensagens, e novas técnicas que visam manter os comandos ordenados.
+% {\color{red} Não estudamos outras formas de comunicação como: gRPC, HTTP, UDP, \textit{etc}, ficamos no escopo apenas dos protocolos de ordenação de mensagens por enquanto.}
+
+\item \textit{Estudo de arquiteturas de microsserviços}: estudamos as novidades mais atuais sobre arquiteturas de microsserviços, padrões de projetos para implementação na nuvem, como agregar isso à orquestração de contêineres, para futuramente melhorarmos.
+
+\item \textit{Estudo de orquestração de contêineres}: estudamos tecnologia de orquestração de contêineres e, tecnologia de contêineres.
+
+\item \textit{Criação de protótipos para provas de conceito}: essa atividade se trata de desenvolvimento da ferramenta, melhorias sobre a implementação do Hermes. Esta programado também remodelar, se preciso, atualizar algoritmos, implementar novidades, \textit{etc}.
+% {\color{red} Não conseguimos iniciar em 2021, vamos deixar para o primeiro semestre de 2022}.
+
+\item \textit{Avaliação experimental da técnica proposta}: esta tarefa permeia o estado de produção da nossa solução de software, e para isso vamos realizar experimentos, anotando resultados, para entrar como conhecimento na monografia, e posteriormente em um artigo, a ser publicado.
+
+\item \textit{Produção técnico-científica}: esta tarefa se trata do período de desenvolvimento da monografia completa, ou seja, continuação da escrita, melhoria dos parágrafos, relocação de parágrafos, \textit{etc}, bem como planejamentos futuros, para manter o texto bem encaminhado. Observe, também, que está planejado para essa tarefa incorporar as solicitações feitas pela banca, após entrega do relatório de TCC 1.
+
+\item \textit{Entrega, defesa, e ajustes do TCC}: esta tarefa se trata do período final de entrega da monografia, leitura final do texto como um todo, ajustes ortográficos, entrega do texto pronto, preparação para defesa, criação da apresentação para banca, e planejamentos futuros sobre o estado do texto poderão ser feitos nessa atividade, até a entrega do rascunho do TCC, para avaliação pela banca. O dia de defesa será definido no futuro. Depois de defendido o TCC, pretendemos incorporar as solicitações feitas pela banca. A criação de um plano de ação para publicarmos um artigo científico, deve surgir perto desse período.
+\end{enumerate}

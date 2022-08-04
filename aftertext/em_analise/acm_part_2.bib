@@ -1,0 +1,1145 @@
+@inproceedings{10.1145/2904111.2904115,
+author = {Gadea, Cristian and Trifan, Mircea and Ionescu, Dan and Ionescu, Bogdan},
+title = {A Reference Architecture for Real-Time Microservice API Consumption},
+year = {2016},
+isbn = {9781450342940},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2904111.2904115},
+doi = {10.1145/2904111.2904115},
+abstract = {Modern web frameworks and backend-as-a-service providers make it possible for real-time
+updates to a NoSQL data model to be reflected in the user interfaces of multiple subscribing
+end-user applications. However, it remains difficult for users to dynamically discover
+and instantly make use of the data provided by the plethora of REST APIs in existence
+across various cloud providers today. This paper presents a reference architecture
+built on the idea of a scalable NoSQL database that allows multiple subscribers to
+receive instant notifications of database changes through the use of a "livequery".
+By keeping one WebSocket connection open between each client web browser and an Object
+Synchronization Server, this paper shows how data from multiple disparate REST APIs
+can be organized and transmitted to interested clients via the database. An example
+is given featuring a collaborative rich-text editor that makes use of a Named-Entity
+Recognition microservice.},
+booktitle = {Proceedings of the 3rd Workshop on CrossCloud Infrastructures &amp; Platforms},
+articleno = {2},
+numpages = {6},
+keywords = {real-time web, docker, microservices, named entity recognition, collaborative editing, cloud computing},
+location = {London, United Kingdom},
+series = {CrossCloud '16}
+}
+
+@inproceedings{10.5555/3374138.3374171,
+author = {Bocciarelli, Paolo and D'Ambrogio, Andrea and Giglio, Andrea and Paglia, Emiliano},
+title = {A Microservice-Based Approach for Fine-Grained Simulation in MSaaS Platforms},
+year = {2019},
+publisher = {Society for Computer Simulation International},
+address = {San Diego, CA, USA},
+abstract = {M&amp;S as a Service (MSaaS) is an increasingly adopted paradigm that brings the benefits
+of service-oriented architectures and cloud computing into the M&amp;S field. The design
+and implementation of MSaaS platforms typically address the provision of coarse-grained
+M&amp;S services, which offer the user easy access and orchestration of M&amp;S components
+consisting of entire environments, applications and/or tools. This paper introduces
+an approach to the provision of fine-grained M&amp;S services, which are defined by use
+of a microservice-based architecture, according to which applications are developed
+as a suite of small-sized services. The proposed approach extends an already available
+MSaaS platform, named SOASim. The paper shows how the integration and mutual use of
+fine-grained and coarse-grained services (e.g., modeling services, transformation
+services, presentation services etc.) significantly enhance the benefits of SOASim.
+An example application to the microservice-based setup of a discrete event simulation
+is used to describe and discuss the proposed approach.},
+booktitle = {Proceedings of the 2019 Summer Simulation Conference},
+articleno = {33},
+numpages = {12},
+keywords = {MSaaS, SaaS, cloud, DES, microservices},
+location = {Berlin, Germany},
+series = {SummerSim '19}
+}
+
+@inproceedings{10.1145/2996890.2996901,
+author = {Leitner, Philipp and Cito, J\"{u}rgen and St\"{o}ckli, Emanuel},
+title = {Modelling and Managing Deployment Costs of Microservice-Based Cloud Applications},
+year = {2016},
+isbn = {9781450346160},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2996890.2996901},
+doi = {10.1145/2996890.2996901},
+abstract = {We present an approach to model the deployment costs, including compute and IO costs,
+of Microservice-based applications deployed to a public cloud. Our model, which we
+dubbed CostHat, supports both, Microservices deployed on traditional IaaS or PaaS
+clouds, and services that make use of novel cloud programming paradigms, such as AWS
+Lambda. CostHat is based on a network model, and allows for what-if and cost sensitivity
+analysis. Further, we have used this model to implement tooling that warns cloud developers
+directly in the Integrated Development Environment (IDE) about certain classes of
+potentially costly code changes. We illustrate our work based on a case study, and
+evaluate the CostHat model using a standalone Python implementation. We show that,
+once instantiated, cost calculation in CostHat is computationally inexpensive on standard
+hardware (below 1 ms even for applications consisting of thousand services and endpoints).
+This enables its use in real-time for developer tooling which continually re-evaluates
+the costs of an application in the background, while the developer is working on the
+code.},
+booktitle = {Proceedings of the 9th International Conference on Utility and Cloud Computing},
+pages = {165–174},
+numpages = {10},
+location = {Shanghai, China},
+series = {UCC '16}
+}
+
+@inproceedings{10.1145/3425269.3425273,
+author = {de Freitas Apolin\'{a}rio, Daniel Rodrigo and de Fran\c{c}a, Breno Bernard Nicolau},
+title = {Towards a Method for Monitoring the Coupling Evolution of Microservice-Based Architectures},
+year = {2020},
+isbn = {9781450387545},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3425269.3425273},
+doi = {10.1145/3425269.3425273},
+abstract = {The microservice architecture is claimed to satisfy ongoing software development demands,
+such as resilience, flexibility, and velocity. However, developing applications based
+on microservices also brings some drawbacks, such as the increased software operational
+complexity. Recent studies have also pointed out the lack of methods to prevent problems
+related to the maintainability of these solutions. Disregarding established design
+principles during the software evolution may lead to the so-called architectural erosion,
+which can end up in a condition of unfeasible maintenance. As microservices can be
+considered a new architecture style, there are few initiatives to monitoring the evolution
+of software microservice-based architectures. In this paper, we introduce the SYMBIOTE
+method for monitoring the coupling evolution of microservice-based systems. More specifically,
+this method collects coupling metrics during runtime (staging or production environments)
+and monitors them throughout software evolution. The longitudinal analysis of the
+collected measures allows detecting an upward trend in coupling metrics that could
+be signs of architectural erosion. To develop the proposed method, we performed an
+experimental analysis of the coupling metrics behavior using artificially-generated
+data.},
+booktitle = {Proceedings of the 14th Brazilian Symposium on Software Components, Architectures, and Reuse},
+pages = {71–80},
+numpages = {10},
+keywords = {software evolution, maintainability, coupling metrics, microservices},
+location = {Natal, Brazil},
+series = {SBCARS '20}
+}
+
+@inproceedings{10.1145/3368089.3417066,
+author = {Guo, Xiaofeng and Peng, Xin and Wang, Hanzhang and Li, Wanxue and Jiang, Huai and Ding, Dan and Xie, Tao and Su, Liangfei},
+title = {Graph-Based Trace Analysis for Microservice Architecture Understanding and Problem Diagnosis},
+year = {2020},
+isbn = {9781450370431},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3368089.3417066},
+doi = {10.1145/3368089.3417066},
+abstract = {Microservice systems are highly dynamic and complex. For such systems, operation engineers
+and developers highly rely on trace analysis to understand architectures and diagnose
+various problems such as service failures and quality degradation. However, the huge
+number of traces produced at runtime makes it challenging to capture the required
+information in real-time. To address the faced challenges, in this paper, we propose
+a graph-based microservice trace analysis approach GMTA for understanding architecture
+and diagnosing various problems. Built on a graph-based representation, GMTA includes
+efficient processing of traces produced on the fly. It abstracts traces into different
+paths and further groups them into business flows. To support various analytical applications,
+GMTA includes an efficient storage and access mechanism by combining a graph database
+and a real-time analytics database and using a carefully designed storage structure.
+Based on GMTA, we construct analytical applications for architecture understanding
+and problem diagnosis, these applications support various needs such as visualizing
+service dependencies, making architectural decisions, analyzing the changes of services
+behaviors, detecting performance issues, and locating root causes. GMTA has been implemented
+and deployed in eBay. An experimental study based on trace data produced by eBay demonstrates
+GMTA's effectiveness and efficiency for architecture understanding and problem diagnosis.
+Case studies conducted in eBay's monitoring team and Site Reliability Engineering
+(SRE) team further confirm GMTA's substantial benefits in industrial-scale microservice
+systems.},
+booktitle = {Proceedings of the 28th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+pages = {1387–1397},
+numpages = {11},
+keywords = {architecture, fault localization, graph, tracing, visualization, Microservice},
+location = {Virtual Event, USA},
+series = {ESEC/FSE 2020}
+}
+
+@inproceedings{10.1145/3380688.3380715,
+author = {Huynh, Hieu Trung and Quan, Ho Dac},
+title = {Energy Expenditure Estimation Based on Artificial Intelligence and Microservice Architecture},
+year = {2020},
+isbn = {9781450376310},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3380688.3380715},
+doi = {10.1145/3380688.3380715},
+abstract = {Nutritional status plays an important role in not only pregnancy outcomes but also
+neonatal health. One of efficient techniques to control the nutritional status is
+to estimate the energy expenditure. There are some approaches for estimating energy
+expenditure. However, they have limitations including high cost, relative complexity,
+trained personnel requirements, or locality. This study investigates in a system for
+data collection and analysis (IoH-Internet of Health) developing based on microservice
+architecture, and its application for energy expenditure estimation. The proposed
+system has a good ability to scale and integrate with other systems; the energy expenditure
+estimation is performed by using artificial intelligence. The experimental results
+have shown the promising results of the proposed system.},
+booktitle = {Proceedings of the 4th International Conference on Machine Learning and Soft Computing},
+pages = {159–163},
+numpages = {5},
+keywords = {expenditure energy estimation, visualization, IoH system, data collection, healthcare},
+location = {Haiphong City, Viet Nam},
+series = {ICMLSC 2020}
+}
+
+@inproceedings{10.1145/3172871.3172882,
+author = {Kalra, Sumit and Prabhakar, T. V.},
+title = {Towards Dynamic Tenant Management for Microservice Based Multi-Tenant SaaS Applications},
+year = {2018},
+isbn = {9781450363983},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3172871.3172882},
+doi = {10.1145/3172871.3172882},
+abstract = {In a multi-tenant cloud application, more than one heterogeneous tenants share the
+single instance of the application. It increases the degree of resource sharing among
+tenants and brings down the operational cost. In this work, we propose a methodological
+framework to manage the degree of tenancy for a microservice based multi-tenant cloud
+application. We also present a case study to show how microservices can be distributed
+among multiple tenants to increase the resource utilization and, at the same time
+meeting with the heterogeneous requirements of the tenants.},
+booktitle = {Proceedings of the 11th Innovations in Software Engineering Conference},
+articleno = {12},
+numpages = {5},
+keywords = {Micro service, Cloud computing, Tenant management, Multi-tenant},
+location = {Hyderabad, India},
+series = {ISEC '18}
+}
+
+@inproceedings{10.1145/3337821.3337857,
+author = {Hou, Xiaofeng and Liu, Jiacheng and Li, Chao and Guo, Minyi},
+title = {Unleashing the Scalability Potential of Power-Constrained Data Center in the Microservice Era},
+year = {2019},
+isbn = {9781450362955},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3337821.3337857},
+doi = {10.1145/3337821.3337857},
+abstract = {Recent scale-out cloud services have undergone a shift from monolithic applications
+to microservices by putting each functionality into lightweight software containers.
+Although traditional data center power optimization frameworks excel at per-server
+or per-rack management, they can hardly make informed decisions when facing microservices
+that have different QoS requirements on a per-service basis. In a power-constrained
+data center, blindly budgeting power usage could lead to a power unbalance issue:
+microservices on the critical path may not receive adequate power budget. This unavoidably
+hinders the growth of cloud productivity.To unleash the performance potential of cloud
+in the microservice era, this paper investigates microservice-aware data center resource
+management. We model microservice using a bipartite graph and propose a metric called
+microservice criticality factor (MCF) to measure the overall impact of performance
+scaling on a microservice from the whole application's perspective. We further devise
+ServiceFridge, a novel system framework that leverages MCF to jointly orchestrate
+software containers and control hardware power demand. Our detailed case study on
+a practical microservice application demonstrates that ServiceFridge allows data center
+to reduce its dynamic power by 25% with slight performance loss. It improves the mean
+response time by 25.2% and improves the 90th tail latency by 18.0% compared with existing
+schemes.},
+booktitle = {Proceedings of the 48th International Conference on Parallel Processing},
+articleno = {10},
+numpages = {10},
+location = {Kyoto, Japan},
+series = {ICPP 2019}
+}
+
+@inproceedings{10.1145/3053600.3053627,
+author = {D\"{u}llmann, Thomas F. and van Hoorn, Andr\'{e}},
+title = {Model-Driven Generation of Microservice Architectures for Benchmarking Performance and Resilience Engineering Approaches},
+year = {2017},
+isbn = {9781450348997},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3053600.3053627},
+doi = {10.1145/3053600.3053627},
+abstract = {Microservice architectures are steadily gaining adoption in industrial practice. At
+the same time, performance and resilience are important properties that need to be
+ensured. Even though approaches for performance and resilience have been developed
+(e.g., for anomaly detection and fault tolerance), there are no benchmarking environments
+for their evaluation under controlled conditions. In this paper, we propose a generative
+platform for benchmarking performance and resilience engineering approaches in microservice
+architectures, comprising an underlying metamodel, a generation platform, and supporting
+services for workload generation, problem injection, and monitoring.},
+booktitle = {Proceedings of the 8th ACM/SPEC on International Conference on Performance Engineering Companion},
+pages = {171–172},
+numpages = {2},
+keywords = {benchmarking, microservice architecture, software performance, model-driven generation, software resilience},
+location = {L'Aquila, Italy},
+series = {ICPE '17 Companion}
+}
+
+@inproceedings{10.1145/3357141.3357148,
+author = {C\^{a}ndido, Adriano L. and Trinta, Fernando A. M. and Rocha, Lincoln S. and Rego, Paulo A. L. and Mendon\c{c}a, Nabor C. and Garcia, Vinicius C.},
+title = {A Microservice Based Architecture to Support Offloading in Mobile Cloud Computing},
+year = {2019},
+isbn = {9781450376372},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3357141.3357148},
+doi = {10.1145/3357141.3357148},
+abstract = {Mobile devices are increasingly present in people's daily lives. However, despite
+the substantial improvement of new generations of smartphones, the amount of information
+and the complexity of the procedures delegated to these devices still imposes certain
+restrictions on processing, especially regarding energy consumption. A promise solution
+to this issue is the technique known as offloading. Over the last few years, several
+offloading support platforms have been proposed. This work has a particular interest
+in one of those platforms, called CAOS. Despite its success to perform offloading
+tasks, CAOS still has problems such as low scalability. In this paper, we report on
+the refactoring of CAOS into a new microservice-based architecture. Performance and
+scalability evaluations were performed in both monolithic and microservices versions
+to show the benefits achieved with the new CAOS architecture.},
+booktitle = {Proceedings of the XIII Brazilian Symposium on Software Components, Architectures, and Reuse},
+pages = {93–102},
+numpages = {10},
+keywords = {Mobile Cloud Computing, Microservices, Offloading},
+location = {Salvador, Brazil},
+series = {SBCARS '19}
+}
+
+@inproceedings{10.1145/3143434.3143443,
+author = {Bogner, Justus and Wagner, Stefan and Zimmermann, Alfred},
+title = {Automatically Measuring the Maintainability of Service- and Microservice-Based Systems: A Literature Review},
+year = {2017},
+isbn = {9781450348539},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3143434.3143443},
+doi = {10.1145/3143434.3143443},
+abstract = {In a time of digital transformation, the ability to quickly and efficiently adapt
+software systems to changed business requirements becomes more important than ever.
+Measuring the maintainability of software is therefore crucial for the long-term management
+of such products. With Service-based Systems (SBSs) being a very important form of
+enterprise software, we present a holistic overview of such metrics specifically designed
+for this type of system, since traditional metrics - e.g. object-oriented ones - are
+not fully applicable in this case. The selected metric candidates from the literature
+review were mapped to 4 dominant design properties: size, complexity, coupling, and
+cohesion. Microservice-based Systems (μSBSs) emerge as an agile and fine-grained variant
+of SBSs. While the majority of identified metrics are also applicable to this specialization
+(with some limitations), the large number of services in combination with technological
+heterogeneity and decentralization of control significantly impacts automatic metric
+collection in such a system. Our research therefore suggest that specialized tool
+support is required to guarantee the practical applicability of the presented metrics
+to μSBSs.},
+booktitle = {Proceedings of the 27th International Workshop on Software Measurement and 12th International Conference on Software Process and Product Measurement},
+pages = {107–115},
+numpages = {9},
+keywords = {SOA, metrics, microservices, service-based systems, maintainability},
+location = {Gothenburg, Sweden},
+series = {IWSM Mensura '17}
+}
+
+@inproceedings{10.1145/3425269.3425270,
+author = {Araujo, Elena A. and Esp\'{\i}ndola, \'{A}lvaro M. and Garcia, Vinicius Cardoso and Terra, Ricardo},
+title = {Applying a Multi-Platform Architectural Conformance Solution in a Real-World Microservice-Based System},
+year = {2020},
+isbn = {9781450387545},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3425269.3425270},
+doi = {10.1145/3425269.3425270},
+abstract = {Microservice architectures are composed of a set of independent microservices that
+execute well-defined functionalities, allowing each one to be developed in different
+programming languages and data management technologies. The problem, however, is that
+such heterogeneity implies in a harder verification process of communication among
+microservices and the architectural designs of each microservice. Although the state-of-the-art
+provides several architectural conformance solutions, none formally restricts communications
+(e.g., over HTTP) between different systems. Even stable and industrial solutions---such
+as Kubernetes, Terraform, and Docker Compose---provide basic mechanisms to restrict
+communications between microservices. Thereupon, this paper proposes and evaluates
+a multi-platform architectural conformance solution for the microservice architecture.
+For this purpose, (i) we specify an architectural constraint language, called DCL+---adapted
+from the DCL (Dependency Constraint Language) language; (ii) we propose a multi-platform
+process that restricts the communication between the microservices and also verifies
+the architectural projects of each one of them; (iii) we develop DCL+check, a tool
+that implements the proposed solution; (iv) we apply our process in a medium-size
+real-world application composed of eleven microservices, developed in two different
+languages (JavaScript and Java). As result, we found 16 communication and 171 structural
+design violations. The communication violations occurred in general due to the lack
+of knowledge of the developers about the restrictions of communication among the modules
+of the orchestrator system and other microservices, as well as the evolution of two
+microservices.},
+booktitle = {Proceedings of the 14th Brazilian Symposium on Software Components, Architectures, and Reuse},
+pages = {41–50},
+numpages = {10},
+location = {Natal, Brazil},
+series = {SBCARS '20}
+}
+
+@inproceedings{10.1145/3297280.3297400,
+author = {Cardarelli, Mario and Iovino, Ludovico and Di Francesco, Paolo and Di Salle, Amleto and Malavolta, Ivano and Lago, Patricia},
+title = {An Extensible Data-Driven Approach for Evaluating the Quality of Microservice Architectures},
+year = {2019},
+isbn = {9781450359337},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3297280.3297400},
+doi = {10.1145/3297280.3297400},
+abstract = {Microservice architecture (MSA) is defined as an architectural style where the software
+system is developed as a suite of small services, each running in its own process
+and communicating with lightweight mechanisms. The benefits of MSA are many, ranging
+from an increase in development productivity, to better business-IT alignment, agility,
+scalability, and technology flexibility. The high degree of microservices distribution
+and decoupling is, however, imposing a number of relevant challenges from an architectural
+perspective. In this context, measuring, controlling, and keeping a satisfactory level
+of quality of the system architecture is of paramount importance.In this paper we
+propose an approach for the specification, aggregation, and evaluation of software
+quality attributes for the architecture of microservice-based systems. The proposed
+approach allows developers to (i) produce architecture models of the system, either
+manually or automatically via recovering techniques, (ii) contribute to an ecosystem
+of well-specified and automatically-computable software quality attributes for MSAs,
+and (iii) continuously measure and evaluate the architecture of their systems by (re-)using
+the software quality attributes defined in the ecosystem. The approach is implemented
+by using Model-Driven Engineering techniques.The current implementation of the approach
+has been validated by assessing the maintainability of a third-party, publicly available
+benchmark system.},
+booktitle = {Proceedings of the 34th ACM/SIGAPP Symposium on Applied Computing},
+pages = {1225–1234},
+numpages = {10},
+keywords = {microservices, architecture recovery, software quality, model-driven},
+location = {Limassol, Cyprus},
+series = {SAC '19}
+}
+
+@inproceedings{10.1145/3344948.3344961,
+author = {Klinaku, Floriment and Bilgery, Dominik and Becker, Steffen},
+title = {The Applicability of Palladio for Assessing the Quality of Cloud-Based Microservice Architectures},
+year = {2019},
+isbn = {9781450371421},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3344948.3344961},
+doi = {10.1145/3344948.3344961},
+abstract = {When adopting microservices, software architects have to make several design decisions
+which impact the quality of the application in terms of scalability, elasticity and
+cost-efficiency. A prominent model-driven architectural simulator that aids software
+architects in analysing and predicting the quality of their architecture is Palladio.
+There is active work on extending Palladio to support new needs, however, there is
+lack of evidence for its applicability in the context of microservice architectures.
+Therefore, we conduct a case study at a partner company where we apply Palladio to
+analyse the performance as well as to assess scalability, elasticity and cost-efficiency
+aspects of a cloud-based microservice application. In this work, we highlight some
+of the results which show that Palladio is able to predict the application performance
+with a sufficient accuracy. However, when assessing scalability, elasticity and cost-efficiency
+the applicability of Palladio comes with several workarounds and not automated for
+all the chosen scenarios.},
+booktitle = {Proceedings of the 13th European Conference on Software Architecture - Volume 2},
+pages = {34–37},
+numpages = {4},
+keywords = {microservices, cloud, model-driven architecture simulation},
+location = {Paris, France},
+series = {ECSA '19}
+}
+
+@inproceedings{10.1145/3291940.3291969,
+author = {Chen, Zhongheng and Ji, Fei and Yu, Hua and Guan, Quansheng and Chen, Fangjiong},
+title = {Protocol Emulation Platform Based on Microservice Architecture for Underwater Acoustic Networks},
+year = {2018},
+isbn = {9781450361934},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3291940.3291969},
+doi = {10.1145/3291940.3291969},
+abstract = {As use of underwater applications increases, simulation studies on underwater acoustic
+networks (UAN) have also increasingly appeared. At present, the commonly used network
+simulation platforms are NS2 and NS3, or are extended from them. These simualation
+platforms require users to have rich experience in C++ programming because they integrate
+many complicated APIs, and the configuration process is cumbersome. Without further
+optimizing these existing emulation platforms from the software architecture, it is
+often impossible for the protocol researchers to completely focus on the logic implementation
+of the protocol without paying attention to the compilation and loading operation
+of the simulation software itself. In this paper, an UAN protocol emulation platform
+based on microservice architecture (MSA) is proposed. The microservices are independently
+developed and deployed to overcome the shortcomings of the traditional monolithic
+architecture for the development of software system. Using MSA, the protocols and
+functional modules are fully componentized, which is convenient for users to customize
+the UAN protocol stack, network behavior, and underlying physical devices. The proposed
+emulation platform can be deployed as a cloud-based server and provides users with
+services, such as simulation on demand, emulation in real time, monitoring and statistical
+analyzing, and other customizable extension functions. This operation mode is called
+emulation as a service (EaaS). A preliminary test has verified the feasibility of
+the whole framework and demonstrated that our implementation fulfills the main functions
+of this emulation platform.},
+booktitle = {Proceedings of the Thirteenth ACM International Conference on Underwater Networks &amp; Systems},
+articleno = {12},
+numpages = {8},
+keywords = {protocol emulation platform, message queue, microservice architecture, underwater acoustic networks},
+location = {Shenzhen, China},
+series = {WUWNet '18}
+}
+
+@inproceedings{10.1145/3460319.3464805,
+author = {Pan, Yicheng and Ma, Meng and Jiang, Xinrui and Wang, Ping},
+title = {Faster, Deeper, Easier: Crowdsourcing Diagnosis of Microservice Kernel Failure from User Space},
+year = {2021},
+isbn = {9781450384599},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3460319.3464805},
+doi = {10.1145/3460319.3464805},
+abstract = {With the widespread use of cloud-native architecture, increasing web applications
+(apps) choose to build on microservices. Simultaneously, troubleshooting becomes full
+of challenges owing to the high dynamics and complexity of anomaly propagation. Existing
+diagnostic methods rely heavily on monitoring metrics collected from the kernel side
+of microservice systems. Without a comprehensive monitoring infrastructure, application
+owners and even cloud operators cannot resort to these kernel-space solutions. This
+paper summarizes several insights on operating a top commercial cloud platform. Then,
+for the first time, we put forward the idea of user-space diagnosis for microservice
+kernel failures. To this end, we develop a crowdsourcing solution - DyCause, to resolve
+the asymmetric diagnostic information problem. DyCause deploys on the application
+side in a distributed manner. Through lightweight API log sharing, apps collect the
+operational status of kernel services collaboratively and initiate diagnosis on demand.
+Deploying DyCause is fast and lightweight as we do not have any architectural and
+functional requirements for the kernel. To reveal more accurate correlations from
+asymmetric diagnostic information, we design a novel statistical algorithm that can
+efficiently discover the time-varying causalities between services. This algorithm
+also helps us build the temporal order of the anomaly propagation. Therefore, by using
+DyCause, we can obtain more in-depth and interpretable diagnostic clues with limited
+indicators. We apply and evaluate DyCause on both a simulated test-bed and a real-world
+cloud system. Experimental results verify that DyCause running in the user-space outperforms
+several state-of-the-art algorithms running in the kernel on accuracy. Besides, DyCause
+shows superior advantages in terms of algorithmic efficiency and data sensitivity.
+Simply put, DyCause produces a significantly better result than other baselines when
+analyzing much fewer or sparser metrics. To conclude, DyCause is faster to act, deeper
+in analysis, and easier to deploy.},
+booktitle = {Proceedings of the 30th ACM SIGSOFT International Symposium on Software Testing and Analysis},
+pages = {646–657},
+numpages = {12},
+keywords = {granger causal intervals, dynamic service dependency, root cause analysis, microservice system},
+location = {Virtual, Denmark},
+series = {ISSTA 2021}
+}
+
+@inproceedings{10.1145/3442381.3449905,
+author = {Yu, Guangba and Chen, Pengfei and Chen, Hongyang and Guan, Zijie and Huang, Zicheng and Jing, Linxiao and Weng, Tianjun and Sun, Xinmeng and Li, Xiaoyun},
+title = {MicroRank: End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments},
+year = {2021},
+isbn = {9781450383127},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3442381.3449905},
+doi = {10.1145/3442381.3449905},
+abstract = { With the advantages of flexible scalability and fast delivery, microservice has become
+a popular software architecture in the modern IT industry. However, the explosion
+in the number of service instances and complex dependencies make the troubleshooting
+extremely challenging in microservice environments. To help understand and troubleshoot
+a microservice system, the end-to-end tracing technology has been widely applied to
+capture the execution path of each request. Nevertheless, the tracing data are not
+fully leveraged by cloud and application providers when conducting latency issue localization
+in the microservice environment. This paper proposes a novel system, named MicroRank,
+which analyzes clues provided by normal and abnormal traces to locate root causes
+of latency issues. Once a latency issue is detected by the Anomaly Detector in MicroRank,
+the cause localization procedure is triggered. MicroRank first distinguishs which
+traces are abnormal. Then, MicroRank’s PageRank Scorer module uses the abnormal and
+normal trace information as its input and differentials the importance of different
+traces to extended spectrum techniques . Finally, the spectrum techniques can calculate
+the ranking list based on the weighted spectrum information from PageRank Scorer to
+locate root causes more effectively. The experimental evaluations on a widely-used
+open-source system and a production system show that MicroRank achieves excellent
+results not only in one root cause situation but also in two issues that happen at
+the same time. Moreover, MicroRank makes 6% to 22% improvement in recall in localizing
+root causes compared to current state-of-the-art methods.},
+booktitle = {Proceedings of the Web Conference 2021},
+pages = {3087–3098},
+numpages = {12},
+keywords = {Microservice, spectrum analysis, root cause localization, end-to-end tracing, PageRank},
+location = {Ljubljana, Slovenia},
+series = {WWW '21}
+}
+
+@inproceedings{10.1145/3129790.3129816,
+author = {Bogner, Justus and Wagner, Stefan and Zimmermann, Alfred},
+title = {Towards a Practical Maintainability Quality Model for Service-and Microservice-Based Systems},
+year = {2017},
+isbn = {9781450352178},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3129790.3129816},
+doi = {10.1145/3129790.3129816},
+abstract = {Although current literature mentions a lot of different metrics related to the maintainability
+of Service-based Systems (SBSs), there is no comprehensive quality model (QM) with
+automatic evaluation and practical focus. To fill this gap, we propose a Maintainability
+Model for Services (MM4S), a layered maintainability QM consisting of Service Properties
+(SPs) related with automatically collectable Service Metrics (SMs). This research
+artifact created within an ongoing Design Science Research (DSR) project is the first
+version ready for detailed evaluation and critical feedback. The goal of MM4S is to
+serve as a simple and practical tool for basic maintainability estimation and control
+in the context of SBSs and their specialization Microservice-based Systems (μSBSs).},
+booktitle = {Proceedings of the 11th European Conference on Software Architecture: Companion Proceedings},
+pages = {195–198},
+numpages = {4},
+keywords = {microservices, metrics, SOA, maintainability, service-based systems, quality model},
+location = {Canterbury, United Kingdom},
+series = {ECSA '17}
+}
+
+@inproceedings{10.1145/3338906.3338961,
+author = {Zhou, Xiang and Peng, Xin and Xie, Tao and Sun, Jun and Ji, Chao and Liu, Dewei and Xiang, Qilin and He, Chuan},
+title = {Latent Error Prediction and Fault Localization for Microservice Applications by Learning from System Trace Logs},
+year = {2019},
+isbn = {9781450355728},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3338906.3338961},
+doi = {10.1145/3338906.3338961},
+abstract = {In the production environment, a large part of microservice failures are related to
+the complex and dynamic interactions and runtime environments, such as those related
+to multiple instances, environmental configurations, and asynchronous interactions
+of microservices. Due to the complexity and dynamism of these failures, it is often
+hard to reproduce and diagnose them in testing environments. It is desirable yet still
+challenging that these failures can be detected and the faults can be located at runtime
+of the production environment to allow developers to resolve them efficiently. To
+address this challenge, in this paper, we propose MEPFL, an approach of latent error
+prediction and fault localization for microservice applications by learning from system
+trace logs. Based on a set of features defined on the system trace logs, MEPFL trains
+prediction models at both the trace level and the microservice level using the system
+trace logs collected from automatic executions of the target application and its faulty
+versions produced by fault injection. The prediction models thus can be used in the
+production environment to predict latent errors, faulty microservices, and fault types
+for trace instances captured at runtime. We implement MEPFL based on the infrastructure
+systems of container orchestrator and service mesh, and conduct a series of experimental
+studies with two opensource microservice applications (one of them being the largest
+open-source microservice application to our best knowledge). The results indicate
+that MEPFL can achieve high accuracy in intraapplication prediction of latent errors,
+faulty microservices, and fault types, and outperforms a state-of-the-art approach
+of failure diagnosis for distributed systems. The results also show that MEPFL can
+effectively predict latent errors caused by real-world fault cases.},
+booktitle = {Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+pages = {683–694},
+numpages = {12},
+keywords = {microservices, machine learning, fault localization, error prediction, tracing, debugging},
+location = {Tallinn, Estonia},
+series = {ESEC/FSE 2019}
+}
+
+@inproceedings{10.1145/3368089.3417933,
+author = {Kalia, Anup K. and Xiao, Jin and Lin, Chen and Sinha, Saurabh and Rofrano, John and Vukovic, Maja and Banerjee, Debasish},
+title = {Mono2Micro: An AI-Based Toolchain for Evolving Monolithic Enterprise Applications to a Microservice Architecture},
+year = {2020},
+isbn = {9781450370431},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3368089.3417933},
+doi = {10.1145/3368089.3417933},
+abstract = {Mono2Micro is an AI-based toolchain that provides recommendations for decomposing
+legacy web applications into microservice partitions. Mono2Micro consists of a set
+of tools that collect static and runtime information from a monolithic application
+and process the information using an AI-based technique to generate recommendations
+for partitioning the application classes. Each partition represents a candidate microservice
+or a grouping of classes with similar business functionalities. Mono2Micro takes a
+temporo-spatial clustering approach to compute meaningful and explainable partitions.
+It generates two types of partition recommendations. First, it computes business-logic-seams-based
+partitions that represent a desired encapsulation of business functionalities. However,
+such a recommendation may cut across data dependencies between classes, accommodating
+which could require significant application updates. To address this, Mono2Micro computes
+natural-seams-based partitions, which respect data dependencies. We describe the set
+of tools that comprise Mono2Micro and illustrate them using a well-known open-source
+JEE application.},
+booktitle = {Proceedings of the 28th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+pages = {1606–1610},
+numpages = {5},
+keywords = {software modularization, clustering, microservices, dynamic analysis},
+location = {Virtual Event, USA},
+series = {ESEC/FSE 2020}
+}
+
+@inproceedings{10.1109/CCGrid.2016.37,
+author = {Villamizar, Mario and Garc\'{e}s, Oscar and Ochoa, Lina and Castro, Harold and Salamanca, Lorena and Verano, Mauricio and Casallas, Rubby and Gil, Santiago and Valencia, Carlos and Zambrano, Angee and Lang, Mery},
+title = {Infrastructure Cost Comparison of Running Web Applications in the Cloud Using AWS Lambda and Monolithic and Microservice Architectures},
+year = {2016},
+isbn = {9781509024520},
+publisher = {IEEE Press},
+url = {https://doi.org/10.1109/CCGrid.2016.37},
+doi = {10.1109/CCGrid.2016.37},
+abstract = {Large Internet companies like Amazon, Netflix, and LinkedIn are using the microservice
+architecture pattern to deploy large applications in the cloud as a set of small services
+that can be developed, tested, deployed, scaled, operated and upgraded independently.
+However, aside from gaining agility, independent development, and scalability, infrastructure
+costs are a major concern for companies adopting this pattern. This paper presents
+a cost comparison of a web application developed and deployed using the same scalable
+scenarios with three different approaches: 1) a monolithic architecture, 2) a microservice
+architecture operated by the cloud customer, and 3) a microservice architecture operated
+by the cloud provider. Test results show that microservices can help reduce infrastructure
+costs in comparison to standard monolithic architectures. Moreover, the use of services
+specifically designed to deploy and scale microservices reduces infrastructure costs
+by 70% or more. Lastly, we also describe the challenges we faced while implementing
+and deploying microservice applications.1},
+booktitle = {Proceedings of the 16th IEEE/ACM International Symposium on Cluster, Cloud, and Grid Computing},
+pages = {179–182},
+numpages = {4},
+keywords = {software engineering, microservices, service oriented architectures, AWS lambda, cloud computing, software architecture, Amazon web services, scalable applications, microservice architecture},
+location = {Cartagena, Columbia},
+series = {CCGRID '16}
+}
+
+@inproceedings{10.1145/3411564.3411630,
+author = {Thalheimer, J\'{e}ferson Miguel and Filho, Aluizio Haendchen and Briks, Fabio Julio Pereira and Ribeiro, Rafael Castaneda and Concatto, Fernando and Viecelli, Ang\'{e}lica Karize},
+title = {A Microservice-Driven Collaborative Agent in Virtual Learning Environments: A Role Model for a Tracing Agent},
+year = {2020},
+isbn = {9781450388733},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3411564.3411630},
+doi = {10.1145/3411564.3411630},
+abstract = { Currently, distance learning comprises almost half of students enrolled in undergraduate
+courses in Brazil. However, the dropout rate of this modality is over 50%, and only
+22% of students complete the courses [27]. Despite technological advances and good
+acceptance of this modality, research indicates that the lack of involvement in a
+virtual community can lead to feelings of loneliness, low self-esteem, isolation and
+desmotivation. There is evidence that these feelings are among the main factors responsible
+for the low performance and high evasion rate. Virtual Learning Environments (VLE)
+handles a large volume of student interaction data. In this context, it is important
+to create mechanisms to maintain and manage a data structure to facilitate the processes
+of transforming data into information and knowledge. This paper aims to present a
+tracing agent responsible for maintaining and managing the data structure in VLE.
+The agent acts in the context of a microservice-oriented multi-agent system, interacting
+and collaborating with other agents in order to improve interaction and decision-making
+processes. This work becomes original and at the same time innovative, presenting
+an unprecedented combination of technologies and techniques in the context of VLEs.},
+booktitle = {XVI Brazilian Symposium on Information Systems},
+articleno = {21},
+numpages = {8},
+keywords = {Tracing Agent, Multiagent System, Virtual Learning Environment},
+location = {S\~{a}o Bernardo do Campo, Brazil},
+series = {SBSI'20}
+}
+
+@inproceedings{10.1145/3308558.3313653,
+author = {Shan, Huasong and Chen, Yuan and Liu, Haifeng and Zhang, Yunpeng and Xiao, Xiao and He, Xiaofeng and Li, Min and Ding, Wei},
+title = {??-Diagnosis: Unsupervised and Real-Time Diagnosis of Small- Window Long-Tail Latency in Large-Scale Microservice Platforms},
+year = {2019},
+isbn = {9781450366748},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3308558.3313653},
+doi = {10.1145/3308558.3313653},
+abstract = {Microservice architectures and container technologies are broadly adopted by giant
+internet companies to support their web services, which typically have a strict service-level
+objective (SLO), tail latency, rather than average latency. However, diagnosing SLO
+violations, e.g., long tail latency problem, is non-trivial for large-scale web applications
+in shared microservice platforms due to million-level operational data and complex
+operational environments. We identify a new type of tail latency problem for web services,
+small-window long-tail latency (SWLT), which is typically aggregated during a small
+statistical window (e.g., 1-minute or 1-second). We observe SWLT usually occurs in
+a small number of containers in microservice clusters and sharply shifts among different
+containers at different time points. To diagnose root-causes of SWLT, we propose an
+unsupervised and low-cost diagnosis algorithm-?-Diagnosis, using two-sample test algorithm
+and ?-statistics for measuring similarity of time series to identify root-cause metrics
+from millions of metrics. We implement and deploy a real-time diagnosis system in
+our real-production microservice platforms. The evaluation using real web application
+datasets demonstrates that ?-Diagnosis can identify all the actual root-causes at
+runtime and significantly reduce the candidate problem space, outperforming other
+time-series distance based root-cause analysis algorithms.},
+booktitle = {The World Wide Web Conference},
+pages = {3215–3222},
+numpages = {8},
+keywords = {time series similarity, Root-cause analysis, tail latency},
+location = {San Francisco, CA, USA},
+series = {WWW '19}
+}
+
+@inproceedings{10.1145/3415958.3433072,
+author = {Shahoud, Shadi and Khalloof, Hatem and Winter, Moritz and Duepmeier, Clemens and Hagenmeyer, Veit},
+title = {A Meta Learning Approach for Automating Model Selection in Big Data Environments Using Microservice and Container Virtualization Technologies},
+year = {2020},
+isbn = {9781450381154},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3415958.3433072},
+doi = {10.1145/3415958.3433072},
+abstract = {For a given specific machine learning task, very often several machine learning algorithms
+and their right configurations are tested in a trial-and-error approach, until an
+adequate solution is found. This wastes human resources for constructing multiple
+models, requires a data analytics expert and is time-consuming, since a variety of
+learning algorithms are proposed in literature and the non-expert users do not know
+which one to use in order to obtain good performance results. Meta learning addresses
+these problems and supports non-expert users by recommending a promising learning
+algorithm based on meta features computed from a given dataset. In the present paper,
+a new generic microservice-based framework for realizing the concept of meta learning
+in Big Data environments is introduced. This framework makes use of a powerful Big
+Data software stack, container visualization, modern web technologies and a microservice
+architecture for a fully manageable and highly scalable solution. In this demonstration
+and for evaluation purpose, time series model selection is taken into account. The
+performance and usability of the new framework is evaluated on state-of-the-art machine
+learning algorithms for time series forecasting: it is shown that the proposed microservice-based
+meta learning framework introduces an excellent performance in assigning the adequate
+forecasting model for the chosen time series datasets. Moreover, the recommendation
+of the most appropriate forecasting model results in a well acceptable low overhead
+demonstrating that the framework can provide an efficient approach to solve the problem
+of model selection in context of Big Data.},
+booktitle = {Proceedings of the 12th International Conference on Management of Digital EcoSystems},
+pages = {84–91},
+numpages = {8},
+keywords = {Big Data, Meta Learning, Web-based Applications, Machine Learning, Microservice},
+location = {Virtual Event, United Arab Emirates},
+series = {MEDES '20}
+}
+
+@inproceedings{10.1145/3241403.3241406,
+author = {Sorgalla, Jonas and Wizenty, Philip and Rademacher, Florian and Sachweh, Sabine and Z\"{u}ndorf, Albert},
+title = {AjiL: Enabling Model-Driven Microservice Development},
+year = {2018},
+isbn = {9781450364836},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3241403.3241406},
+doi = {10.1145/3241403.3241406},
+abstract = {The development of microservice-based architectures typically involves tedious development
+tasks, e.g., to configure the necessary infrastructural components or to establish
+the interface-based communication between services. Therefore, this paper presents
+AjiL, a tool which aims to ease the necessary development effort with the means of
+graphical modeling and code generation. It comprises three major components: based
+on the lightweight Aji Modeling Language, the Aji Editor can create microservice system
+diagrams, which can be used by the Aji Spring Cloud Generator to generate system foundations.},
+booktitle = {Proceedings of the 12th European Conference on Software Architecture: Companion Proceedings},
+articleno = {1},
+numpages = {4},
+keywords = {microservice architecture, development tool, model-driven engineering, graphical domain-specific modeling language},
+location = {Madrid, Spain},
+series = {ECSA '18}
+}
+
+@inproceedings{10.1145/3297662.3365807,
+author = {Shahoud, Shadi and Gunnarsdottir, Sonja and Khalloof, Hatem and Duepmeier, Clemens and Hagenmeyer, Veit},
+title = {Facilitating and Managing Machine Learning and Data Analysis Tasks in Big Data Environments Using Web and Microservice Technologies},
+year = {2019},
+isbn = {9781450362382},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3297662.3365807},
+doi = {10.1145/3297662.3365807},
+abstract = {Driven by the great advance of machine learning in a wide range of application areas,
+the need for developing machine learning frameworks effectively as well as easily
+usable by novices increased dramatically. Furthermore, building machine learning models
+in the context of big data environments still represents a great challenge. In the
+present paper, we tackle these challenges by introducing a new generic framework for
+efficiently facilitating the training, testing, managing, storing, and retrieving
+of machine learning models in the context of big data. The framework makes use of
+a powerful big data software stack and a microservice architecture for a fully manageable
+and highly scalable solution. A highly configurable user interface is introduced giving
+the user the ability to easily train, test, and manage machine learning models. Moreover,
+it automatically indexes models and allows flexible exploration of them in the visual
+interface. The performance of the new framework is evaluated on state-of-the-arts
+machine learning algorithms: it is shown that storing and retrieving machine learning
+models as well as a respective acceptable low overhead demonstrate an efficient approach
+to facilitate machine learning in big data environments.},
+booktitle = {Proceedings of the 11th International Conference on Management of Digital EcoSystems},
+pages = {80–87},
+numpages = {8},
+keywords = {Web-based Applications, Big Data, Data Analytic, Microservice, Machine Learning},
+location = {Limassol, Cyprus},
+series = {MEDES '19}
+}
+
+@inproceedings{10.1145/3129790.3129821,
+author = {Wizenty, Philip and Sorgalla, Jonas and Rademacher, Florian and Sachweh, Sabine},
+title = {MAGMA: Build Management-Based Generation of Microservice Infrastructures},
+year = {2017},
+isbn = {9781450352178},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3129790.3129821},
+doi = {10.1145/3129790.3129821},
+abstract = {Microservice architectures typically integrate a variety of loosely coupled infrastructure
+components. Due to technology heterogeneity, configuring them to provide the basis
+for a runnable service system might be time-consuming. Therefore, this paper presents
+MAGMA, a tool based on the Maven build management system that aims at accelerating
+the development of Microservice architectures by generating pre-configured, runnable
+systems. MAGMA enables the selective generation of infrastructure components like
+API Gateways and Service Discoveries, as well as the extension of existing Microservice
+architectures with customizable service templates and basic functional services.},
+booktitle = {Proceedings of the 11th European Conference on Software Architecture: Companion Proceedings},
+pages = {61–65},
+numpages = {5},
+keywords = {microservices, infrastructure generation, build management},
+location = {Canterbury, United Kingdom},
+series = {ECSA '17}
+}
+
+@inproceedings{10.1145/3307650.3322227,
+author = {Sriraman, Akshitha and Dhanotia, Abhishek and Wenisch, Thomas F.},
+title = {SoftSKU: Optimizing Server Architectures for Microservice Diversity @scale},
+year = {2019},
+isbn = {9781450366694},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3307650.3322227},
+doi = {10.1145/3307650.3322227},
+abstract = {The variety and complexity of microservices in warehouse-scale data centers has grown
+precipitously over the last few years to support a growing user base and an evolving
+product portfolio. Despite accelerating microservice diversity, there is a strong
+requirement to limit diversity in underlying server hardware to maintain hardware
+resource fungibility, preserve procurement economies of scale, and curb qualification/test
+overheads. As such, there is an urgent need for strategies that enable limited server
+CPU architectures (a.k.a "SKUs") to provide performance and energy efficiency over
+diverse microservices. To this end, we first undertake a comprehensive characterization
+of the top seven microservices that run on the compute-optimized data center fleet
+at Facebook.Our characterization reveals profound diversity in OS and I/O interaction,
+cache misses, memory bandwidth utilization, instruction mix, and CPU stall behavior.
+Whereas customizing a CPU SKU for each microservice might be beneficial, it is prohibitive.
+Instead, we argue for "soft SKUs", wherein we exploit coarse-grain (e.g., boot time)
+configuration knobs to tune the platform for a particular microservice. We develop
+a tool, μSKU, that automates search over a soft-SKU design space using A/B testing
+in production and demonstrate how it can obtain statistically significant gains (up
+to 7.2% and 4.5% performance improvement over stock and production servers, respectively)
+with no additional hardware requirements.},
+booktitle = {Proceedings of the 46th International Symposium on Computer Architecture},
+pages = {513–526},
+numpages = {14},
+keywords = {resource fungibility, microservice, soft SKU},
+location = {Phoenix, Arizona},
+series = {ISCA '19}
+}
+
+@inproceedings{10.1145/3185768.3186296,
+author = {Klinaku, Floriment and Frank, Markus and Becker, Steffen},
+title = {CAUS: An Elasticity Controller for a Containerized Microservice},
+year = {2018},
+isbn = {9781450356299},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3185768.3186296},
+doi = {10.1145/3185768.3186296},
+abstract = {Recent trends towards microservice architectures and containers as a deployment unit
+raise the need for novel adaptation processes to enable elasticity for containerized
+microservices. Microservices facing unpredictable workloads need to react fast and
+match the supply as closely as possible to the demand in order to guarantee quality
+objectives and to keep costs at a minimum. Current state-of-the-art approaches, that
+react on conditions which reflect the need to scale, are either slow or lack precision
+in supplying the demand with the adequate capacity. Therefore, we propose a novel
+heuristic adaptation process which enables elasticity for a particular containerized
+microservice. The proposed method consists of two mechanisms that complement each
+other. One part reacts to changes in load intensity by scaling container instances
+depending on their processing capability. The other mechanism manages additional containers
+as a buffer to handle unpredictable workload changes. We evaluate the proposed adaptation
+process and discuss its effectiveness and feasibility in controlling autonomously
+the number of replicated containers.},
+booktitle = {Companion of the 2018 ACM/SPEC International Conference on Performance Engineering},
+pages = {93–98},
+numpages = {6},
+keywords = {containers, cloud-computing, over-provisioning, horizontal-scaling, threshold-based, elasticity, extra-capacity},
+location = {Berlin, Germany},
+series = {ICPE '18}
+}
+
+@inproceedings{10.5555/3433701.3433804,
+author = {Hou, Xiaofeng and Li, Chao and Liu, Jiacheng and Zhang, Lu and Hu, Yang and Guo, Minyi},
+title = {ANT-Man: Towards Agile Power Management in the Microservice Era},
+year = {2020},
+isbn = {9781728199986},
+publisher = {IEEE Press},
+abstract = {The emerging trend of decomposing cloud applications into microservices has raised
+new questions about managing the performance/power trade-off of a datacenter at microsecond-scale.
+We introduce ANT-Man, an Auto, Native and Transparent power Management framework that
+can exploit fine-grained microservice variability for system efficiency. To achieve
+this, ANT-Man abstracts away two major sources of latency overhead in traditional
+hierarchical power management frameworks. First, ANT-Man proposes an auto power budgeting
+scheme for reducing the power coordination latency at the datacenter level. It can
+proactively determine the power budget tailored to each individual microservice. Second,
+ANT-Man proposes a native and transparent power control scheme to overcome the power
+configuration latency for each microservice. It enables super-fast power budget enforcement
+with nanosecond-scale performance scaling. Extensive experiments on our prototyped
+system show that ANT-Man could slash power consumption by 7.8~43.5%, and in the meantime
+reduce the 95th tail latency by 9.7~12.5% compared to existing techniques.},
+booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},
+articleno = {78},
+numpages = {14},
+keywords = {variability, power management, microservice},
+location = {Atlanta, Georgia},
+series = {SC '20}
+}
+
+@inproceedings{10.1145/3267955.3267961,
+author = {Marchal, Xavier and Cholez, Thibault and Festor, Olivier},
+title = {<i>μ</i>NDN: An Orchestrated Microservice Architecture for Named Data Networking},
+year = {2018},
+isbn = {9781450359597},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3267955.3267961},
+doi = {10.1145/3267955.3267961},
+abstract = {As an extension of Network Function Virtualization, microservice architectures are
+a promising way to design future network services. At the same time, Information-Centric
+Networking architectures like NDN would benefit from this paradigm to offer more design
+choices for the network architect while facilitating the deployment and the operation
+of the network. We propose μNDN, an orchestrated suite of microservices as an alternative
+way to implement NDN forwarding and support functions. We describe seven essential
+micro-services we developed, explain the design choices behind our solution and how
+it is orchestrated. We evaluate each service in isolation and the entire microservice
+architecture through two realistic scenarios to show its ability to react and mitigate
+some performance and security issues thanks to the orchestration. Our results show
+that μNDN can replace a monolithic NDN forwarder while being more powerful and scalable.},
+booktitle = {Proceedings of the 5th ACM Conference on Information-Centric Networking},
+pages = {12–23},
+numpages = {12},
+keywords = {information-centric networking, network functions virtualization, software-defined networks, microservice architecture, network management},
+location = {Boston, Massachusetts},
+series = {ICN '18}
+}
+
+@inproceedings{10.5555/3432601.3432616,
+author = {Podolskiy, Vladimir and Patrou, Maria and Patros, Panos and Gerndt, Michael and Kent, Kenneth B.},
+title = {The Weakest Link: Revealing and Modeling the Architectural Patterns of Microservice Applications},
+year = {2020},
+publisher = {IBM Corp.},
+address = {USA},
+abstract = {Cloud microservice applications comprise interconnected services packed into containers.
+Such applications generate complex communication patterns among their microservices.
+Studying such patterns can support assuring various quality attributes, such as autoscaling
+for satisfying performance, availability and scalability, or targeted penetration
+testing for satisfying security and correctness. We study the structure of containerized
+microservice applications via providing the methodology and the results of a structural
+graph-based analysis of 103 Docker Compose deployment files from open-sourced Github
+repositories. Our findings indicate the dominance of a power-law distribution of microservice
+interconnections. Further analysis highlights the suitability of the Barab\'{a}si-Albert
+model for generating large random graphs that model the architecture of real microservice
+applications. The exhibited structures and their usage for engineering microservice
+applications are discussed.},
+booktitle = {Proceedings of the 30th Annual International Conference on Computer Science and Software Engineering},
+pages = {113–122},
+numpages = {10},
+keywords = {application topology, software vulnerability, microservice, cloud-native application},
+location = {Toronto, Ontario, Canada},
+series = {CASCON '20}
+}
+
+@inproceedings{10.1145/3382025.3414942,
+author = {Assun\c{c}\~{a}o, Wesley K. G. and Kr\"{u}ger, Jacob and Mendon\c{c}a, Willian D. F.},
+title = {Variability Management Meets Microservices: Six Challenges of Re-Engineering Microservice-Based Webshops},
+year = {2020},
+isbn = {9781450375696},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3382025.3414942},
+doi = {10.1145/3382025.3414942},
+abstract = {A microservice implements a small unit of functionality that it provides through a
+network using lightweight protocols. So, microservices can be combined to fulfill
+tasks and implement features of a larger software system---resembling a variability
+mechanism in the context of a software product line (SPL). Microservices and SPLs
+have similar goals, namely facilitating reuse and customizing, but they are usually
+employed in different contexts. Any developer who has access to the network can provide
+a microservice for any task, while SPLs are usually intended to implement features
+of a specific domain. Due to their different concepts, using microservices to implement
+an SPL or adopting SPL practices (e.g., variability management) for microservices
+is a challenging cross-area research problem. However, both techniques can complement
+each other, and thus tackling this problem promises benefits for organizations that
+employ either technique. In this paper, we reason on the importance of advancing in
+this direction, and sketch six concrete challenges to initiate research, namely (1)
+feature identification, (2) variability modeling, (3) variable microservice architectures,
+(4) interchangeability, (5) deep customization, and (6) re-engineering an SPL. We
+intend these challenges to serve as a starting point for future research in this cross-area
+research direction---avoiding that the concepts of one area are reinvented in the
+other.},
+booktitle = {Proceedings of the 24th ACM Conference on Systems and Software Product Line: Volume A - Volume A},
+articleno = {22},
+numpages = {6},
+keywords = {re-engineering, cloud computing, software product line, variability management, microservices},
+location = {Montreal, Quebec, Canada},
+series = {SPLC '20}
+}
+
+@inproceedings{10.1145/3387940.3391501,
+author = {Lin, Chun-Ting and Ma, Shang-Pin and Huang, Yu-Wen},
+title = {MSABot: A Chatbot Framework for Assisting in the Development and Operation of Microservice-Based Systems},
+year = {2020},
+isbn = {9781450379632},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3387940.3391501},
+doi = {10.1145/3387940.3391501},
+abstract = {Microservice architecture (MSA) has become a popular architectural style. The main
+advantages of MSA include modularization and scalability. However, the development
+and maintenance of Microservice-based systems are more complex than traditional monolithic
+architecture. This research plans to develop a novel Chatbot system, referred to as
+MSABot (Microservice Architecture Bot), to assist in the development and operation
+of Microservice-based systems by using Chatbots. MSABot integrates a variety of tools
+to allow users to understand the current status of Microservice development and operation,
+and to push the information of system errors or risks to users. For the operators
+who take over the maintenance of Microservices, MSABot also allows them to quickly
+understand the overall service architecture and the operation status of each service.
+Besides, we invited multiple users who are familiar with the technology of Microservice
+or ChapOps to evaluate MSABot. The results of the survey show that more than 90% of
+the respondents believe that MSABot can adequately support the development and maintenance
+of Microservice-based systems.},
+booktitle = {Proceedings of the IEEE/ACM 42nd International Conference on Software Engineering Workshops},
+pages = {36–40},
+numpages = {5},
+keywords = {Hubot, Rasa, Microservice, ChatOps, Chatbot, Microservice Architecture},
+location = {Seoul, Republic of Korea},
+series = {ICSEW'20}
+}
+
+@inproceedings{10.1145/3470482.3479628,
+author = {Silvestre, Vit\'{o}ria R. N. and Gomes, Francisco A. A. and C\^{a}ndido, Adriano L. and Fernandes, Filipe and Rocha, Lincoln S. and Trinta, Fernando A. M.},
+title = {DOP-MS: A Microservice-Based Data Offloading Service with Support for Data Anonymisation},
+year = {2021},
+isbn = {9781450386098},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3470482.3479628},
+doi = {10.1145/3470482.3479628},
+abstract = {Due to mobile devices' growing presence in our daily routine, mobile applications
+are becoming increasingly complex. They require more powerful processing capability
+and more extensive data storage, which characterizes a challenge when computational
+constraints of these devices are taken into account. Several software infrastructures
+proposed to help the development of mobile applications with data offloading features.
+However, they lack essential features for data offloading, such as configurable data
+synchronization policy models, privacy mechanisms for the offloaded data, and scalability
+and performance analyses. This work presents DOP, a solution to assist the development
+of mobile applications that use data migration, including contextual data, from mobile
+devices to a remote environment, based on a microservice architecture. The data offloading
+technique enables data migration into a remote environment, allowing (i) storage savings
+on the mobile device and (ii) sharing data among users. The experiments on DOP showed
+benefits in storage savings on mobile devices and new possibilities for inferring
+situations based on shared data from multiple users.},
+booktitle = {Proceedings of the Brazilian Symposium on Multimedia and the Web},
+pages = {145–152},
+numpages = {8},
+keywords = {Mobile Cloud Computing, Data Offloading, Microservices},
+location = {Belo Horizonte, Minas Gerais, Brazil},
+series = {WebMedia '21}
+}
+
+@inproceedings{10.1145/3194164.3194166,
+author = {Bogner, Justus and Fritzsch, Jonas and Wagner, Stefan and Zimmermann, Alfred},
+title = {Limiting Technical Debt with Maintainability Assurance: An Industry Survey on Used Techniques and Differences with Service- and Microservice-Based Systems},
+year = {2018},
+isbn = {9781450357135},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3194164.3194166},
+doi = {10.1145/3194164.3194166},
+abstract = {Maintainability assurance techniques are used to control this quality attribute and
+limit the accumulation of potentially unknown technical debt. Since the industry state
+of practice and especially the handling of Service- and Microservice-Based Systems
+in this regard are not well covered in scientific literature, we created a survey
+to gather evidence for a) used processes, tools, and metrics in the industry, b) maintainability-related
+treatment of systems based on service-orientation, and c) influences on developer
+satisfaction w.r.t. maintainability. 60 software professionals responded to our online
+questionnaire. The results indicate that using explicit and systematic techniques
+has benefits for maintainability. The more sophisticated the applied methods the more
+satisfied participants were with the maintainability of their software while no link
+to a hindrance in productivity could be established. Other important findings were
+the absence of architecture-level evolvability control mechanisms as well as a significant
+neglect of service-oriented particularities for quality assurance. The results suggest
+that industry has to improve its quality control in these regards to avoid problems
+with long-living service-based software systems.},
+booktitle = {Proceedings of the 2018 International Conference on Technical Debt},
+pages = {125–133},
+numpages = {9},
+keywords = {microservice-based systems, service-based systems, software quality control, survey, industry, maintainability},
+location = {Gothenburg, Sweden},
+series = {TechDebt '18}
+}
+
+@inproceedings{10.1145/2747470.2747474,
+author = {Toffetti, Giovanni and Brunner, Sandro and Bl\"{o}chlinger, Martin and Dudouet, Florian and Edmonds, Andrew},
+title = {An Architecture for Self-Managing Microservices},
+year = {2015},
+isbn = {9781450334761},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2747470.2747474},
+doi = {10.1145/2747470.2747474},
+abstract = {Running applications in the cloud efficiently requires much more than deploying software in virtual machines. Cloud applications have to be continuously managed: 1) to adjust their resources to the incoming load and 2) to face transient failures replicating and restarting components to provide resiliency on unreliable infrastructure. Continuous management monitors application and infrastructural metrics to provide automated and responsive reactions to failures (health management) and changing environmental conditions (auto-scaling) minimizing human intervention.In the current practice, management functionalities are provided as infrastructural or third party services. In both cases they are external to the application deployment. We claim that this approach has intrinsic limits, namely that separating management functionalities from the application prevents them from naturally scaling with the application and requires additional management code and human intervention. Moreover, using infrastructure provider services for management functionalities results in vendor lock-in effectively preventing cloud applications to adapt and run on the most effective cloud for the job.In this position paper we propose a novel architecture that enables scalable and resilient self-management of microservices applications on cloud.},
+booktitle = {Proceedings of the 1st International Workshop on Automated Incident Management in Cloud},
+pages = {19–24},
+numpages = {6},
+location = {Bordeaux, France},
+series = {AIMC '15}
+}

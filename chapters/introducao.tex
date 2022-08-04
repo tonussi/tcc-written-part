@@ -1,0 +1,110 @@
+\chapter{Introdução}
+\label{intro}
+
+% \ct{Sugiro ler a proposta do João e a monografia do Renan e seguir uma estrutura semelhante a deles. Na introdução você conta uma história, apresenta referências para as explicações e argumentos. Pense que o leitor que não entende do assunto terá uma ideia geral sobre o que você vai fazer. Abaixo eu comecei com uma frase, como pontapé inicial. Você pode aproveitar partes do texto que aparecem nas seções abaixo para compor o resto da introdução.
+% }
+
+% A nossa jornada começa no mundo de sistemas distribuídos, e temos como motivação aprender mais sobre a consistência forte dos dados nesses sistemas. Esses sistemas por sua vez exigem alguns requisitos mínimos, para poder desempenhar suas funcionalidades. Esses requisitos tem sido alvo de fornecedores de infraestrutura sob demanda, tais como: Amazon Web Services\footnote{Amazon Web Services: \url{https://aws.amazon.com/}}, Google Cloud\footnote{Google Cloud: \url{https://cloud.google.com/}}, dentre outras. Pois essas mesmas visam oferecer serviços distribuídos na nuvem, que recebem muitas requisições constantemente. Esses servidores executam em paralelo e de forma independente \cite{tanenbaum2015modern}.
+
+% Um requisito que se pode mencionar é, a necessidade de acordo entre as partes envolvidas, sendo essas partes sistemas computacionais distribuídos (os servidores).
+
+% A aplicação que executa em cada máquina do sistema distribuído, neste trabalho, é geralmente do tipo stateful. Pois há necessidade de manter a consistência de aplicações que mudam de estado, internamente.
+
+% Os usuários, acessando indiretamente esses servidores, há transparência. Isso quer dizer que, os usuários não precisam saber que existem múltiplas máquinas trabalhando para dar vazão para as requisições e, segundo, os usuários não precisam saber que existe um sistema encarregado de fazer a ordenação total de comandos.
+
+As arquiteturas de microsserviços têm recebido grande atenção para o desenvolvimento de aplicações distribuídas e vêm sendo amplamente adotadas, especialmente em provedores de computação em nuvem \cite{aguilera2020microsecond, netto2020incorporating, tai2016continuous, moghaddam2016simple, nguyen2020toward, gabbrielli2016self, toffetti2015architecture, oliveira2016evaluating}. Em particular, o desenvolvimento de serviços nessas arquiteturas com suporte de orquestradores de contêineres facilita o gerenciamento de escalabilidade, reaproveitamento de recursos e integração contínua \cite{ghofrani2018challenges}.
+
+%\odo{Apesar das facilidades oferecidas por orquestradores de contêineres, há desafios abertos relacionados à disponibilidade e garantia de consistência entre réplicas de microsserviços.}
+%Observamos que existem motivações para
+Observa-se uma tendência em implementar sistemas de replicação mais eficientes com microsserviços, visando 
+aliar a praticidade de desenvolvimento baseado em arquiteturas de microsserviços e consistência forte dos dados \cite{toffetti2015architecture}. 
+%Esses sistemas por sua vez exigem alguns requisitos mínimos, para poder desempenhar suas funcionalidades. 
+%Grandes fornecedores de infraestrutura sob demanda, tais como: Amazon Web Services\footnote{Amazon Web Services: \url{https://aws.amazon.com/}}, Google Cloud\footnote{Google Cloud: \url{https://cloud.google.com/}}, se beneficiam desses sistemas de replicação, que mantêm consistência forte \cite{toffetti2015architecture}. Pois essas mesmas visam a disponibilidade de seus servidores distribuídos na nuvem, que recebem muitas requisições constantemente. Esses servidores executam em paralelo e de forma independente \cite{tanenbaum2015modern}.
+%
+Apesar de orquestradores, como o Kubernetes, proverem mecanismos para replicação de
+%Sabemos que existem softwares de orquestração, que replicam 
+contêineres com muita facilidade, 
+%como o Kubernetes. Mas 
+não há garantia de que o estado de uma réplica seja mantido idêntico ao estado 
+%da outra réplica, 
+das demais réplicas,
+dado que as réplicas modificam seus estados internos independentemente. 
+Portanto, a
+%A 
+garantia de consistência fica por conta do desenvolvedor de software. 
+%Por isso pretendemos implementar um bom sistema de consenso entre as réplicas, para evitar problemas de divergências, de informação, entre as mesmas.
+
+
+
+
+Em um
+%Um 
+trabalho recente,
+\textcite{renan2021hermes}
+%\cite{renan2021hermes}, 
+apresentou uma prova de conceito
+%, bastante relacionado à essa 
+relacionando tolerância a falhas e a adoção de arquitetura de microsserviços, chamada Hermes. Trata-se de um ordenador de mensagens à frente de cada réplica de um sistema distribuído, com orquestração de contêineres.
+%, e tal abordagem foi baseada em arquitetura de microsserviços. 
+O serviço proposto utiliza 
+%Os 
+protocolos de consenso 
+%visam oferecer 
+para estabelecer um acordo uniforme entre as réplicas com respeito 
+a próxima requisição que deve ser executada. %a executar ou não uma ação que modificará seu estado interno \cite{hadzilacos-10.5555/866693}.
+Este serviço serve como um bloco de construção para prover ordenação de mensagens, onde cada réplica parte de um mesmo estado inicial, recebem as mesmas requisições de clientes e processam as requisições de forma determinística e em uma mesma ordem, garantindo que as réplicas estejam consistentes.
+% Apesar da solução se mostrar viável, ela
+% não apresenta bom desempenho e não oferece extensibilidade para que o usuário escolha qual protocolo usar na ordenação de mensagens
+Atualmente a utilização do serviço de ordenação proposto para a implementação de ordenação de mensagens permite apenas ordenação de mensagens sobre \textit{sockets} TCP.
+%ainda precisa de muitas otimizações para ser adotada na prática e aumentar a popularidade. 
+% requer aprimoramentos.
+%Então há espaços
+
+Dessa forma, o presente trabalho estende o trabalho de \textcite{renan2021hermes}. A ideia é manter um conjunto de microsserviços frente às réplicas da aplicação
+% , atuando
+% como ordenadores de mensagens, trabalhando coordenadamente
+%, essa técnica é também conhecida como 
+% para garantir ordenação total na entrega de mensagens às réplicas \cite{hadzilacos-10.5555/866693}.
+% Há espaço para
+e apresentar um novo tipo de protocolo de comunicação, no caso HTTP, para o Hermes. 
+%e enxergamos a possibilidade de incluir um novo
+% Há a 
+% possibilidade de inclusão de outros protocolos de consenso, como: Paxos \cite{lamport1998part}, Raft \cite{raft}, Calvin \cite{calvin-10.1145/2213836.2213838}, e CRDT \cite{demers1987epidemic}.
+% Existe espaço também para o uso de estratégias como ordenação em lotes, ou ordenação de identificadores apenas, ao invés de ordenar as mensagens inteiras.
+Esta abordagem pode ampliar a adoção de serviço de ordenação, contemplando
+% trazer novos tipos de experimentos relacionados a
+aplicações de terceiros que utilizam comunicação via HTTP.
+% Finalmente, também será necessário avaliar quais são as implicações de se usar um serviço de ordenação de mensagens HTTP.
+
+% O contexto da nossa pesquisa e desenvolvimento endereça o assunto de sistemas distribuídos de larga escala e o uso de arquitetura de microsserviços para implementar soluções de ordenação total dos comandos que chegam até os servidores distribuídos (réplicas). Esses comandos chegam até as réplicas, através de requisições, essa proposta propõe que melhoremos os mecanismos de ordenação automática com protocolos de consenso adequados.
+
+% Para situar melhor o leitor, esses comandos são comandos enviados pelos usuários que estão acessando o sistema distribuído.
+
+% O emprego de arquitetura de microsserviços em si oferece uma gama de vantagens, são elas: integração contínua, testes automatizados, implantação automatizada, ajuste de escalabilidade, agregar outros sistemas, gerenciamento de recursos, balanceamento de carga, dentre outras coisas.
+
+%O problema que estamos enfrentando exige técnica em replicação por máquinas de estados, ordenação total de eventos, difusão de mensagens (do inglês \textit{broadcast}) entre réplicas, orquestração de réplicas, Docker\footnote{Docker: \url{https://www.docker.com/}} contêiner, Kubernetes\footnote{Kubernetes: \url{https://kubernetes.io/}}, consenso entre réplicas, algoritmos de consenso, provas matemáticas que visam garantir tolerância a falhas, ou seja, uma vasta gama de assuntos interessantes.
+
+
+\section{Motivação}
+
+O presente trabalho visa explorar a extensibilidade do Hermes e fazer experimentações em um 
+\textit{cluster} real, estudando a implantação do Hermes. O trabalho de 
+\textcite{renan2021hermes} foi implementado em linguagem Go e o Hermes usa comunicação TCP. Contudo, o presente trabalho se motivou em adicionar a possibilidade do ordenador de mensagens se comunicar via HTTP, ampliando a possibilidade de aplicações se ligarem ao Hermes.
+
+\section{Objetivo}
+
+Apresentar uma implementação alternativa de comunicação em protocolo HTTP para o interceptador de mensagens Hermes \cite{renan2021hermes}.
+Dentre os objetivos específicos, pode-se citar:
+
+\begin{itemize}
+\item \textit{Meio de comunicação:} Implementar a interface de comunicação do Hermes para possibilitar requisições HTTP.
+
+\item \textit{Implementar aplicações de exemplo para testar a integração destas com o serviço de replicação:} Para este propósito, foram desenvolvidas aplicações como \textit{log} em disco.
+
+\item \textit{Avaliar a escalabilidade da implementação em protocolo HTTP:}
+Para isto foram feitas experimentações em ambiente real, extraindo métricas de análise de desempenho.
+\end{itemize}
+
+\section{Organização do trabalho}
+
+O presente trabalho está organizado da seguinte forma: o Capítulo \ref{cap:fundamentacao} apresenta a fundamentação teórica; o Capítulo \ref{cap:correlatos} apresenta os trabalhos correlatos; o Capítulo \ref{cap:hermes} apresenta o interceptador de mensagens Hermes; o Capítulo \ref{cap:http} apresenta a implementação do protocolo HTTP no Hermes; o Capítulo \ref{cap:experimentacao} apresenta a avaliação experimental; o Capítulo \ref{cap:conclusao} apresenta a conclusão do trabalho.

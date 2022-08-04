@@ -1,0 +1,33 @@
+\chapter{Conclusão}
+\label{cap:conclusao}
+
+A presente monografia apresentou uma forma de comunicação via HTTP para o interceptador e ordenador de mensagens, Hermes. Esta forma de comunicação permite que aplicações que trabalham com HTTP, possam ser replicadas. Os desenvolvedores podem focar na lógica de negócio da sua aplicação ou \gls{API}, sem se preocuparem com detalhes de ordenação. Este trabalho é também, um estudo sobre: a arquitetura geral do interceptador Hermes; técnicas de ordenação, orquestradores de contêineres, algoritmos de consenso e tópicos relacionados.
+
+O experimentos no Emulab mostraram detalhes sobre a implantação do Hermes, e como operar com ele à frente de uma aplicação feita em Python. Vale lembrar que o uso de orquestrador de contêineres é necessário para tornar operacional o Hermes. A aplicação Python salva as operações dos usuários em \textit{log} no disco. A partir das análises dos experimentos foi possível concluir que o Hermes obteve sobrecarga em relação ao sistema sem replicação.
+
+O uso de técnicas de ordenação de mensagens mostrou que um sistema se mantêm operacional a despeito de uma certa quantidade de falhas das réplicas do serviço, além de oferecer melhor escalabilidade ao serviço replicado. A implementação da interface \textit{communicator} em Go mostrou que protocolos de aplicação (\gls{HTTP}) podem ser integrados ao sistema de ordenação de mensagens. Os experimentos sem replicação mostram latências menores e mantêm vazões altas por mais pontos de experimentos.
+
+Os experimentos com o ordenador Hermes mostraram latências mais altas em relação ao sistema sem replicação. As leituras em arquivo de uma linha aleatória a cada requisição \textit{GET} fazem com que os gráficos mostrem que o servidor consegue responder em baixas latências até determinada implicação de carga, mas sobe abruptamente em certo ponto. Durante os experimentos, foram feitas diversas tentativas de coleta de pontos e foram criados várias configurações de experimentação, porém os resultados sempre estavam culminando para algo parecido. Contudo, a escrita em arquivo pela requisição POST se demostrou mais previsível nos gráficos, aparentando uma subido gradual da latência enquanto a vazão estagnava. O código usado para este trabalho pode ser encontrado em \url{https://github.com/tonussi/tcc.git}.
+
+\section{Trabalhos Futuros}
+
+Existe espaço para explorar novas funcionalidades e adicionar integração com novos algoritmos de ordenação de mensagens.
+
+% Uma possibilidade de melhoria é na parte de garantia de que os dados escritos em disco estejam sincronizados em caso de replicas falharem e se recuperarem. Pois nos experimentos, notou-se que devido a sobrecarga dos \textit{Nodes} ocorria a falta de um ou outro \textit{Pod} e precisava ser reiniciado. Uma vez que o \textit{Pod} era reiniciado os \textit{logs} das operações não se encontravam iguais. No entando, o foco deste trabalho não era recuperação em caso de falha.
+
+\textit{Adição de novos protocolos de comunicação:} Por exemplo a implementação do \textit{protocolo \gls{UDP}} está em aberto para permitir entregas não baseadas em conexão. 
+% Existe um código iniciado por \textcite{renan2021hermes}, porém ainda não foi finalizado e experimentado. Até o presente trabalho os protocolos TCP e HTTP foram implementados.
+
+\textit{Aprimorar o serviço de ordenação proposto em \textcite{renan2021hermes}:} De maneira geral, pode-se mencionar a implementação de diferentes protocolos de comunicação de ordenação de mensagens, assim como no desenvolvimento de estratégias para aumento da vazão na entrega de requisições às réplicas.
+
+% \textit{Implementar \gls{RME} como um microsserviço:} Este objetivo visa utilizar o serviço de ordenação de mensagens proposto por \textcite{renan2021hermes} para implementar um serviço completo de \gls{RME}. Com esse serviço, espera-se que desenvolvedores de aplicações possam se beneficiar de redundância e maior disponibilidade dos seus serviços sem ter que implementar aspectos específicos de tolerância a falhas.
+
+% \textit{Desenvolver um protótipo do serviço \gls{RME} no topo do orquestrador de contêineres Kubernetes:} Este protótipo permitirá observar a aplicabilidade e transparência do serviço na prática e observar os desafios e limitações da configuração da infraestrutura e do serviço.
+
+\textit{Novos protocolos de consenso no Hermes:} Há a possibilidade de inclusão de outros protocolos de consenso, como: Paxos \cite{lamport1998part}, Calvin \cite{calvin-10.1145/2213836.2213838}, CRDT \cite{demers1987epidemic}, dentre outros que podem ser encontrados em \url{https://github.com/heidihoward/distributed-consensus-reading-list}.
+
+\textit{Ordenação em lotes:} Esta estratégia de ordenação em lotes pode requerer uma terceira fonte de informação, também replicada. Esta fonte guardaria o conteúdo das requisições em bytes com uma chave associada ao lote e uma vez que o ordenador Hermes agrupasse um lote de um tamanho determinado, faria-se então a ordenação de um lote pela chave. Depois de ordenar a chave, recupera-se o lote da fonte de informação e se aplica o lote nas réplicas.
+
+\textit{Mudança de líder no sistema Raft do Hermes}: Possibilitar que o líder mude, caso ocorra falha do \textit{Pod} que segura o Hermes Líder (nó do Raft atuando como líder). É possível, e aparentemente viável, que essa mudança permita que o sistema de \textit{Load Balancer} do Kubernetes seja integrado ao sistema Hermes. Por enquanto o Hermes líder é fixo, e atua como \textit{Node Port}.
+
+\textit{Otimização do atendimento de requisições HTTP:} As requisições HTTP do tipo GET, POST, \textit{etc.} podem ter uma resposta do servidor de aplicação. Porém encarregar o Hermes de responder ao cliente pode causar um atraso no processamento de ordenação de mensagens. Sabendo disto, existe espaço para repensar no mecanismo de resposta após aplicar uma mensagem no servidor replicado. Poderia haver um outro serviço que disponibiliza a resposta do servidor em um outro canal de comunicação.
